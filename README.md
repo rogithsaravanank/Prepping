@@ -1,5 +1,3 @@
-# Prepping
-
 # My Notes
 
 ## Table of Contents
