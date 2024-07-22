@@ -4,6 +4,7 @@
 
 ## Table of Contents
 
-- [Java](notes/Java.md)
-- [SpringBoot](notes/SpringBoot.md)
-- [CI/CD](notes/CICD.md)
+- [Java](Prepping/notes/Java.md)
+- [SpringBoot](Prepping/notes/SpringBoot.md)
+- [CI/CD](Prepping/notes/CICD.md)
+- [SQL](Prepping/notes/SQL.md)
