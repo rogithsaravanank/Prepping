@@ -23,6 +23,8 @@ public class Keywords {
         Streams.testStatic = 30;
         System.out.println("testStatic " + Streams.testStatic);
 
+        // Day d=Day.FRIDAY;
+
         //enum
         Day day = Day.MONDAY;
         switch (day){
