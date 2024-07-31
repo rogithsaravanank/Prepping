@@ -8,10 +8,6 @@
 - javac filename(Main.java)
 - java Main(class name)
 
-## Object Oriented Programming
-- Use Case is the first place were the object orientation starts.
-- Objects will be created for doing an action which will be an internal state(behaviour) of the object.
-
 ## Data Types
 - Primitive : Integer (byte- -2^7=128 to +2^7 ,int- 4 bytes, long- 8 bytes), Float(double,float), Character(char-2 bytes), Boolean(boolean)
 - 
@@ -45,4 +41,9 @@
 - while()
 - for()
 - do{} while();
+
+## Object Oriented Programming
+- Use Case is the first place were the object orientation starts.
+- Objects will be created for doing an action which will be an internal state(behaviour) of the object.
+- Every object has an property and behaviour.
 
