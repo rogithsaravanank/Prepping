@@ -62,4 +62,21 @@
 - stack will have connection with heap to refer the objects.
 
 ## Array
--
+- It is collection of elements with static number of elements
+- int[] num=new int[3];
+- int[] num= {1,2,2};
+- Size is fixed.
+
+## Mullti dimensional Array
+- int num[][]= new int[2][3];
+- Jagged array num[3][] rows are known and columns are unknown , but here the rows should be declared
+- jaggedArray()
+
+## String
+- Always use ""
+- String constant pool consist of all the strings declared in heap space.
+- Mutable string(Change) and immutable string (No Change)
+- Capacity of String buffer variable is 16.
+
+
+
