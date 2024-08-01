@@ -47,3 +47,19 @@
 - Objects will be created for doing an action which will be an internal state(behaviour) of the object.
 - Every object has an property and behaviour.
 
+## JRE , JVM, JDK
+- Java Development Kit : This contains JRE
+- Java Runtime Environment : This contains JVM
+- Java Virtual Machine : Compiles the Files
+
+## Method Overloading
+- same method name but the multiple types of arguments sent to the method.
+
+## Memory 
+- JVM consist of stack and heap space to handle the computations of the methods.
+- stack stores each methods and variables in key value pair. Each method will have a seaparate stack.
+- object creation will happen in heap space.
+- stack will have connection with heap to refer the objects.
+
+## Array
+-
