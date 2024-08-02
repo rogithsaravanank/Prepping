@@ -1,4 +1,4 @@
-## 1.Substring
+## 1. Consecutive Substring
 
 Input : String s = “abcabd”;
 Output: “abcab”, “d” 
@@ -6,4 +6,4 @@ Output: “abcab”, “d”
 Example: “dxabxad” = “dxabxad”
 
 
-## 2.
+## 2. 
