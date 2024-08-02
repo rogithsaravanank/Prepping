@@ -76,7 +76,57 @@
 - Always use ""
 - String constant pool consist of all the strings declared in heap space.
 - Mutable string(Change) and immutable string (No Change)
+- string pool constant exists and string will always create new object it won't modify the constant.
+
+## String Buffer 
 - Capacity of String buffer variable is 16.
+- append, insert,setlength, ensureCapacity
+- Mutable String
+- Thread Safe 
+
+## Static keyword
+- Static variables are stored in separte place. It can be used by having class name as object.
+- Static block will be called only once and it will always be called first.
+- if object is not created it will not call static block(use Class.forName(classname) to only intialize a class without create an object)
+- We cannot use instance varibles in Static methods.
+
+## Encapsulation
+- Intergrating data(variables) and methods into a single entity is called as encapsultaion.
+
+## Getterss and Setters
+- Normally when we create a instacne variable in private then it will be accessible only within the class to make it editable and gettable outside the class is were the getters and setters comes in to the picture.
+
+## this keyword
+- It represents the current object.
+- it will call the constructor of teh same class. **this()**
+
+## Constructor
+- Name of the class is constructor name
+- Everytime we create a new object we call the constructor by default.
+- db connections can be called in the constructor.
+- Can be overloaded --> paramaterized constructor
+- default constructor is created automatically.
+
+## Super keyword
+- Every constructor has the 1 st line as super() to call the parent class default constructor.
+- If the parameterized constructor should be called try to use the super(parmeter) which you want to send.
+- **Every class in java extends the object class.**
+
+## Naming Convention
+- Class, Interface --> Student
+- Variable and Methods --> CamelCase
+- Constants --> PIE
+
+## Annoymous Object
+- new Student().getMarks();
+- It has intialization but not a name.
+
+## Inheritance
+- 6.11.00 hrs
+
+
+
+
 
 
 
