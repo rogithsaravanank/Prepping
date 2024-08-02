@@ -14,6 +14,7 @@ public class Basics {
         obj.multiDimension();
         obj.jaggedArray();
         obj.stringBuffer();
+        obj.stringUsage();
     }
 
     private void getNum() {
@@ -70,6 +71,14 @@ public class Basics {
         StringBuffer str=new StringBuffer();
 
         System.out.println("Size of empty String buffer "+str.capacity());
+    }
+
+    public void stringUsage(){
+        String name="Rogith";
+        //This code proves that the string pool constant exists and string will always create new object it won't modify the constant.
+        System.out.println(name.hashCode());
+        name=name+" Saravanan";
+        System.out.println(name.hashCode());
     }
 
 }
