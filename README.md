@@ -13,5 +13,5 @@
 - [Questions](Prepping/notes/Questions.md)
 - [Reference](Prepping/notes/Reference.md)
 - [System Design](Prepping/notes/SystemDesign.md)
-- [Companies] (Prepping/notes/Companies.md)
-- [Format] (Prepping/notes/Format.md)
+- [Companies](Prepping/notes/Companies.md)
+- [Format](Prepping/notes/Format.md)
