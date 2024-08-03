@@ -122,8 +122,38 @@
 - It has intialization but not a name.
 
 ## Inheritance
-- 6.11.00 hrs
+- extends(is a) keyword is used
+- It removes the redundancy in code.
+- multi level inheritance is also supported(Calc-->AdvCalc--> ScienCalc).
 
+## Diamond Problem
+- Multiple inheritance is not supported in java
+- If the same method is in both parent classes it creates a ambiguity problem so multiple inheritance is not supported.
+
+## Method Overriding
+- Child class method will override parent class method if the method and its parameters are similar.
+
+## Package
+- package keyword is used
+- Structuring of the project
+- use imports to create objects and use the methods in other packages if its public.
+- java.lang package is always imported.
+
+![alt text](images/image.png)
+
+## Polymorphism
+- Many behaviours
+- Ability of an object to (take many forms) behave differntly based on the input.
+- Types: Compile time polymorphism(Early binding)--> Overloading, Run time polymorphism(Late binding) --> Overriding
+- A obj=new B(); A -->Obj type is A  B--> Obj implementaion is called a dynamic method dispatch works only with inheritance.
+
+## final keyword
+- Once assigned variable it cannot be modified
+- final class cannot be inherited
+- final method cannot be overridden
+
+## Overriding toString and equals
+- We have to override the methods to print and check the exact values of the objects which you are printing and comparing.
 
 
 
