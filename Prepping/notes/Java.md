@@ -154,6 +154,7 @@
 
 ## Overriding toString and equals
 - We have to override the methods to print and check the exact values of the objects which you are printing and comparing.
+- 7.31.00
 
 
 
