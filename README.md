@@ -8,7 +8,7 @@
 - [SQL](Prepping/notes/SQL.md)
 - [GIT](Prepping/notes/Git.md)
 - [Workpalce Communication](Prepping/notes/Communication.md)
-- [Certificates]((Prepping/notes/Certification.md))
+- [Certificates](Prepping/notes/Certification.md)
 
 ### Interview Notes
 
