@@ -3,12 +3,15 @@
 ## Table of Contents
 
 - [Java](Prepping/notes/Java.md)
+- [JUnit](Prepping/notes/JUnit.md)
+- [DSA](Prepping/notes/DSA.md)
 - [SpringBoot](Prepping/notes/SpringBoot.md)
 - [CI/CD](Prepping/notes/CICD.md)
 - [SQL](Prepping/notes/SQL.md)
 - [GIT](Prepping/notes/Git.md)
 - [Workpalce Communication](Prepping/notes/Communication.md)
-- [Certificates](Prepping/notes/Certification.md)
+- [Course Certificates](Prepping/notes/Certification.md)
+- [Coding Standards](Prepping/notes/CodingPrinciples.md)
 
 ### Interview Notes
 
