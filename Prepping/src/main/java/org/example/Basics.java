@@ -15,6 +15,19 @@ public class Basics {
         obj.jaggedArray();
         obj.stringBuffer();
         obj.stringUsage();
+
+        SampleA obj_sampleA = new SampleB();
+        obj_sampleA.showA();// This represnts obj is referenced only to SampleA class so it can't access SampleB methods.
+
+        SampleB objB= (SampleB) obj_sampleA;
+        objB.showB();// When we cast the method as SampleB obj it could access both class methods
+
+        SampleA objA= new SampleA(){
+            public void showA(){
+                System.out.println("new inner class");
+            }
+        };
+        objA.showA();
     }
 
     private void getNum() {

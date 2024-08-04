@@ -152,9 +152,67 @@
 - final class cannot be inherited
 - final method cannot be overridden
 
-## Overriding toString and equals
+## Overriding toString and equals(Check out Class names SampleA, SampleB)
 - We have to override the methods to print and check the exact values of the objects which you are printing and comparing.
-- 7.31.00
+- hashCode() also needs to be checked if equals is modified
+
+## Type Casting
+- Converting the type of a varible to another type.
+- Up Casting and Down casting
+-       SampleA obj_sampleA = new SampleB();
+        obj_sampleA.showA();// This represnts obj is referenced only to SampleA class so it can't access SampleB methods.
+
+        SampleB objB= (SampleB) obj_sampleA;
+        objB.showB();// When we cast the method as SampleB obj it could access both class methods
+
+## Wrapper Classes
+- Every Primitive type will have a class int(Primitive) --> Integer(Reference variable)
+- **AutoBoxing** storing a primitive value in a reference variable(Wrapper object). --> int a=5;Integer b=a;(AutoBoxing)
+- **Autounboxing** --> int a=b;Integer b=5;(AutoUnBoxing)
+
+## Abstract Keyword
+- Defining a method without any implementation is called as abstract method. It can only be created in abstract class.Cannot create object of abstract class.
+- Abstract class can have all kinds of normal methods and abstract methods.
+- An class extending abstract class should implement all the abstract methods if not it will throw an error.
+
+## inner Class
+- It can only be used by outer class object and outer class itself
+- Example: B Class is inner class to A class then methods inside B class can only be accessed by creating object of A class then referencing it to create a object for B class.
+- A.B objB= objA.new B();
+
+## Anonymous inner class
+    SampleA objA= new SampleA(){
+            public void showA(){
+            System.out.println("new inner class");
+            }
+        };
+- This can be useful for the abstract class implementation of a methods because its easier to use this way.
+
+## Interface
+- All methods inside a interface are abstract methods
+- **implements** is used
+- variables inside a interface is final and static
+- multiple interface can be implemented in a class
+
+## Enum is class
+    enum NameEnum{
+        Running,Succes,Failure;}
+    NameEnum s= NameEnum.Running; //NameEnum.values()--> Array of values
+- Switch case can be used with ease
+- As its a class it can have constructors and getter setters and all kinds of methods
+
+## Annotations
+- @Override, @Deprecated
+
+## Types of Interface
+- Marker interface: Blank interface example; Serialization --> converting a object to byte stream (writeObject()), deserialization --> byte stream to object (readObject()) 
+- Functional interface: SAM Single Abstract Method only one methdod
+- Normal interface
+
+
+
+
+
 
 
 
