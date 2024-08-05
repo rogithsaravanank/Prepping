@@ -1,11 +1,14 @@
 package org.example;
 
- public class SampleA {
+import java.io.IOException;
+import java.util.Scanner;
+
+public class SampleA {
     private int price;
     private String taste;
 
     // public String toString(){
-    //     return this.price +" "+ this.taste;
+    // return this.price +" "+ this.taste;
     // }
 
     @Override
@@ -17,22 +20,58 @@ package org.example;
         return result;
     }
 
+    public static void main(String[] args) throws IOException {
+        // SampleInterface objI= new SampleInterface() {
+
+        // public void show(){
+        // System.out.println("fsaa ");
+        // }
+        // };
+
+        SampleInterface objI = (a,b) -> a+b;
+
+       int res= objI.show(5,2);
+       System.out.println(" It s the result "+res);
+       System.out.println(" Enter a number ");
+    //    int i=System.in.read(); Do not use give only the ascii Value
+    Scanner sc= new Scanner(System.in);
+    int i =sc.nextInt();
+// int i=18;
+       int j=0;
+        try{
+        j=18/i;
+        if(j==0)
+            throw new RogithException("Something is fine");}
+
+        catch(RogithException e){
+                System.out.println("printing the exception" + e);
+            }
+
+
+            System.out.println("After exception ");
+
+
+    }
+
     @Override
     public String toString() {
         return "SampleA [price=" + price + ", taste=" + taste + "]";
     }
 
-    public SampleA(){}
-    
+    public SampleA() {
+    }
+
     public SampleA(int price, String taste) {
         this.price = price;
         this.taste = taste;
     }
 
-public void showA(){
-    System.out.println("In sample A");
-}
+    public void showA() {
+        System.out.println("In sample A");
+    }
 
+    // public void show(){System.out.println("In sample A show");}
+    // public void checkout(){System.out.println("In sample A checkout");}
     @Override
     public boolean equals(Object obj) {
         if (this == obj)
@@ -61,12 +100,10 @@ public void showA(){
     }
 
     // public boolean equals(SampleA obj){
-    //  if(this.taste.equals(obj.taste) && this.price==obj.price)
-    //     return true;
-    // else 
-    //     return false;    
+    // if(this.taste.equals(obj.taste) && this.price==obj.price)
+    // return true;
+    // else
+    // return false;
     // }
 
-
 }
-
