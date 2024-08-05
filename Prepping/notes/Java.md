@@ -121,7 +121,7 @@
 - new Student().getMarks();
 - It has intialization but not a name.
 
-## Inheritance
+## Inheritance(Is-A)
 - extends(is a) keyword is used
 - It removes the redundancy in code.
 - multi level inheritance is also supported(Calc-->AdvCalc--> ScienCalc).
@@ -188,7 +188,7 @@
         };
 - This can be useful for the abstract class implementation of a methods because its easier to use this way.
 
-## Interface
+## Interface -- Most of the interfaces Suffix is -able --> Runnable,Throwable
 - All methods inside a interface are abstract methods
 - **implements** is used
 - variables inside a interface is final and static
@@ -209,11 +209,47 @@
 - Functional interface: SAM Single Abstract Method only one methdod
 - Normal interface
 
+## Functional Interface
+- @FunctionalInterface identified by the annotation
+- Lambda expression works only with functional interface
+        SampleInterface objI = (a,b) -> a+b;
 
+## Exceptions
+- Compile time errors - coding erros like calling a methods which is not declared
+- Run time errors - Exception Handling use try{} catch(){} Example: ArithmeticException , ArrayIndexoutofboundsException, NullpointerException. These all are unchecked exceptions.
+- Checked exceptions include Sql Exception, IO exception
+- Logical errors 
 
+## Throw
+- key is used to throw a exception
+- Example: condition {throw new ArthimeticException("Donot want a print");} it will be catched in the catch
 
+## Throws
+- Do not ask main method to handle exception
+- throws should be used in the method signature
+- hierarchy of the exceptions can be tracked by stack trace(e.printStackTrace())
 
+## System.out.println --> System is a class, Out is an object in PrintStream, println is a method.
 
+## Scanner sc= new Scanner(System,in); int a = sc.nextInt();
+
+## Finally block 
+- Its always executed , Can close connections.
+- try with resources does not need any sort of catch blocks or finally.
+
+## Threads
+- Extend **Thread** class 
+- Thread should have a run method 
+- start() method to call the method
+- setPriority(Thread.MAX_PRIORITY)
+- Thread.sleep(millis:time) --> InteruptedException should be handled
+- **implement** Runnable
+- join() method waits for the thread to complete
+- States: New --> Runnable --> Running --> Waiting --> Dead
+
+## Mutations
+- Change of the values
+- synchronized methods can be used to stop mutation in threads
 
 
 

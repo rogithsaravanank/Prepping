@@ -1,7 +1,7 @@
 package org.example;
 
 public interface SampleInterface {
-    public void  show();
-    public void  checkout();
+    public int  show(int a,int b);
+    // public void  checkout();
     
 }

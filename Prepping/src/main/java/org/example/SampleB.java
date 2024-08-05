@@ -1,35 +1,34 @@
 package org.example;
 
-public class SampleB extends SampleA implements SampleInterface {
-    
-public static void main(String[] args) {
-    
+public class SampleB extends SampleA {
 
-    SampleA objA= new SampleA();
-    
-    objA.setPrice(10); 
-    objA.setTaste("good");
-    System.out.println(objA.toString());// This will give the hascode if there is no to String in the A class
+    public static void main(String[] args) {
 
-    SampleA objA2= new SampleA();
-    objA.setPrice(10); 
-    objA.setTaste("good");
+        SampleA objA = new SampleA();
 
-    System.out.println(objA.equals(objA2));// This will give false until the equals method is overriden
-SampleB objB=new SampleB();
+        objA.setPrice(10);
+        objA.setTaste("good");
+        System.out.println(objA.toString());// This will give the hascode if there is no to String in the A class
 
-    objB.show();
-    objB.checkout();
-}
-public void show(){
-    System.out.println("Show via interface");
-}
-public void checkout(){
-    System.out.println("checkout via interface");
-}
+        SampleA objA2 = new SampleA();
+        objA.setPrice(10);
+        objA.setTaste("good");
 
-public void showB(){
-    System.out.println("In sample B");
-}
+        System.out.println(objA.equals(objA2));// This will give false until the equals method is overriden
+        // SampleB objB=new SampleB();
+
+        // new SampleB().show();
+        // new SampleB().checkout();
+    }
+    // public void show(){
+    // System.out.println("Show via interface");
+    // }
+    // public void checkout(){
+    // System.out.println("checkout via interface");
+    // }
+
+    public void showB() {
+        System.out.println("In sample B");
+    }
 
 }

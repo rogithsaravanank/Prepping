@@ -12,6 +12,7 @@
 - [Workpalce Communication](Prepping/notes/Communication.md)
 - [Course Certificates](Prepping/notes/Certification.md)
 - [Coding Standards](Prepping/notes/CodingPrinciples.md)
+- [Links](Prepping/notes/Links.md)
 
 ### Interview Notes
 

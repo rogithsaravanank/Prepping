@@ -1,6 +1,10 @@
 ## Certifications
 
-### Communication : ![alt text](images/Udemy-Certificate-Comminication.jpg)
+### Communication : ![Communication](images/Udemy-Certificate-Comminication.jpg)
 
-### API Dev : ![alt text](images/Udemy_Stream_API_Dev.jpg)
+### API Dev : ![Functional Programming](images/Udemy_Stream_API_Dev.jpg)
+
+### Graph QL : ![GrpahQL](images/graphQL.jpg)
+
+### Architect Role : ![Role Improvement](images/CertificateOfCompletion_Software%20Architecture%20From%20Developer%20to%20Architect.jpg)
 
