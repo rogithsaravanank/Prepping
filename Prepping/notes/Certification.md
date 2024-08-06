@@ -8,3 +8,5 @@
 
 ### Architect Role : ![Role Improvement](images/CertificateOfCompletion_Software%20Architecture%20From%20Developer%20to%20Architect.jpg)
 
+### Coding Principles: ![SOLID](images/SOLIDS_Udemy.jpg)
+
