@@ -36,4 +36,7 @@
 - Violation of ISP ---> Fat interfaces, interfaces with low cohesion, un implemented methods
 
 ### Dependancy Inversion Principle 
-- 
+- High level modules should not depend on low level modules both should depend on Abstraction
+- Abstraction should not depend on details , Details should depend on abstractions
+- [DI ](images/DI_code.jpeg)
+- [Sample](images/DI_example.jpeg)

@@ -251,6 +251,74 @@
 - Change of the values
 - synchronized methods can be used to stop mutation in threads
 
+## Collections
+- Collections Framework
+- Collection interface
+- Collections class
+
+## Collection framework
+- ArrayList --> enhancement of an array maintains insertion prder
+- LinkedList
+- Dequeue
+- HashSet --> No duplication, Do not maintain insertion order
+- TreeSet --> Sorted 
+- HashMap --> Key, Value pair map --> keySet(): Gets all the keys from the map(No duplication in keys in map) --> .values() get values of map
+- HashTable -->  it is synchronized so it is thread safe
+
+## Collections Class
+- Comparator class
+ 
+## Imporant
+ Comparator cmp= new Comparator<String>() {
+            public int compare(String i,String j){
+                // if(i.length()>j.length())
+                //     return 1;
+                // else 
+                //     return -1;
+
+                return (i.length()>j.length()) ? 1:-1;
+            }
+        };
+
+    Comparator<String> cmp= (String i,String j) -> (i.length()>j.length()) ? 1:-1;
+
+    Comparator<String> cmp= (i,j) -> (i.length()>j.length()) ? 1:-1;
+
+    //Collections.sort(lst,cmp);
+     Collections.sort(lst,(i,j) -> (i.length()>j.length()) ? 1:-1);
+
+## Streams
+- Streams can be used only once 
+
+## JAVA 21 
+- void main(){}; can be used to print 
+- it will be in an unnamed class which need not to be declared.
+
+## JAVA 10
+- LVTI --> Local Varible Type Inference
+- int i=5; --> var i=5;
+- int i ; --> var i; pops error 
+
+## Sealed Class/Interface
+- Normally **final** class cannot be inherited
+- **sealed** class className **permits**  classNames
+- Usage payment gateway class
+- **non-sealed** for subclasses
+
+## Record 
+- **record** ClassName(Int i , String n){} instead of Constructor , toString, Equals,getter methods. 
+- But you cannot set values. All the varibles are final and private.
+- Cannonical Constructors
+
+
+
+
+
+
+
+
+
+
 
 
 
