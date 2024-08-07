@@ -65,4 +65,9 @@ list.stream().toMap(Function.identity(), Function.identity());
 - **`@RestController`:** Combines `@ResponseBody` and `@Controller`
 - **`@ResponseBody`:** Indicates that the return value of a method should be bound to the web response body. When using `@RestController`, it automatically includes `@ResponseBody` for all methods.
 
-#### 
+#### behaviourial
+- **Always have stories** to show somme grit and determination and experience
+- Problems faced and stories on how you fixed it
+- self motivated
+- Think about the questions for them
+- 
