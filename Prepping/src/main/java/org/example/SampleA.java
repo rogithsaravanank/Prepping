@@ -99,6 +99,10 @@ public class SampleA {
         this.taste = taste;
     }
 
+    public int add(int a,int b){
+        return a+b;
+    }
+
     // public boolean equals(SampleA obj){
     // if(this.taste.equals(obj.taste) && this.price==obj.price)
     // return true;
