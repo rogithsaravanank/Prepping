@@ -12,7 +12,9 @@
 - [Workpalce Communication](Prepping/notes/Communication.md)
 - [Course Certificates](Prepping/notes/Certification.md)
 - [Coding Standards](Prepping/notes/CodingPrinciples.md)
+- [Kubernetes](Prepping/notes/K8s.md)
 - [Links](Prepping/notes/Links.md)
+
 
 ### Interview Notes
 
