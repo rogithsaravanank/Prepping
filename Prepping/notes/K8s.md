@@ -25,3 +25,36 @@
 - kubectl run hello-minikube
 - kubectl cluster-info
 - kubectl get nodes
+- kubectl get pods -o wide
+- kubectl run nginx --image=nginx : creating a ngnix pods
+- kubectl create deployment nginx --image=nginx : Creating a deployment
+
+### YAML
+- Key - value pair --> Fruit: Apple
+- Array/Lists --> Multiple items are of same type of the object, These are ordered
+Fruits:
+-   Orage
+-   Pineapple
+- Dictionary --> these are unordered
+Banana:
+    Calories: 105
+    Fat: 0.5
+
+### Sample
+Employee://Dictionary
+  Name: Jacob
+  Sex: Male
+  Age: 30
+  Title: Systems Engineer
+  Projects://List
+    - Automation
+    - Support
+  Payslips:// List of Dictionaries
+    - Month: June
+      Wage: 4000
+    - Month: July
+      Wage: 4500
+    - Month: August
+      Wage: 4000
+
+### 
