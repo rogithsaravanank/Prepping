@@ -1,6 +1,6 @@
 # My Notes
 
-## Table of Contents
+## Basics
 
 - [Java](Prepping/notes/Java.md)
 - [JUnit](Prepping/notes/JUnit.md)
@@ -16,7 +16,7 @@
 - [Links](Prepping/notes/Links.md)
 
 
-### Interview Notes
+## Interview Notes
 
 - [Coding](Prepping/notes/Coding.md)
 - [Questions](Prepping/notes/Questions.md)
