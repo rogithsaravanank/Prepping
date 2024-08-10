@@ -10,4 +10,4 @@
 
 ### Coding Principles: ![SOLID](images/SOLIDS_Udemy.jpg)
 
-### System Design: [SystemDesign](images/System_Design.jpg) 
+### System Design: ![SystemDesign](images/System_Design.jpg) 
