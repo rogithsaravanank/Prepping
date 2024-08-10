@@ -1,7 +1,5 @@
 # My Notes
 
-## Basics
-
 - [Java](Prepping/notes/Java.md)
 - [JUnit](Prepping/notes/JUnit.md)
 - [DSA](Prepping/notes/DSA.md)
