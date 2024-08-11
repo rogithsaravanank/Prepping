@@ -1,7 +1,12 @@
 package org.example;
 
 import java.io.IOException;
+import java.util.Arrays;
+import java.util.List;
 import java.util.Scanner;
+import java.util.concurrent.atomic.AtomicInteger;
+import java.util.stream.IntStream;
+import java.util.stream.Stream;
 
 public class SampleA {
     private int price;
@@ -49,7 +54,7 @@ public class SampleA {
 
 
             System.out.println("After exception ");
-
+            forEachTest();
 
     }
 
@@ -93,6 +98,18 @@ public class SampleA {
 
     public void setPrice(int price) {
         this.price = price;
+    }
+
+    public static void forEachTest(){
+        List<Integer> lst=Arrays.asList(1,2,2,3);
+AtomicInteger at=new AtomicInteger();
+lst.forEach(a->at.addAndGet(a));
+
+System.out.println(at);
+
+int res=lst.stream().flatMapToInt(IntStream::of).sum();
+System.out.println(res);
+
     }
 
     public void setTaste(String taste) {
