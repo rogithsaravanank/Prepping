@@ -2,9 +2,12 @@ package org.example;
 
 import java.io.IOException;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 import java.util.Scanner;
 import java.util.concurrent.atomic.AtomicInteger;
+import java.util.stream.Collector;
+import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
@@ -26,36 +29,62 @@ public class SampleA {
     }
 
     public static void main(String[] args) throws IOException {
+        // createScanner();
+        forEachTest();
+
+    }
+
+
+    public static void forEachTest() {
+        Integer[] arr = { 1, 2, 3, 3, 4 };
+
+        List<Integer> lst = Arrays.asList(arr);
+
+        // List<Integer> lst = Arrays.asList(arr);
+
+         Integer res1 = lst.stream().filter(a -> a % 2 != 0).collect(Collectors.summingInt(a->a));
+
+        System.out.println("res1..." + res1);
+
+        AtomicInteger at = new AtomicInteger();
+        lst.forEach(a -> at.addAndGet(a));
+
+        System.out.println(at);
+
+        int res = lst.stream().flatMapToInt(IntStream::of).sum();
+        System.out.println(res);
+
+    }
+
+
+    private static void createScanner() {
         // SampleInterface objI= new SampleInterface() {
 
         // public void show(){
         // System.out.println("fsaa ");
         // }
         // };
+        SampleInterface objI = (a, b) -> a + b;
 
-        SampleInterface objI = (a,b) -> a+b;
+        int res = objI.show(5, 2);
+        System.out.println(" It s the result " + res);
+        System.out.println(" Enter a number ");
+        // int i=System.in.read(); Do not use give only the ascii Value
+        Scanner sc = new Scanner(System.in);
+        int i = sc.nextInt();
+        // int i=18;
+        int j = 0;
+        try {
+            j = 18 / i;
+            if (j == 0)
+                throw new RogithException("Something is fine");
+        }
 
-       int res= objI.show(5,2);
-       System.out.println(" It s the result "+res);
-       System.out.println(" Enter a number ");
-    //    int i=System.in.read(); Do not use give only the ascii Value
-    Scanner sc= new Scanner(System.in);
-    int i =sc.nextInt();
-// int i=18;
-       int j=0;
-        try{
-        j=18/i;
-        if(j==0)
-            throw new RogithException("Something is fine");}
+        catch (RogithException e) {
+            System.out.println("printing the exception" + e);
+        }
 
-        catch(RogithException e){
-                System.out.println("printing the exception" + e);
-            }
-
-
-            System.out.println("After exception ");
-            forEachTest();
-
+        System.out.println("After exception ");
     }
 
     @Override
@@ -100,24 +129,12 @@ public class SampleA {
         this.price = price;
     }
 
-    public static void forEachTest(){
-        List<Integer> lst=Arrays.asList(1,2,2,3);
-AtomicInteger at=new AtomicInteger();
-lst.forEach(a->at.addAndGet(a));
-
-System.out.println(at);
-
-int res=lst.stream().flatMapToInt(IntStream::of).sum();
-System.out.println(res);
-
-    }
-
     public void setTaste(String taste) {
         this.taste = taste;
     }
 
-    public int add(int a,int b){
-        return a+b;
+    public int add(int a, int b) {
+        return a + b;
     }
 
     // public boolean equals(SampleA obj){
