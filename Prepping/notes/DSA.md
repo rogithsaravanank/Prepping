@@ -32,6 +32,21 @@
 ## Chart 
 ![alt text](images/BIGO.png)
 
--- 17.07.00
+## Sort
 
+## Bubble Sort
+- It is not a efficient way of sorting 
+- It has time complexity of O(n)*O(n)
+- This just compares the adjacent values two to two until all the possible combinations are checked.
+- ![alt text](images/bubblesort.png)
+
+## Selection sort
+- It has time complexity of O(n)*O(n)
+- but still the selection algorithm will reduce the iterations by the selecting the maximum or minimum value based on choice
+- This will significantly reduces the iterations.
+- dedicated inner loop just to find the min or max value
+
+## Insertion sort
+- Shifting will be done here 
+- 
 
