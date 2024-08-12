@@ -30,7 +30,7 @@
 - O(2^n): Exponential time
 
 ## Chart 
-![alt text](images/BIGO.png)
+![Chart](images/BIGO.png)
 
 ## Sort
 
@@ -38,15 +38,17 @@
 - It is not a efficient way of sorting 
 - It has time complexity of O(n)*O(n)
 - This just compares the adjacent values two to two until all the possible combinations are checked.
-- ![alt text](images/bubblesort.png)
+- swap
+- ![Bubble Sort](images/bubblesort.png)
 
 ## Selection sort
 - It has time complexity of O(n)*O(n)
 - but still the selection algorithm will reduce the iterations by the selecting the maximum or minimum value based on choice
 - This will significantly reduces the iterations.
 - dedicated inner loop just to find the min or max value
+- swap
 
 ## Insertion sort
 - Shifting will be done here 
+- i=1,j=i-1,key
 - 
-
