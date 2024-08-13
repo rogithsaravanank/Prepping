@@ -1,6 +1,6 @@
 ## SQL
 
-```markdown
+<!-- ```markdown -->
 # Basic SQL Commands
 
 ## Command Descriptions
@@ -52,6 +52,4 @@
   - `SELECT users.name, orders.amount FROM users RIGHT JOIN orders ON users.id = orders.user_id;`
 - **FULL OUTER JOIN**: Retrieves records when there is a match in one of the tables.
   - `SELECT users.name, orders.amount FROM users FULL OUTER JOIN orders ON users.id = orders.user_id;`
-```
-
-You can save this text into a file with a `.md` extension (e.g., `sql_commands.md`).
+<!-- ``` -->
