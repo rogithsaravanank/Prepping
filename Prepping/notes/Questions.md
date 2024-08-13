@@ -70,4 +70,18 @@ list.stream().toMap(Function.identity(), Function.identity());
 - Problems faced and stories on how you fixed it
 - self motivated
 - Think about the questions for them
+
+#### Method Reference
 - 
+
+#### Singleton object has prototype instantiation via Autowire so now the prototype will behave as singleton how to change that
+##### When using Spring Framework, if you have a singleton-scoped bean that has a dependency on a prototype-scoped bean, and the prototype bean is injected via @Autowired, the prototype bean will behave like a singleton. This happens because the singleton bean is created only once and its dependencies (including the prototype-scoped bean) are injected at the time of its creation. Therefore, the same instance of the prototype-scoped bean is used throughout the lifecycle of the singleton bean.To change this behavior and ensure that a new instance of the prototype-scoped bean is created every time it is needed.
+- In Application context you can add below code 
+``` @Autowired
+private ApplicationContext applicationContext;
+
+public void doSomething() {
+    PrototypeBean prototypeBean = applicationContext.getBean(PrototypeBean.class);
+    prototypeBean.doSomething();
+}
+```

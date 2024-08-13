@@ -1,8 +1,7 @@
-## SQL
+# SQL
 
 <!-- ```markdown -->
-# Basic SQL Commands
-
+<!-- # Basic SQL Commands -->
 ## Command Descriptions
 - **SELECT**: Select Data From Database
 - **FROM**: Specify Table We're Pulling From
