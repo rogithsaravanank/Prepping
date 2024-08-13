@@ -52,3 +52,18 @@
 - Shifting will be done here 
 - i=1,j=i-1,key
 - 17.57.00
+
+## Quick sort 
+- its rule is to divide and conquer 
+- [1,9,4,5,5] --> [1,9] [4,5,5]
+- it will have a pivot value to divide
+- i=-1,j=0,pivot=anyelement 
+- low , high
+- nlog n
+
+## Merge Sort
+- divide and conquer
+- nlog n
+- median is used to divide
+- left, right
+- ![alt text](mergeSort.png)
