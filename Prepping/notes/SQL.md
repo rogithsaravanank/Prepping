@@ -32,6 +32,18 @@
 - **AVG**: Return Average Of Column
 - **MIN**: Return Min Value Of Column
 - **MAX**: Return Max Value Of Column
+- **OFFSET**: Specifies the starting point for records to return
+- **TRUNCATE TABLE**: Removes all records from a table but retains the table structure
+- **CREATE INDEX**: Creates an index on a table to improve query performance
+- **DROP INDEX**: Deletes an index from a table
+- **CAST**: Converts a value from one data type to another
+- **UNION**: Combines the result sets of two or more SELECT queries
+- **UNION ALL**: Combines the result sets of two or more SELECT queries, including duplicates
+- **SUBQUERY**: A query nested inside another query
+- **EXISTS**: Checks if a subquery returns any records
+- **ANY**: Compares a value to any value in a list or subquery
+- **ALL**: Compares a value to all values in a list or subquery
+- **BETWEEN**: Selects values within a range
 
 ## Example Queries
 - **WHERE**: Filters records that meet a specific condition.
@@ -52,4 +64,36 @@
   - `SELECT users.name, orders.amount FROM users RIGHT JOIN orders ON users.id = orders.user_id;`
 - **FULL OUTER JOIN**: Retrieves records when there is a match in one of the tables.
   - `SELECT users.name, orders.amount FROM users FULL OUTER JOIN orders ON users.id = orders.user_id;`
+- **LIMIT**: Specifies the number of records to return.
+  - `SELECT name FROM users LIMIT 5;`
+- **OFFSET**: Specifies the starting point for records to return.
+  - `SELECT name FROM users LIMIT 5 OFFSET 10;`
+- **TRUNCATE TABLE**: Removes all records from a table but retains the table structure.
+  - `TRUNCATE TABLE users;`
+- **CREATE INDEX**: Creates an index on a table to improve query performance.
+  - `CREATE INDEX id_name ON users (name);`
+- **DROP INDEX**: Deletes an index from a table.
+  - `DROP INDEX idx_name;`
+- **CASE**: Provides conditional logic in SQL queries.
+  - `SELECT name, age, CASE WHEN age < 30 THEN 'Young' ELSE 'Old' END as age_group FROM users;`
+- **CAST**: Converts a value from one data type to another.
+  - `SELECT name, CAST (age AS CHAR) FROM users;`
+- **UNION**: Combines the result sets of two or more SELECT queries.
+  - `SELECT name FROM users UNION SELECT name FROM employees;`
+- **UNION ALL**: Combines the result sets of two or more SELECT queries, including duplicates.
+  - `SELECT name FROM users UNION ALL SELECT name FROM employees;`
+- **SUBQUERY**: A query nested inside another query.
+  - `SELECT name FROM users WHERE age = (SELECT MAX(age) FROM users);`
+- **EXISTS**: Checks if a subquery returns any records.
+  - `SELECT name FROM users WHERE EXISTS (SELECT 1 FROM orders WHERE users.id = orders.user_id);`
+- **ANY**: Compares a value to any value in a list or subquery.
+  - `SELECT name FROM users WHERE age > ANY (SELECT age FROM users WHERE age < 30);`
+- **ALL**: Compares a value to all values in a list or subquery.
+  - `SELECT name FROM users WHERE age > ALL (SELECT age FROM users WHERE age < 30);`
+- **LIKE**: Searches for a specified pattern in a column.
+  - `SELECT name FROM users WHERE name LIKE 'A%';`
+- **IN**: Checks if a value is within a set of values.
+  - `SELECT name FROM users WHERE age IN (25, 30, 35);`
+- **BETWEEN**: Selects values within a range.
+  - `SELECT name FROM users WHERE age BETWEEN 20 AND 30;`
 <!-- ``` -->
