@@ -91,4 +91,30 @@ public class Streams {
 
 
     }
+    public static void ques(){
+        String s = "120.sid.0.1";
+        
+        String[] arr = s.split("\\.");  // Escape the dot
+        
+        if (arr.length == 4) {
+            String verifiedString = Arrays.stream(arr)
+                .filter(x -> {
+                    try {
+                        Integer.parseInt(x);
+                        return true;
+                    } catch (NumberFormatException e) {
+                        return false;
+                    }
+                })
+                .filter(x -> {
+                    int num = Integer.parseInt(x);
+                    return num > 0 && num <= 255;
+                })
+                .collect(Collectors.joining("."));
+            
+            System.out.println(verifiedString);
+        } else {
+            System.out.println("Invalid input string.");
+        }
+}
 }
