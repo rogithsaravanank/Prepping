@@ -14,3 +14,5 @@
 - AstraZeneca(chennai)
 - Open text(Hyderabad)
 - Gen Digital(chennai)
+- Siemens(chennai)
+- UPS(chennai)

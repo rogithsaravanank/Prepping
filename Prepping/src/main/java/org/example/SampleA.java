@@ -3,6 +3,7 @@ package org.example;
 import java.io.IOException;
 import java.util.Arrays;
 import java.util.Collections;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Scanner;
 import java.util.concurrent.atomic.AtomicInteger;
@@ -37,7 +38,7 @@ public class SampleA {
 
     public static void forEachTest() {
         Integer[] arr = { 1, 2, 3, 3, 4 };
-
+LinkedList<Integer> ll_lst=new LinkedList<>();
         List<Integer> lst = Arrays.asList(arr);
 
         // List<Integer> lst = Arrays.asList(arr);

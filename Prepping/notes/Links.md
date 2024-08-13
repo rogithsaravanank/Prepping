@@ -1,6 +1,8 @@
 ## Links
 
-### Notes: https://github.com/rogithsaravanank/Prepping/tree/main
+### Notes: 
+- https://github.com/rogithsaravanank/Prepping/tree/main
+- https://srimuthurajesh.github.io/Tech-Notes
 
 ### LinkedIn profile : www.linkedin.com/in/rogith-saravanan-k-665019136
 
