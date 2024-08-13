@@ -67,3 +67,6 @@
 - median is used to divide
 - left, right
 - ![alt text](mergeSort.png)
+
+## Linked List
+- 19.28.00

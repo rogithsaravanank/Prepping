@@ -72,7 +72,7 @@ list.stream().toMap(Function.identity(), Function.identity());
 - Think about the questions for them
 
 #### Method Reference
-- 
+- In Java, a method reference is a shorthand notation of a lambda expression to call a method. It allows you to refer to a method without executing it. The syntax is ClassName::methodName or object::methodName. Method references are a more concise and readable way to write certain types of lambda expressions. They are particularly useful for passing methods as arguments to higher-order functions.
 
 #### Singleton object has prototype instantiation via Autowire so now the prototype will behave as singleton how to change that
 ##### When using Spring Framework, if you have a singleton-scoped bean that has a dependency on a prototype-scoped bean, and the prototype bean is injected via @Autowired, the prototype bean will behave like a singleton. This happens because the singleton bean is created only once and its dependencies (including the prototype-scoped bean) are injected at the time of its creation. Therefore, the same instance of the prototype-scoped bean is used throughout the lifecycle of the singleton bean.To change this behavior and ensure that a new instance of the prototype-scoped bean is created every time it is needed.
@@ -85,3 +85,5 @@ public void doSomething() {
     prototypeBean.doSomething();
 }
 ```
+
+#### 
