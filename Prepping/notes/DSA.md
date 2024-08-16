@@ -69,4 +69,4 @@
 - ![alt text](mergeSort.png)
 
 ## Linked List
-- 19.28.00
+- 19.28.0
