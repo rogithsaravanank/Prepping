@@ -7,9 +7,19 @@
 
 ## Queue - FIFO
 - Example: Standing in a queue in restaurant
+- enqueue() insert
+- dequeue() remove
+- add() insert
+- poll() delete
+- clear()
 
 ## Stack - LIFO
 - Example: Books are placed on one another
+- push()
+- pop()
+- peek()
+- Can be fixed or dynamic
+- basic capacity 10*2
 
 ## Linear Search
 - It is cheking the array one by one if it is the target value or not.
@@ -70,3 +80,36 @@
 
 ## Linked List
 - 19.28.0
+
+
+## Queue
+- LinkedList:
+
+    Pros: Allows null elements, maintains insertion order, efficient for frequent insertions and deletions from both ends.
+    Cons: Higher memory usage due to the doubly-linked list structure.
+    Use Case: General-purpose queue, where the insertion order is important, and null elements are acceptable.
+
+- PriorityQueue:
+
+    Pros: Orders elements based on priority, efficient for priority-based processing.
+    Cons: Does not maintain insertion order, does not allow null elements.
+    Use Case: When elements need to be processed based on priority, like task scheduling.
+
+- ArrayDeque:
+
+    Pros: Efficient for insertions and deletions from both ends, maintains insertion order.
+    Cons: Does not allow null elements.
+    Use Case: General-purpose deque operations, stack-like and queue-like behavior with efficient performance.
+
+
+## Tree
+### Binary Tree 
+- Strict --> each node should have two or none
+- full binary tree -->  each node should have two nodes , Leaf nodes should be in the same level
+- Complete binary tree --> 
+- ![alt text](images/bTree.png)
+
+### Binary Search Tree
+- higher value in the right node
+- lower value in the left node
+- 20.57.00
