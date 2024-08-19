@@ -57,4 +57,23 @@ Employee://Dictionary
     - Month: August
       Wage: 4000
 
-### 
+### Yaml in k8s:
+```
+apiVersion: v1
+kind: Pod
+metadata: 
+  name: myapp-pod
+  labels:
+      app: myapp
+      type: frontend
+spec:
+  containers:
+  - name : ngnix-controller
+    image: ngnix ```
+
+To create the pod
+
+```kubectl apply -f pod.yaml```
+
+```kubectl describe podname```
+
