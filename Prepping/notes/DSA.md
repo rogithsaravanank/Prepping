@@ -112,4 +112,8 @@
 ### Binary Search Tree
 - higher value in the right node
 - lower value in the left node
-- 20.57.00
+
+### Tree Traversal 
+- In order traversal
+- Pre order 
+- Post order

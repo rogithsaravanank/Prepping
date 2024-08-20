@@ -4,13 +4,41 @@ import java.util.*;
 // import java.util.Iterator;
 // import java.util.LinkedList;
 // import java.util.Queue;
-// import java.util.Stack;
+// import java.util.TreeMap;
 
 public class BasicsDSA2 {
     public static void main(String[] args) {
         
     // stack();
-queue();
+// queue();
+tree();
+    }
+
+    private static void tree() {
+    TreeSet<Integer> tr=new TreeSet<>();
+
+    tr.add(12);
+    tr.add(14);
+    tr.add(11);
+
+    System.out.println(tr);//sorted by default
+    Queue<Integer> que=new ArrayDeque<>();
+    que.add(13);
+    que.add(19);
+    que.add(11);
+    tr.addAll(que);
+    System.out.println(tr.last());//sorted by default    
+    System.out.println(tr.size());
+TreeMap<Integer,Integer> trmap=new TreeMap<>();
+trmap.put(12,1);
+trmap.put(11,2);
+trmap.put(14,3);
+
+System.out.println(trmap.ceilingKey(13));//Shows the nearest high value
+
+System.out.println(trmap);
+
+
     }
 
     private static void queue(){
