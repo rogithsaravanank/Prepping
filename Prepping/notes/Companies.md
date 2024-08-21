@@ -16,3 +16,4 @@
 - Gen Digital(chennai)
 - Siemens(chennai)
 - UPS(chennai)
+- Open Text (chennai)
