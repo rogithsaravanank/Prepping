@@ -161,3 +161,33 @@ public class StringManipulation {
     }
 }
 ```
+
+## 15. Availity (full remote) question:
+
+Koko loves to eat bananas. There are N piles of bananas, the i-th pile has piles[i] bananas. The guards have gone and will come back in H hours.
+Koko can decide her bananas-per-hour eating speed of K. Each hour, she chooses some pile of bananas, and eats K bananas from that pile.
+ If the pile has less than K bananas, she eats all of them instead, and won't eat any more bananas during this hour.
+Koko likes to eat slowly but still wants to finish eating all the bananas before the guards come back.
+Return the minimum integer K such that she can eat all the bananas within H hours.
+
+Input: piles = [30,11,23,4,20], H = 6
+Output: 23
+
+Input: piles = [3,6,7,11], H = 8
+Output: 4"
+
+**https://www.geeksforgeeks.org/koko-eating-bananas/**
+
+## 16. Opentext 1st round:
+1. Twosum
+2. Return unique elements in a sorted integer array, without using map
+
+## 17. Opentext round two
+
+input: {{4, 6}, {6, 5}, {7, 3}, {4, 5}}
+output: {6, 5}
+
+Given a 2D array, where each index i is a petrol bunk. arr[i][0] is the fuel you can fill from the petrol bulk, and arr[i][1] is the distance to next petrol bunk. 
+
+Find the first bunk where you have to start so that you can reach the same bunk after covering every bunk (assume first bunk comes after last one in a circular road). Also you start with 0 fuel and assume mileage to be 1 unit of fuel for 1 unit of distance.
+
