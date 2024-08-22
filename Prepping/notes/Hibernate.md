@@ -311,3 +311,196 @@ These annotations in Hibernate (and JPA) are used to define relationships betwee
      - **Join Table**: The `@JoinTable` annotation defines the intermediate table that holds the keys from both entities.
      - **Bi-directional**: The relationship is typically bi-directional, meaning both entities are aware of the relationship.
 
+### First Level Cache
+- It is default in hibernate
+- this cache will be session based
+- each session will have different 1st level cache
+
+### Second level cache
+- Third party cacher
+-  Example: **ehcache**
+- needs to be confirgured in the config xml
+- @Cachable & @Cache(usage=ConcurrencyStrategy.READ_ONLY)
+- It can be used in multiple sessions
+
+
+#### In Hibernate, the `Session` object is the primary interface for interacting with the database. It provides methods for performing CRUD (Create, Read, Update, Delete) operations, managing transactions, and querying the database. Here are some of the most commonly used methods in a `Session` object:
+
+### 1. **CRUD Operations**
+
+- **`save(Object entity)`**
+  - Persists the given entity into the database and returns the generated identifier.
+  - Example:
+    ```java
+    Long id = (Long) session.save(employee);
+    ```
+
+- **`update(Object entity)`**
+  - Updates the persistent entity with the identifier of the given detached instance.
+  - Example:
+    ```java
+    session.update(employee);
+    ```
+
+- **`saveOrUpdate(Object entity)`**
+  - Either saves or updates the given entity, depending on the context (if the entity is transient or detached).
+  - Example:
+    ```java
+    session.saveOrUpdate(employee);
+    ```
+
+- **`merge(Object entity)`**
+  - Copies the state of the given object onto the persistent object with the same identifier.
+  - Example:
+    ```java
+    Employee managedEmployee = (Employee) session.merge(employee);
+    ```
+
+- **`delete(Object entity)`**
+  - Deletes the given entity from the database.
+  - Example:
+    ```java
+    session.delete(employee);
+    ```
+
+### 2. **Transaction Management**
+
+- **`beginTransaction()`**
+  - Begins a new transaction.
+  - Example:
+    ```java
+    Transaction transaction = session.beginTransaction();
+    ```
+
+- **`getTransaction()`**
+  - Retrieves the current transaction associated with the session.
+  - Example:
+    ```java
+    Transaction transaction = session.getTransaction();
+    ```
+
+- **`flush()`**
+  - Forces the session to flush, which synchronizes the database state with the current state of the session.
+  - Example:
+    ```java
+    session.flush();
+    ```
+
+- **`clear()`**
+  - Clears the session, removing all persistent objects from the session cache.
+  - Example:
+    ```java
+    session.clear();
+    ```
+
+- **`close()`**
+  - Closes the session, releasing the connection and other resources.
+  - Example:
+    ```java
+    session.close();
+    ```
+
+### 3. **Querying**
+
+- **`get(Class<T> clazz, Serializable id)`**
+  - Retrieves an entity by its primary key, returning `null` if not found.
+  - Example:
+    ```java
+    Employee employee = session.get(Employee.class, 1L);
+    ```
+
+- **`load(Class<T> clazz, Serializable id)`**
+  - Retrieves an entity by its primary key, throwing an exception if not found. It returns a proxy that is lazily loaded.
+  - Example:
+    ```java
+    Employee employee = session.load(Employee.class, 1L);
+    ```
+
+- **`createQuery(String hql)`**
+  - Creates a new instance of `Query` for executing HQL (Hibernate Query Language) queries.
+  - Example:
+    ```java
+    Query query = session.createQuery("from Employee where salary > :salary");
+    query.setParameter("salary", 5000);
+    List<Employee> employees = query.list();
+    ```
+
+- **`createSQLQuery(String sql)`**
+  - Creates a new instance of `SQLQuery` for executing native SQL queries.
+  - Example:
+    ```java
+    SQLQuery query = session.createSQLQuery("SELECT * FROM Employee WHERE salary > :salary");
+    query.setParameter("salary", 5000);
+    List<Object[]> employees = query.list();
+    ```
+
+- **`createCriteria(Class<T> clazz)`**
+  - Creates a `Criteria` object for querying entities using criteria API.
+  - Example:
+    ```java
+    Criteria criteria = session.createCriteria(Employee.class);
+    criteria.add(Restrictions.gt("salary", 5000));
+    List<Employee> employees = criteria.list();
+    ```
+
+- **`getNamedQuery(String queryName)`**
+  - Retrieves a `Query` instance for a named HQL query defined in the mapping file or annotated class.
+  - Example:
+    ```java
+    Query query = session.getNamedQuery("Employee.findAll");
+    List<Employee> employees = query.list();
+    ```
+
+### 4. **Session Management**
+
+- **`evict(Object entity)`**
+  - Removes the given entity from the session cache.
+  - Example:
+    ```java
+    session.evict(employee);
+    ```
+
+- **`contains(Object entity)`**
+  - Checks if the given entity is associated with the current session.
+  - Example:
+    ```java
+    boolean isInSession = session.contains(employee);
+    ```
+
+- **`lock(Object entity, LockMode lockMode)`**
+  - Acquires a lock on the entity using the given lock mode.
+  - Example:
+    ```java
+    session.lock(employee, LockMode.PESSIMISTIC_WRITE);
+    ```
+
+### 5. **Miscellaneous**
+
+- **`getSessionFactory()`**
+  - Returns the `SessionFactory` that created the session.
+  - Example:
+    ```java
+    SessionFactory sessionFactory = session.getSessionFactory();
+    ```
+
+- **`byId(Class<T> clazz)`**
+  - Provides a way to retrieve an entity by its ID using the `IdentifierLoadAccess` interface.
+  - Example:
+    ```java
+    Employee employee = session.byId(Employee.class).load(1L);
+    ```
+
+- **`byNaturalId(Class<T> clazz)`**
+  - Provides a way to retrieve an entity by its natural ID using the `NaturalIdLoadAccess` interface.
+  - Example:
+    ```java
+    Employee employee = session.byNaturalId(Employee.class)
+                               .using("employeeCode", "E123")
+                               .load();
+    ```
+
+### States in Hibernate:
+- Transient 
+- Persistent(get(),persist(),save())
+- Detached
+- Removed(remove())
