@@ -122,3 +122,5 @@ public class UserController {
 4. **Performance**: HTTP methods and status codes allow for clear communication between client and server, reducing the complexity of data processing.
 
 REST APIs have become a standard for web services due to their simplicity, scalability, and ease of integration.
+
+- 1.12.40.00

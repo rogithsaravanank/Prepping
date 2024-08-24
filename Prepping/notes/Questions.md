@@ -86,4 +86,13 @@ public void doSomething() {
 }
 ```
 
-#### 
+#### Tavant (Bangalore) Round 2:
+
+3. Why would you need balanced trees like red-black tree and avial tree when you have binary tree with O(log n) search
+4. Find longest substring with unique characters in a given string
+5. Spring boot questions (scope and how to handle multithreading)
+6. JVM memory management (gc, gc types, heap regions)
+7. Kubernetes (how to debug a pod, how to check logs)
+8. More kubernetes (auto scaling, configuring memory, ports, etc)
+9. AWS services which you use and explain them
+10. How CI/CD flow works in our application, code to deployment to aws.

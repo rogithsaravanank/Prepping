@@ -191,3 +191,9 @@ Given a 2D array, where each index i is a petrol bunk. arr[i][0] is the fuel you
 
 Find the first bunk where you have to start so that you can reach the same bunk after covering every bunk (assume first bunk comes after last one in a circular road). Also you start with 0 fuel and assume mileage to be 1 unit of fuel for 1 unit of distance.
 
+
+## 18. Tavant:  Implement heap sort
+
+## 19. Tavant: Implement binary search on a sorted array
+
+## 20. Tavant: Find longest substring with unique characters in a given string
