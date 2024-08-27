@@ -11,7 +11,96 @@ public class BasicsDSA2 {
         
     // stack();
 // queue();
-tree();
+// tree();
+// hashing();
+// secMaxFreq();
+vectorString();
+    }
+
+    private static void vectorString() {
+        Vector<Character> s = new Vector<>();
+        s.add('h');
+        s.add('e');
+        s.add('l');
+        s.add('l');
+        s.add('o');
+
+        System.out.println(s);
+        char a;
+        int len=s.size()-1;
+        for(int i=0;i<s.size()/2;i++){
+            a=s.get(i);
+            s.set(i,s.get(len));
+            s.set(len--,a) ;
+        }
+
+        System.out.println(s);
+
+
+    }
+
+    private static void secMaxFreq() {
+        int nums[]= {10,9,9,7,7,4,4,3,32,2,3,3};
+        int maxFreq=0;
+        int secondMaxFreq=0;
+        int mostFreqElement=Integer.MAX_VALUE;
+        int secondMostFreqElement=Integer.MAX_VALUE;
+        Map<Integer,Integer> map=new HashMap<>();
+
+     for(int num:nums)
+     {
+        map.put(num,map.getOrDefault(num,0)+1);
+     }
+
+     for(int key :map.keySet())
+     {
+        int frequency=map.get(key);
+        
+        if(frequency>maxFreq){
+            secondMaxFreq=maxFreq;
+            secondMostFreqElement=mostFreqElement;
+            maxFreq=frequency;
+            mostFreqElement=key;
+        }
+        else if(frequency>secondMaxFreq&& frequency<maxFreq){
+            secondMostFreqElement=key;
+            secondMaxFreq=frequency;
+        }
+        else if( frequency== secondMaxFreq&& key<secondMostFreqElement){
+                secondMostFreqElement=key;
+        }
+     }
+System.out.println(secondMostFreqElement);
+    //  return secondMostFreqElement==0 ? -1:secondMostFreqElement;
+
+    }
+
+    private static void hashing() {
+        int nums[]= {10,9,9,7,7};
+        int maxfreq=0;
+     int mostmaxfreq=Integer.MAX_VALUE;
+     Map<Integer,Integer> map=new HashMap<>();
+    for(int num:nums){
+          map.put(num,map.getOrDefault(num,0)+1);
+     }
+
+     for(int key:map.keySet()){
+        int frequency= map.get(key);
+
+        if(frequency>maxfreq){
+            maxfreq=frequency;
+            mostmaxfreq=key;
+        }
+        else if(frequency==maxfreq && key<mostmaxfreq){
+            mostmaxfreq=key;
+        }
+
+     }
+
+   
+        System.out.println(map);
+        System.out.println(mostmaxfreq);
+        
     }
 
     private static void tree() {
