@@ -15,6 +15,13 @@ public class BasicsDSA2 {
 // hashing();
 // secMaxFreq();
 vectorString();
+stringBuilder();
+    }
+
+    private static void stringBuilder() {
+        String s="hanah";
+        StringBuilder sb=new StringBuilder(s);
+        sb.reverse();
     }
 
     private static void vectorString() {
