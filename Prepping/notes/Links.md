@@ -23,4 +23,11 @@
 - https://www.overleaf.com/latex/templates/tagged/cv/page/2
 - enhancecv
 
-### 
+### Application properties
+- https://docs.spring.io/spring-boot/docs/1.4.x/reference/html/common-application-properties.html
+
+### Design Patterns in Interactive Way
+- https://refactoring.guru/design-patterns/java
+
+### Blogs
+- (System Design) https://interviewready.io/blog

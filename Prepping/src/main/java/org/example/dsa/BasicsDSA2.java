@@ -14,9 +14,37 @@ public class BasicsDSA2 {
 // tree();
 // hashing();
 // secMaxFreq();
-vectorString();
-stringBuilder();
+// vectorString();
+// stringBuilder();
+
+// System.out.println(fibonacci(3));
+fib(5);
     }
+
+    private static int fibonacci(int n) {
+        
+                if(n==0) return 0;
+                if(n==1) return 1;
+                int res=fibonacci(n-1)+ fibonacci(n-2);
+                return res;
+            
+        }
+
+        private static void fib(int num){
+            int num1=0;
+                int num2=1;
+            System.out.println(num1);
+            System.out.println(num2);
+            // int temp=0;
+            for(int i=0;i<num;i++){
+               int temp=num1+num2;
+                System.out.println(temp);
+                num1=num2;
+                num2=temp;
+            }
+
+        }
+    
 
     private static void stringBuilder() {
         String s="hanah";

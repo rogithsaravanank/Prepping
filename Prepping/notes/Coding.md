@@ -197,3 +197,34 @@ Find the first bunk where you have to start so that you can reach the same bunk 
 ## 19. Tavant: Implement binary search on a sorted array
 
 ## 20. Tavant: Find longest substring with unique characters in a given string
+
+## 21. stream of numbers 1 to 1000 find the missing numbers
+```
+import java.util.*;
+import java.util.stream.Collectors;
+import java.util.stream.IntStream;
+
+class Solution {
+    public static void main(String[] args) {
+        // Example input array with some numbers missing
+        int[] inputArray = {1, 2, 4, 5, 7, 8, 10, 999, 1000};
+
+        // Find missing numbers using Java Streams
+        List<Integer> missingNumbers = findMissingNumbers(inputArray);
+
+        // Print the missing numbers
+        System.out.println("Missing numbers: " + missingNumbers);
+    }
+
+    public static List<Integer> findMissingNumbers(int[] inputArray) {
+        // Convert input array to a Set for O(1) look-up times
+        Set<Integer> numberSet = Arrays.stream(inputArray).boxed().collect(Collectors.toSet());
+
+        // Find numbers from 1 to 1000 that are not in the set
+        return IntStream.rangeClosed(1, 1000)
+                        .filter(num -> !numberSet.contains(num))
+                        .boxed()
+                        .collect(Collectors.toList());
+    }
+}
+```

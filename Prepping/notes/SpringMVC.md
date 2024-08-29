@@ -162,3 +162,80 @@ In Spring Boot, much of the boilerplate configuration required by traditional Sp
 
 This auto-configuration and simplification make Spring Boot a popular choice for developing Spring MVC applications quickly and efficiently.
 
+
+-------------------------------X-----------------------------------------------X------------------------------------------X------------------------------
+
+
+## Normal Spring MVC without SpringBoot
+- it will first call the web.xml - Where the dispatcher servlet will be configured
+-   it calls the declared servlet with givenName-servlet.xml file 
+-  In the above file will declare the beans with tags for component-scan and annotation-config
+- Then properties can also be set for the viewresolver bean with prefix and sufix as we saw earlier.
+
+
+You're absolutely right about the flow of a typical Spring MVC application setup without using Spring Boot. Here’s a more detailed explanation of the steps involved in setting up and running a traditional Spring MVC application:
+
+### 1. **`web.xml` Configuration**
+
+In a traditional Spring MVC application, the `web.xml` file is known as the deployment descriptor. It is located in the `WEB-INF` directory of the application and is the starting point for configuring web-related settings.
+
+- **Dispatcher Servlet Configuration**: In `web.xml`, you configure the `DispatcherServlet`, which acts as the front controller for handling all incoming requests in a Spring MVC application. This servlet is responsible for dispatching requests to the appropriate controllers.
+
+   ```xml
+   <servlet>
+       <servlet-name>dispatcher</servlet-name>
+       <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+       <load-on-startup>1</load-on-startup>
+   </servlet>
+
+   <servlet-mapping>
+       <servlet-name>dispatcher</servlet-name>
+       <url-pattern>/</url-pattern>
+   </servlet-mapping>
+   ```
+
+### 2. **`<servlet-name>-servlet.xml` Configuration**
+
+Once the `DispatcherServlet` is initialized (in this example named `dispatcher`), it looks for a Spring configuration file named `dispatcher-servlet.xml` in the `WEB-INF` directory. This file is often referred to as the Spring application context file for the web layer.
+
+- **`<servlet-name>-servlet.xml` File**: This file is crucial as it contains all the configurations required for the Spring MVC application, including controller beans, view resolvers, handler mappings, etc.
+
+### 3. **Declaring Beans with `<context:component-scan>` and `<context:annotation-config>`**
+
+In the `dispatcher-servlet.xml`, you typically configure component scanning and annotation-driven configuration.
+
+- **Component Scan (`<context:component-scan>`)**: This tag enables Spring to scan the specified package(s) for annotated components (like `@Controller`, `@Service`, `@Repository`, etc.). By specifying base packages, you allow Spring to automatically detect and register beans from these packages.
+
+    ```xml
+    <context:component-scan base-package="com.example.controller"/>
+    ```
+
+- **Annotation-Driven Configuration (`<context:annotation-config>`)**: This tag is used to activate annotation-driven Spring configuration. It enables support for common annotations such as `@Autowired`, `@Required`, etc.
+
+    ```xml
+    <context:annotation-config/>
+    ```
+
+### 4. **ViewResolver Configuration**
+
+The `ViewResolver` bean is configured to help the `DispatcherServlet` determine which view to render in response to a request.
+
+- **InternalResourceViewResolver**: The most common implementation is `InternalResourceViewResolver`, which resolves logical view names to actual `.jsp` files in the `WEB-INF` directory. It uses `prefix` and `suffix` properties to construct the path to the view files.
+
+    ```xml
+    <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+        <property name="prefix" value="/WEB-INF/views/"/>
+        <property name="suffix" value=".jsp"/>
+    </bean>
+    ```
+
+### Summary
+
+To summarize, in a traditional Spring MVC application (without Spring Boot), the application flow generally follows this pattern:
+
+1. **`web.xml`**: Defines the `DispatcherServlet` and URL mappings.
+2. **`<servlet-name>-servlet.xml`**: Contains the main Spring configuration for controllers, view resolvers, and other beans.
+3. **Component Scanning and Annotations**: Helps in auto-detecting and configuring beans using annotations like `@Controller`, `@Service`, etc.
+4. **View Resolution**: Configures how the views are resolved and rendered.
+
+This setup provides fine-grained control over the application configuration but can be verbose and require a lot of XML configuration, which Spring Boot simplifies significantly by providing convention over configuration and sensible defaults.
