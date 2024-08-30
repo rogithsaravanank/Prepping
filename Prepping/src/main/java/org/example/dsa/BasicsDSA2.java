@@ -18,7 +18,30 @@ public class BasicsDSA2 {
 // stringBuilder();
 
 // System.out.println(fibonacci(3));
-fib(5);
+// fib(5);
+oddNum();
+    }
+
+    private static void oddNum() {
+        String s = "0214638";
+          
+        int i,j=-1;
+        for(i=s.length()-1;i>=0;i--){
+            if(s.charAt(i)-'0'%2==1) {
+                j=i;
+                break;}
+        }
+        // if(j==-1) return "";
+        i=0;
+        while(j>0){
+            if(s.charAt(i)-'0'!=0) break;
+            i++;
+        }
+
+        // return s.substring(i,j);
+        
+
+        System.out.println(i+" "+j);
     }
 
     private static int fibonacci(int n) {

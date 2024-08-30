@@ -239,3 +239,109 @@ To summarize, in a traditional Spring MVC application (without Spring Boot), the
 4. **View Resolution**: Configures how the views are resolved and rendered.
 
 This setup provides fine-grained control over the application configuration but can be verbose and require a lot of XML configuration, which Spring Boot simplifies significantly by providing convention over configuration and sensible defaults.
+
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------
+
+## Spring MVC ORM
+
+### pom.xml  dependancies
+- hibernate
+- orm relation 
+- spring transaction
+- database connector(mysql connector)
+- connection pooling (c3po) for multiple connections
+
+### Transction manager
+- bean for transaction manager
+- hibernate properties
+- data source for connection pooling bean 
+
+
+To set up Spring MVC with ORM (Object-Relational Mapping) and Hibernate, you need to define dependencies in the `pom.xml` file and configure the necessary properties for database connection and transaction management.
+
+
+
+### `pom.xml` Dependencies
+
+Here's a sample of the required dependencies for a Spring MVC ORM setup:
+
+```xml
+<dependencies>
+    <!-- Spring ORM -->
+    <dependency>
+        <groupId>org.springframework</groupId>
+        <artifactId>spring-orm</artifactId>
+        <version>5.3.30</version>
+    </dependency>
+    
+    <!-- Hibernate Core -->
+    <dependency>
+        <groupId>org.hibernate</groupId>
+        <artifactId>hibernate-core</artifactId>
+        <version>5.6.15.Final</version>
+    </dependency>
+    
+    <!-- Spring Transaction -->
+    <dependency>
+        <groupId>org.springframework</groupId>
+        <artifactId>spring-tx</artifactId>
+        <version>5.3.30</version>
+    </dependency>
+
+    <!-- MySQL Connector -->
+    <dependency>
+        <groupId>mysql</groupId>
+        <artifactId>mysql-connector-java</artifactId>
+        <version>8.0.33</version>
+    </dependency>
+
+    <!-- C3P0 Connection Pooling -->
+    <dependency>
+        <groupId>com.mchange</groupId>
+        <artifactId>c3p0</artifactId>
+        <version>0.9.5.5</version>
+    </dependency>
+</dependencies>
+```
+
+### Hibernate Properties and Transaction Manager Configuration
+
+The following sample demonstrates how to configure Hibernate properties, data source, and transaction management in `applicationContext.xml`:
+
+```xml
+<!-- Data Source Bean for C3P0 Connection Pooling -->
+<bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource">
+    <property name="driverClass" value="com.mysql.cj.jdbc.Driver" />
+    <property name="jdbcUrl" value="jdbc:mysql://localhost:3306/yourdb" />
+    <property name="user" value="username" />
+    <property name="password" value="password" />
+    <property name="maxPoolSize" value="20" />
+    <property name="minPoolSize" value="5" />
+    <property name="checkoutTimeout" value="3000" />
+    <property name="maxStatements" value="50" />
+</bean>
+
+<!-- Hibernate SessionFactory Bean -->
+<bean id="sessionFactory" class="org.springframework.orm.hibernate5.LocalSessionFactoryBean">
+    <property name="dataSource" ref="dataSource" />
+    <property name="packagesToScan" value="com.example.model" />
+    <property name="hibernateProperties">
+        <props>
+            <prop key="hibernate.dialect">org.hibernate.dialect.MySQL8Dialect</prop>
+            <prop key="hibernate.show_sql">true</prop>
+            <prop key="hibernate.hbm2ddl.auto">update</prop>
+        </props>
+    </property>
+</bean>
+
+<!-- Transaction Manager Bean -->
+<bean id="transactionManager" class="org.springframework.orm.hibernate5.HibernateTransactionManager">
+    <property name="sessionFactory" ref="sessionFactory" />
+</bean>
+
+<!-- Enable Annotation-driven Transaction Management -->
+<tx:annotation-driven transaction-manager="transactionManager" />
+```
+
+This configuration sets up the Hibernate session factory, data source for connection pooling, and the transaction manager necessary for managing database transactions in a Spring MVC application. Make sure to replace `yourdb`, `username`, and `password` with your actual database details.
