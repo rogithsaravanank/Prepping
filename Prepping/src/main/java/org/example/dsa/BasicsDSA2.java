@@ -19,7 +19,43 @@ public class BasicsDSA2 {
 
 // System.out.println(fibonacci(3));
 // fib(5);
-oddNum();
+// oddNum();
+// prefix();
+prefixEf();
+    }
+
+    private static void prefixEf() {
+        String[] str = {"flowers" , "flow" , "fly", "flight"};
+
+        Arrays.sort(str);
+
+        String first=str[0];
+        String last=str[str.length-1];
+
+        System.out.println(first+" "+last);
+
+        while(!last.startsWith(first)){
+           first= first.substring(0, first.length()-1);
+        }
+
+        System.out.println(first);
+    }
+
+    private static void prefix() {
+       String[] str = {"flowers" , "flow" , "fly", "flight"};
+
+        String res=str[0];
+
+
+        for(int j=1;j<str.length;j++){
+            while(!str[j].startsWith(res)){
+                res=res.substring(0,res.length()-1);
+            }
+        }
+
+        // return res;
+        System.out.println(res);
+    
     }
 
     private static void oddNum() {
