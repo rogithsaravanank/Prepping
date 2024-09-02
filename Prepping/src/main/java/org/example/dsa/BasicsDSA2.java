@@ -21,8 +21,37 @@ public class BasicsDSA2 {
 // fib(5);
 // oddNum();
 // prefix();
-prefixEf();
+// prefixEf();
+// anagram();
+freq();
     }
+
+    private static void freq() {
+   // HashSet<Character> set=new HashSet<>();
+String s="tree";
+   ArrayList<Character> res=new ArrayList<>();
+   HashMap<Character,Integer> freqMap= new HashMap<>();
+
+   for(char c:s.toCharArray()){
+       freqMap.put(c,freqMap.getOrDefault(c,0)+1);
+   }
+   
+System.out.println(freqMap);
+
+//    return res;
+    }
+
+    private static void anagram() {
+    String s = "anagram" ; 
+    String t = "nagaram";
+        
+    HashSet<Integer> set=new HashSet<>();
+    s.chars().forEach(c -> System.out.println((int)c));
+    int sum = s.chars().sum();
+System.out.println("Sum: " + sum);
+
+
+}
 
     private static void prefixEf() {
         String[] str = {"flowers" , "flow" , "fly", "flight"};
