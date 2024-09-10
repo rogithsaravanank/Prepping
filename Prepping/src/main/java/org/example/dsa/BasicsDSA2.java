@@ -8,7 +8,6 @@ import java.util.*;
 
 public class BasicsDSA2 {
     public static void main(String[] args) {
-        
     // stack();
 // queue();
 // tree();
@@ -23,7 +22,46 @@ public class BasicsDSA2 {
 // prefix();
 // prefixEf();
 // anagram();
-freq();
+// freq();
+// streamSample();
+rotateArray();
+    }
+
+    private static void rotateArray() {
+        int[] nums={1, 2, 3, 4, 5, 6};
+         int k=2;
+            int len=nums.length;
+            if(k>len) k%=len;
+            int[] temp=new int[k];
+    
+            for(int i=0;i<k;i++){
+                temp[i]=nums[i];
+            }
+    System.out.println(Arrays.toString(temp));
+           
+            for(int j=0;j<len-k;j++){
+                nums[j]=nums[j+k];
+            }
+            System.out.println(Arrays.toString(nums));
+
+            int a=0;
+            for(int z=len-k;z<len;z++){
+                nums[z]=temp[a++];
+            }
+
+            System.out.println(Arrays.toString(nums));
+    
+        }
+    
+
+    private static void streamSample() {
+        int[] nums={1,2,3,4,5,3,2,2,22};
+        List<int[]> arlst= Arrays.asList(nums);
+
+        OptionalInt t=Arrays.stream(nums).max();
+
+        int a=1;
+        System.out.println(arlst);
     }
 
     private static void freq() {
