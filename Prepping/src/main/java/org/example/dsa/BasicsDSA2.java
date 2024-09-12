@@ -24,7 +24,22 @@ public class BasicsDSA2 {
 // anagram();
 // freq();
 // streamSample();
-rotateArray();
+// rotateArray();
+duplicates();
+    }
+
+    private static void duplicates() {
+        int[] nums={0, 0, 3, 3, 5, 6};
+                int i = 0;
+                for(int j=1;j<nums.length;j++){
+                    if(nums[j]!=nums[i]) {
+                        i++;
+                        nums[i]=nums[j];}
+                }
+                System.out.println(i+1);
+                System.out.println(Arrays.toString(nums));
+            
+        
     }
 
     private static void rotateArray() {
