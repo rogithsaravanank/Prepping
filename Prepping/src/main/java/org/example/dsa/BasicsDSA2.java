@@ -26,6 +26,21 @@ public class BasicsDSA2 {
 // streamSample();
 // rotateArray();
 duplicates();
+missingNumber();
+    }
+
+    public static void missingNumber() {
+        
+       int[] nums= {0, 2, 3, 1, 4};
+       Arrays.sort(nums);
+        int temp=0;
+        for(int i=0;i<nums.length-1;i++){
+            if(temp==i) break;
+            temp++;
+        }
+
+        System.out.println(temp+1);
+
     }
 
     private static void duplicates() {
