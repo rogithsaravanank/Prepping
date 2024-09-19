@@ -119,5 +119,3 @@ public class JpaExample {
 
 JPA is commonly used in combination with frameworks like Hibernate, which is a JPA implementation that provides additional features beyond the specification.
 
-
-- 1.09.50.00

@@ -123,4 +123,3 @@ public class UserController {
 
 REST APIs have become a standard for web services due to their simplicity, scalability, and ease of integration.
 
-- 1.12.40.00
