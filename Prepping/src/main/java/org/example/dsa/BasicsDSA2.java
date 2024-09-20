@@ -25,8 +25,22 @@ public class BasicsDSA2 {
 // freq();
 // streamSample();
 // rotateArray();
-duplicates();
-missingNumber();
+// duplicates();
+// missingNumber();
+reverseWords();
+    }
+
+    public static void reverseWords() {
+        String  s = "welcome to the jungle";
+        String[] strArr=s.trim().split("\\s+");
+        
+        List<String> lst=Arrays.asList(strArr);
+        Collections.reverse(lst);
+
+
+
+        System.out.println(String.join(" ", lst));
+
     }
 
     public static void missingNumber() {

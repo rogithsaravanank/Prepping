@@ -1,16 +1,4 @@
-## SpringBoot
-
-### QueryDSL
-- 1.19.46.00 --> Springboot with mongodb
-
-- Mongo db website to create a free account and cluster
-- spring io
-- dependancy --> spring web, spring data monogodb
-- extend mongorepository
-- 1.20.26.54 
-
-
-### AOP
+## AOP
 - 1.21.05
 - Aspect
 - Join point 
@@ -138,7 +126,7 @@ You're running a busy restaurant, and while you're focused on preparing the food
 
 **AOP** is like hiring a helper to automatically take care of those additional tasks, so you can focus on cooking the food (your main code).
 
----
+----------------------------------@-----------------------------------------------@----------------------------------@-----------------------------------
 
 ### Key Concepts in AOP
 
@@ -175,6 +163,7 @@ You're running a busy restaurant, and while you're focused on preparing the food
 
 ---
 
+### Important 
 ### Simple Example of AOP in Action
 
 Let’s say you’re writing code for an online store, and you want to log whenever someone makes a purchase. Instead of adding a logging line to every method where purchases happen, you can use AOP to **automatically log** before and after every purchase.
