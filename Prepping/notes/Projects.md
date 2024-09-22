@@ -1,5 +1,10 @@
 ## Projects
 
+Always run
+```
+mvn clean package
+
+```
 
 1. **Todo List Application**: Build a simple task manager with CRUD operations. Users can add, update, delete, and view their tasks.
 
