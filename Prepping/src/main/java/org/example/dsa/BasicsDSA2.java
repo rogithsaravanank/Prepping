@@ -27,9 +27,40 @@ public class BasicsDSA2 {
 // rotateArray();
 // duplicates();
 // missingNumber();
-reverseWords();
+// reverseWords();
+leaders();
+Pascals();
     }
 
+        private static void Pascals() {
+            List<Integer> temp=new ArrayList<>();
+            List<List<Integer>> res =new ArrayList<>();
+            int n=8;
+            temp.add(1);
+            res.add(temp);
+
+            temp.add(1);
+            for(int i=2;i<n;i++){
+               
+                
+
+            }
+            temp.add(1);
+            System.out.println(res);
+    }
+
+        public static void leaders() {
+            int[] nums={1,22,3,4,2,8};
+            ArrayList<Integer> res=new ArrayList<>();
+    
+            int leader=Integer.MIN_VALUE;
+            for(int i=nums.length-1;i>=0;i--){
+                if(nums[i]>leader) {leader=nums[i];res.add(leader);}
+            }
+            Collections.reverse(res);
+             System.out.println(res);
+        }
+    
     public static void reverseWords() {
         String  s = "welcome to the jungle";
         String[] strArr=s.trim().split("\\s+");

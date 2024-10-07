@@ -110,7 +110,8 @@ Parking the car!
 
 1. **Aspect (`@Aspect`)**: This is the "sticker" (extra functionality) that you apply around your main business logic. In this case, it's logging a message before each method in `CarService`.
   
-2. **Advice (`@Before`, `@After`, etc.)**: These are the points where the aspect is applied. In this case, `@Before` means the aspect runs before the `drive()` or `park()` methods are executed.
+2. **Advice (`@Before`, `@After`, etc.)**: These are the points where the aspect is applied. In this case, `@Before` means the aspect runs before the `drive()` or `park()` methods are executed. @AfterReturning --> executes only after returing,@AfterThrowing --> Executed oly when it throws a error,@After --> represents finally block it will always be executed.
+
   
 3. **Pointcut (`execution(* com.example.CarService.*(..))`)**: This defines *where* the aspect should be applied. It tells Spring AOP to apply the aspect to every method in `CarService`.
 
@@ -207,3 +208,10 @@ Now, whenever someone makes a purchase, the logging happens automatically withou
 - **Weaving**: The process of applying the aspect to the code.
 
 With AOP, you keep your main code clean, and all the extra stuff happens behind the scenes, like having a magic helper!
+
+
+## properties
+- Application.properties --> logging.level.root=info/debug/warn
+- logging.file=app.log
+- 
+
