@@ -1,5 +1,6 @@
 # My Notes
 
+- [Notes](Prepping/notes/Notes.md)
 - [Java](Prepping/notes/Java.md)
 - [JUnit](Prepping/notes/JUnit.md)
 - [DSA](Prepping/notes/DSA.md)
