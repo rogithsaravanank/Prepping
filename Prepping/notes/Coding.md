@@ -228,3 +228,65 @@ class Solution {
     }
 }
 ```
+
+## 22. Walmart - Asked merge intervals in first round and then asked to design power-bi reporting system
+
+## 23. Stream problems examples  
+1. find the sum of squares of all even numbers      
+java 
+Arrays.stream(input)
+  .filter(x->x%2==0)
+  .map(x->x*x)
+  .forEach(System.out::println)
+
+
+2. Find second max of student age.  
+java 
+int age = list.stream
+            .mapToInt(student::getAge)
+            .skip(1).max();
+
+
+3. Find list of unique characters present in all the string.  
+java
+Set<Character> uniqueChars = listOfStrings.stream()
+                              .flatMap(str -> str.chars().mapToObj(ch -> (char) ch))
+                              .collect(Collectors.toSet());
+
+
+4. Group students count by age.   
+java
+list.stream()
+  .collect(
+      Collectors.groupingBy(Student::getAge, Collectors.counting()));
+
+
+5. Convert a list into map  
+java
+list.stream()
+  .collect(
+    Collection.toMap(Function.identity(),Function.identity()));
+
+6. Sort and reverseorder
+java
+Arrays.stream(arr)
+  .boxed()
+  .sorted(Comparator.reverseOrder())
+  .limit(2)
+
+7. Get count of each char    
+java 
+str.chars()
+  .boxed()
+  .collect(
+    Collectors.groupingBy(Function.identity(), Collectors.counting()));
+ 
+
+8. Sort by salary  
+employeeList.stream().sorted(Comparator.comparingInt(Employee::getSalary))
+9. Find employee with lowest salary
+employeeList.stream().min(Comparator.comparingInt(Employee::getSalary))
+10. Join given list values with comma
+Arrays.stream(names).collect(Collectors.joining(","));
+11. Combine array matrix values in a set
+Arrays.stream(matrixInput).flatMapToInt(Arrays::stream).boxed().collect(Collectors.toList())

@@ -96,3 +96,24 @@ public void doSomething() {
 8. More kubernetes (auto scaling, configuring memory, ports, etc)
 9. AWS services which you use and explain them
 10. How CI/CD flow works in our application, code to deployment to aws.
+
+#### UPS
+
+1. manager round question: if u left the team, what are the things ur team will miss?
+2. interface vs abstract class which should we use and when
+3. try,catch, finally if we return a value from all three what will happen ?
+
+#### Managerial Ques
+
+1. What was the reason for your job change? 
+2. When was the last time you faced a conflict in your team and how did you resolve it? 
+3. ⁠What kind of people do you prefer not to work with?
+4. ⁠What was your biggest challenge and how did you overcome it? 
+5. ⁠What has been your biggest achievement thus far?
+
+#### Thought works
+
+1. Explain current project architecture ![architecture_1](images/architecture_1.png) / ![architecture_2](images/architecture_2.png)
+2. 
+
+

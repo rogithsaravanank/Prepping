@@ -28,6 +28,20 @@ public class Basics {
             }
         };
         objA.showA();
+        System.out.println(checkTry());
+    }
+
+    // @SuppressWarnings("finally")
+    private static String checkTry(){
+        try{
+            return "Try";
+        }
+        catch(Exception e){
+            return "Catch";
+        }   
+        // finally{
+        //     return "Finally";
+        // }
     }
 
     private void getNum() {
