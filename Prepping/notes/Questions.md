@@ -101,7 +101,39 @@ public void doSomething() {
 
 1. manager round question: if u left the team, what are the things ur team will miss?
 2. interface vs abstract class which should we use and when
-3. try,catch, finally if we return a value from all three what will happen ?
+3. try,catch, finally if we return a value from all three what will happen ? --> Always the value returned in finally will be returned
+4. main class has an constructor and child class has a contructor will the child class constructor directly call the main class constructor
+   
+    No, the child class constructor will not directly call the parent (main) class constructor automatically unless specified. However, in object-oriented programming, when a child class constructor is invoked, the parent class constructor is implicitly or explicitly called first to initialize the parent class before initializing the child class.
+    ```
+            class Parent {
+            Parent() {
+                System.out.println("Parent constructor called");
+            }
+        }
+
+        class Child extends Parent {
+            Child() {
+                System.out.println("Child constructor called");
+            }
+        }
+
+        public class Test {
+            public static void main(String[] args) {
+                Child c = new Child();
+            }
+        }
+    ```
+    Output:
+    ```
+    Parent constructor called
+    Child constructor called
+
+    ```
+5. return type using overloading
+6. sample(String name), sample(Object) --> sample(null) will call objects--> sample("String") will call the string method
+7. PagingRepository vs JPARepository in Spring
+8. try with resources
 
 #### Managerial Ques
 
@@ -115,5 +147,17 @@ public void doSomething() {
 
 1. Explain current project architecture ![architecture_1](images/architecture_1.png) / ![architecture_2](images/architecture_2.png)
 2. 
+
+#### UST
+1. n+1 problem in Hibernate
+2. Default fetch type in Hibernate -> Lazy
+3. immutable class 
+4. how to convert the class to immutable class
+5. Exception -> checked(Checked at compile time ex:IOException, Filenotfound) and unchecked exception(found at run time ex:nullpointer)
+6. Functional interface, Method reference
+7. inbuilt functional interface
+8. Stream example
+9. comparable and comparator
+10. SOLID, Design pattern --> decorator
 
 

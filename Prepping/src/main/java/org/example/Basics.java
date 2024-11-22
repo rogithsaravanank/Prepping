@@ -31,17 +31,18 @@ public class Basics {
         System.out.println(checkTry());
     }
 
-    // @SuppressWarnings("finally")
+    @SuppressWarnings("finally")
     private static String checkTry(){
         try{
             return "Try";
         }
         catch(Exception e){
+
             return "Catch";
         }   
-        // finally{
-        //     return "Finally";
-        // }
+        finally{
+            return "Finally";
+        }
     }
 
     private void getNum() {
