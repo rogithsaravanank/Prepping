@@ -41,7 +41,7 @@ Example: “dxabxad” = “dxabxad”
 
 ## 13. ![Codeing ](images/starhealth2.jpeg) - StarHealth
 
-## 14. Gen Digital
+## 14. Gen Digital - [Code](coding/GenDigital.md)
 Gen Digital (Chennai) algorithm round questions:
 
 - 1.Write Logic for ATM machine  
@@ -56,36 +56,6 @@ Gen Digital (Chennai) algorithm round questions:
 // 10 - 1 
 // Assume there are infinite number of notes in atm machine
 
-``` import java.util.Scanner;
-
-public class ATM {
-    public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        System.out.print("Enter the amount: ");
-        int amount = scanner.nextInt();
-        
-        int[] denominations = {1000, 500, 100, 50, 20, 10, 5, 1};
-        int[] notesCount = new int[denominations.length];
-        
-        for (int i = 0; i < denominations.length; i++) {
-            if (amount >= denominations[i]) {
-                notesCount[i] = amount / denominations[i];
-                amount = amount % denominations[i];
-            }
-        }
-        
-        System.out.println("Output:");
-        for (int i = 0; i < denominations.length; i++) {
-            if (notesCount[i] != 0) {
-                System.out.println(denominations[i] + " - " + notesCount[i]);
-            }
-        }
-        
-        scanner.close();
-    }
-}
-```
-
 - 2. String s = “TestABCDE”
 
 Find max repeating character and min repeating character (both case insensitive). If there are same number of repeating characters:
@@ -99,68 +69,6 @@ And then invert max and min
 
 Output: seTsABCDE
 
-
-``` 
-import java.util.*;
-
-public class StringManipulation {
-    public static void main(String[] args) {
-        String s = "TestABCDE";
-        System.out.println(invertMaxMinCharacters(s));
-    }
-
-    public static String invertMaxMinCharacters(String s) {
-        // Convert string to lowercase to handle case insensitivity
-        String lowerCaseStr = s.toLowerCase();
-        
-        // Use a TreeMap to maintain alphabetical order
-        TreeMap<Character, Integer> frequencyMap = new TreeMap<>();
-        
-        // Count frequency of each character
-        for (char ch : lowerCaseStr.toCharArray()) {
-            frequencyMap.put(ch, frequencyMap.getOrDefault(ch, 0) + 1);
-        }
-        
-        // Find the max and min frequency characters
-        char maxChar = '\0';
-        char minChar = '\0';
-        int maxFreq = Integer.MIN_VALUE;
-        int minFreq = Integer.MAX_VALUE;
-        
-        for (Map.Entry<Character, Integer> entry : frequencyMap.entrySet()) {
-            char ch = entry.getKey();
-            int freq = entry.getValue();
-            
-            // For max frequency character
-            if (freq > maxFreq || (freq == maxFreq && ch < maxChar)) {
-                maxFreq = freq;
-                maxChar = ch;
-            }
-            
-            // For min frequency character
-            if (freq < minFreq || (freq == minFreq && ch > minChar)) {
-                minFreq = freq;
-                minChar = ch;
-            }
-        }
-        
-        // Invert the positions of maxChar and minChar in the original string
-        char[] resultArray = s.toCharArray();
-        char maxCharOriginal = Character.toUpperCase(maxChar);
-        char minCharOriginal = Character.toUpperCase(minChar);
-        
-        for (int i = 0; i < resultArray.length; i++) {
-            if (Character.toLowerCase(resultArray[i]) == maxChar) {
-                resultArray[i] = Character.isUpperCase(resultArray[i]) ? minCharOriginal : minChar;
-            } else if (Character.toLowerCase(resultArray[i]) == minChar) {
-                resultArray[i] = Character.isUpperCase(resultArray[i]) ? maxCharOriginal : maxChar;
-            }
-        }
-        
-        return new String(resultArray);
-    }
-}
-```
 
 ## 15. Availity (full remote) question:
 
@@ -198,95 +106,106 @@ Find the first bunk where you have to start so that you can reach the same bunk 
 
 ## 20. Tavant: Find longest substring with unique characters in a given string
 
-## 21. stream of numbers 1 to 1000 find the missing numbers
-```
-import java.util.*;
-import java.util.stream.Collectors;
-import java.util.stream.IntStream;
-
-class Solution {
-    public static void main(String[] args) {
-        // Example input array with some numbers missing
-        int[] inputArray = {1, 2, 4, 5, 7, 8, 10, 999, 1000};
-
-        // Find missing numbers using Java Streams
-        List<Integer> missingNumbers = findMissingNumbers(inputArray);
-
-        // Print the missing numbers
-        System.out.println("Missing numbers: " + missingNumbers);
-    }
-
-    public static List<Integer> findMissingNumbers(int[] inputArray) {
-        // Convert input array to a Set for O(1) look-up times
-        Set<Integer> numberSet = Arrays.stream(inputArray).boxed().collect(Collectors.toSet());
-
-        // Find numbers from 1 to 1000 that are not in the set
-        return IntStream.rangeClosed(1, 1000)
-                        .filter(num -> !numberSet.contains(num))
-                        .boxed()
-                        .collect(Collectors.toList());
-    }
-}
-```
+## 21. stream of numbers 1 to 1000 find the missing numbers [Code](coding/Stream1.md)
 
 ## 22. Walmart - Asked merge intervals in first round and then asked to design power-bi reporting system
 
-## 23. Stream problems examples  
-1. find the sum of squares of all even numbers      
-java 
+## 24. Rotate Array
+
+## 25. Use generics in you code ![alt text](images/generics.png)
+
+## 26. Caterpillar: This Java program demonstrates how to filter duplicate objects from a list using a Set and Java Streams. The program defines an Order class with fields for orderId, name, product, and location. Two Order objects are considered duplicates if they share the same name, product, and location, regardless of their orderId.[Code](coding/Caterpillar.md)
+
+## 27. Colon format [Code](coding/ColonFormat.md)
+
+## 28. Digit Occurence [Code](coding/DigitCount.md)
+
+## 29. Adjacent Elements Product [Code](coding/AdjacentProduct.md)
+
+## 30. Azentio : This program demonstrates filtering entries from a map based on specific keys (2 to 4) and prints the results. It utilizes Java Streams to process the data. [Code](coding/Azentio.md)
+
+## 31. Anthology :his program finds and prints the maximum value from a list of integers using Java Streams. It utilizes the max method with a comparator to determine the largest number in the list. [Code](coding/Anthology.md)
+
+## 32. Priority Queue [Code](coding/PriorityQueue.md)
+
+## 33. Rotate Array [Code](coding/RotateArray.md)
+
+## 34. Merge Sorted Arrays [Code](coding/MergeSortedArrays.md)
+
+## 35. Move Zeroes [Code](coding/MoveZeroes.md)
+
+## 36. 
+
+## Stream problems examples  
+1. find the sum of squares of all even numbers java 
+```
 Arrays.stream(input)
   .filter(x->x%2==0)
   .map(x->x*x)
   .forEach(System.out::println)
+```
 
 
-2. Find second max of student age.  
-java 
+2. Find second max of student age java 
+```
 int age = list.stream
             .mapToInt(student::getAge)
             .skip(1).max();
+```
 
-
-3. Find list of unique characters present in all the string.  
-java
+3. Find list of unique characters present in all the string java
+```
 Set<Character> uniqueChars = listOfStrings.stream()
                               .flatMap(str -> str.chars().mapToObj(ch -> (char) ch))
                               .collect(Collectors.toSet());
+```
 
-
-4. Group students count by age.   
-java
+4. Group students count by age java
+```
 list.stream()
   .collect(
       Collectors.groupingBy(Student::getAge, Collectors.counting()));
-
+```
 
 5. Convert a list into map  
 java
+```
 list.stream()
   .collect(
     Collection.toMap(Function.identity(),Function.identity()));
+```
 
 6. Sort and reverseorder
 java
+```
 Arrays.stream(arr)
   .boxed()
   .sorted(Comparator.reverseOrder())
   .limit(2)
+```
 
 7. Get count of each char    
 java 
+```
 str.chars()
   .boxed()
   .collect(
     Collectors.groupingBy(Function.identity(), Collectors.counting()));
- 
+ ```
 
 8. Sort by salary  
+```
 employeeList.stream().sorted(Comparator.comparingInt(Employee::getSalary))
+```
 9. Find employee with lowest salary
+```
 employeeList.stream().min(Comparator.comparingInt(Employee::getSalary))
+```
 10. Join given list values with comma
+```
 Arrays.stream(names).collect(Collectors.joining(","));
+```
 11. Combine array matrix values in a set
+```
 Arrays.stream(matrixInput).flatMapToInt(Arrays::stream).boxed().collect(Collectors.toList())
+```
