@@ -7,6 +7,7 @@
 
 
 ## 2. Codility [Code](coding/Codility.md) 
+
 - The problem requires implementing a method changeDirectoryString that takes the current directory path and a cd command string, then returns the updated directory path after applying the command. Here’s a solution to tackle the requirements step-by-step: ![codility](images/codility1.jpeg) 
 
 
@@ -15,10 +16,12 @@
 ## 4. Codility ![codility ](images/codility2.jpeg) 
 
 ## 5. Codility ![codility ](images/codility3.jpeg)
+
 - This new task involves setting up a Spring Framework configuration class (`SystemConfig`) for your e-commerce site. Here's a summary of what is required:
 
 ## 6. Athena Health Care [Code](code/athena.md) 
-- You are given an array nums containing n + 1 integers where each integer is in the range [1, n] inclusive. There is exactly one repeated number in the array. Your task is to return this repeated number. ![Leetcode ](images/leetcode1.jpeg) 
+
+ - You are given an array nums containing n + 1 integers where each integer is in the range [1, n] inclusive. There is exactly one repeated number in the array. Your task is to return this repeated number. ![Leetcode ](images/leetcode1.jpeg) 
 
 
 ## 7. Athena Health Care ![Code](images/leetcode2.jpeg) 
@@ -38,30 +41,30 @@
 
 ## 14. Gen Digital - [Code](coding/GenDigital.md)
 
-- 1.Write Logic for ATM machine  
+    - 1. Write Logic for ATM machine  
 
-    // Input: Enter the amt: 2630 
+        // Input: Enter the amt: 2630 
 
-    // Output:  
-    // 1000 - 2 
-    // 500 - 1 
-    // 100 - 1 
-    // 20 - 1 
-    // 10 - 1 
-    // Assume there are infinite number of notes in atm machine
+        // Output:  
+        // 1000 - 2 
+        // 500 - 1 
+        // 100 - 1 
+        // 20 - 1 
+        // 10 - 1 
+        // Assume there are infinite number of notes in atm machine
 
-- 2. String s = “TestABCDE”
+    - 2. String s = “TestABCDE”
 
-    Find max repeating character and min repeating character (both case insensitive). If there are same number of repeating characters:
-    For max -> pick the first character alphabetically
-    For min -> pick the last character alphabetically
+        Find max repeating character and min repeating character (both case insensitive). If there are same number of repeating characters:
+        For max -> pick the first character alphabetically
+        For min -> pick the last character alphabetically
 
-    For this given input T is repeating 2 times, so max is T
-    e, s, A, B, C, D, E are all repeating 1 time, so take s as it is the last in alphabetical order
+        For this given input T is repeating 2 times, so max is T
+        e, s, A, B, C, D, E are all repeating 1 time, so take s as it is the last in alphabetical order
 
-    And then invert max and min
+        And then invert max and min
 
-    Output: seTsABCDE
+        Output: seTsABCDE
 
 
 ## 15. Avility (full remote) question:
@@ -141,7 +144,8 @@
 ## 41. 
 
 ## Stream problems examples  
-    1. find the sum of squares of all even numbers java 
+
+1. find the sum of squares of all even numbers java 
     ```
     Arrays.stream(input)
     .filter(x->x%2==0)
@@ -150,28 +154,28 @@
     ```
 
 
-    2. Find second max of student age java 
+2. Find second max of student age java 
     ```
     int age = list.stream
                 .mapToInt(student::getAge)
                 .skip(1).max();
     ```
 
-    3. Find list of unique characters present in all the string java
+3. Find list of unique characters present in all the string java
     ```
     Set<Character> uniqueChars = listOfStrings.stream()
                                 .flatMap(str -> str.chars().mapToObj(ch -> (char) ch))
                                 .collect(Collectors.toSet());
     ```
 
-    4. Group students count by age java
+4. Group students count by age java
     ```
     list.stream()
     .collect(
         Collectors.groupingBy(Student::getAge, Collectors.counting()));
     ```
 
-    5. Convert a list into map  
+5. Convert a list into map  
     java
     ```
     list.stream()
@@ -179,7 +183,7 @@
         Collection.toMap(Function.identity(),Function.identity()));
     ```
 
-    6. Sort and reverseorder
+6. Sort and reverseorder
     java
     ```
     Arrays.stream(arr)
@@ -188,7 +192,7 @@
     .limit(2)
     ```
 
-    7. Get count of each char    
+7. Get count of each char    
     java 
     ```
     str.chars()
@@ -197,19 +201,19 @@
         Collectors.groupingBy(Function.identity(), Collectors.counting()));
     ```
 
-    8. Sort by salary  
+8. Sort by salary  
     ```
     employeeList.stream().sorted(Comparator.comparingInt(Employee::getSalary))
     ```
-    9. Find employee with lowest salary
+9. Find employee with lowest salary
     ```
     employeeList.stream().min(Comparator.comparingInt(Employee::getSalary))
     ```
-    10. Join given list values with comma
+10. Join given list values with comma
     ```
     Arrays.stream(names).collect(Collectors.joining(","));
     ```
-    11. Combine array matrix values in a set
+11. Combine array matrix values in a set
     ```
     Arrays.stream(matrixInput).flatMapToInt(Arrays::stream).boxed().collect(Collectors.toList())
     ```
