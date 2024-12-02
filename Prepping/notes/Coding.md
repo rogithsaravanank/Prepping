@@ -23,19 +23,19 @@ Example: “dxabxad” = “dxabxad”
 - You are given an array nums containing n + 1 integers where each integer is in the range [1, n] inclusive. There is exactly one repeated number in the array. Your task is to return this repeated number. ![Leetcode ](images/leetcode1.jpeg) 
 
 
-## 7. Athena Health Care ![Leetcode ](images/leetcode2.jpeg) 
+## 7. Athena Health Care ![Code ](images/leetcode2.jpeg) 
 
 
-## 8. Athena Health Care ![Leetcode ](images/Athena-coding.jpeg) 
+## 8. Athena Health Care ![Code ](images/Athena-coding.jpeg) 
 
 
-## 9. Athena Health Care ![Leetcode ](images/Athena-coding1.jpeg)
+## 9. Athena Health Care ![Code ](images/Athena-coding1.jpeg)
 
 
-## 10. GoldmanSach ![Leetcode ](images/goldmansach1.jpeg) 
+## 10. GoldmanSach ![Code ](images/goldmansach1.jpeg) 
 
 
-## 11. GoldmanSach ![Leetcode ](images/goldmansach2.jpeg)
+## 11. GoldmanSach ![Code ](images/goldmansach2.jpeg)
 
 
 ## 12. StarHealth ![Codeing ](images/starhealth1.jpeg) 
@@ -89,19 +89,19 @@ Output: 4"
 
 ## 16. Opentext 1st round:
 1. Twosum
-2. Return unique elements in a sorted integer array, without using map [Code](coding/opentext.md#2)
+2. Return unique elements in a sorted integer array, without using map [Code](coding/opentext.md#1)
 
-## 17. Opentext round two
+## 17. Opentext round two [Code](coding/opentext.md#2)
 
 input: {{4, 6}, {6, 5}, {7, 3}, {4, 5}}
 output: {6, 5}
 
 Given a 2D array, where each index i is a petrol bunk. arr[i][0] is the fuel you can fill from the petrol bulk, and arr[i][1] is the distance to next petrol bunk. 
 
-Find the first bunk where you have to start so that you can reach the same bunk after covering every bunk (assume first bunk comes after last one in a circular road). Also you start with 0 fuel and assume mileage to be 1 unit of fuel for 1 unit of distance.
+Find the first bunk where you have to start so that you can reach the same bunk after covering every bunk (assume first bunk comes after last one in a circular road). Also you start with 0 fuel and assume mileage to be 1 unit of fuel for 1 unit of distance. 
 
 
-## 18. Tavant:  Implement heap sort
+## 18. Tavant:  Implement heap sort in java [Code](coding/tavant.md#1)
 
 ## 19. Tavant: Implement binary search on a sorted array
 
@@ -109,7 +109,7 @@ Find the first bunk where you have to start so that you can reach the same bunk 
 
 ## 21. stream of numbers 1 to 1000 find the missing numbers [Code](coding/Stream1.md)
 
-## 22. Walmart - Asked merge intervals in first round and then asked to design power-bi reporting system
+## 22. Walmart - Asked merge intervals in first round and then asked to design power-bi reporting system [Code](coding/Walmart.md)
 
 ## 24. Rotate Array
 

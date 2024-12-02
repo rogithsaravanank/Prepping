@@ -1,4 +1,3 @@
-
 1. Return unique elements in a sorted integer array, without using map
 
 public int[] getUniqueElementsInPlace(int[] nums) {
