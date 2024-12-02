@@ -28,3 +28,4 @@
 - [Reference](Prepping/notes/Reference.md)
 - [System Design](Prepping/notes/SystemDesign.md)
 - [Format](Prepping/notes/Format.md)
+- [Resources](Prepping/notes/resources/)

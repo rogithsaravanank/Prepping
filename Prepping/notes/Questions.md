@@ -160,4 +160,7 @@ public void doSomething() {
 9. comparable and comparator
 10. SOLID, Design pattern --> decorator
 
+#### Shell
+1. questions related to accessing an api end point in java,SQL query.Missed to capture those questions
+
 

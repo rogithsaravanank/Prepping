@@ -6,43 +6,43 @@ Output: “abcab”, “d”
 Example: “dxabxad” = “dxabxad”
 
 
-## 2. ![codility](images/codility1.jpeg)
+## 2. Codility ![codility](images/codility1.jpeg) / [Code](coding/Codility.md)
+- The problem requires implementing a method changeDirectoryString that takes the current directory path and a cd command string, then returns the updated directory path after applying the command. Here’s a solution to tackle the requirements step-by-step: 
 
 
-## 3. ![codility ](images/codility2.jpeg)
+## 3. Codility ![codility ](images/codility2.jpeg)
 
 
-## 4. ![codility ](images/codility3.jpeg)
+## 4. Codility ![codility ](images/codility3.jpeg)
 
 
-## 5. ![codility ](images/codility3.jpeg)
+## 5. Codility ![codility ](images/codility3.jpeg)
 
 
-## 6. ![Leetcode ](images/leetcode1.jpeg) - Athena Health Care
+## 6. Athena Health Care ![Leetcode ](images/leetcode1.jpeg) 
 
 
-## 7. ![Leetcode ](images/leetcode2.jpeg) - Athena Health Care
+## 7. Athena Health Care ![Leetcode ](images/leetcode2.jpeg) 
 
 
-## 8. ![Leetcode ](images/Athena-coding.jpeg) - Athena Health Care
+## 8. Athena Health Care ![Leetcode ](images/Athena-coding.jpeg) 
 
 
-## 9. ![Leetcode ](images/Athena-coding1.jpeg) - Athena Health Care
+## 9. Athena Health Care ![Leetcode ](images/Athena-coding1.jpeg)
 
 
-## 10. ![Leetcode ](images/goldmansach1.jpeg) - GoldmanSach
+## 10. GoldmanSach ![Leetcode ](images/goldmansach1.jpeg) 
 
 
-## 11. ![Leetcode ](images/goldmansach2.jpeg) - GoldmanSach
+## 11. GoldmanSach ![Leetcode ](images/goldmansach2.jpeg)
 
 
-## 12. ![Codeing ](images/starhealth1.jpeg) - StarHealth
+## 12. StarHealth ![Codeing ](images/starhealth1.jpeg) 
 
 
-## 13. ![Codeing ](images/starhealth2.jpeg) - StarHealth
+## 13. StarHealth ![Codeing ](images/starhealth2.jpeg) 
 
 ## 14. Gen Digital - [Code](coding/GenDigital.md)
-Gen Digital (Chennai) algorithm round questions:
 
 - 1.Write Logic for ATM machine  
 
@@ -134,7 +134,17 @@ Find the first bunk where you have to start so that you can reach the same bunk 
 
 ## 35. Move Zeroes [Code](coding/MoveZeroes.md)
 
-## 36. 
+## 36. IDFC ![alt text](images/IDFC_Code.png)
+
+## 37. Shell ![alt text](images/shell.png)
+
+## 38. Athena ![alt text](images/Athena_1.png)
+
+## 39. Athena ![alt text](images/Athena_2.png)
+
+## 40. Athena ![alt text](images/Athena_3.png)
+
+## 41. 
 
 ## Stream problems examples  
 1. find the sum of squares of all even numbers java 
