@@ -6,7 +6,7 @@ Output: “abcab”, “d”
 Example: “dxabxad” = “dxabxad”
 
 
-## 2. Codility ![codility](images/codility1.jpeg) / [Code](coding/Codility.md)
+## 2. Codility [Code](coding/Codility.md) ![codility](images/codility1.jpeg) 
 - The problem requires implementing a method changeDirectoryString that takes the current directory path and a cd command string, then returns the updated directory path after applying the command. Here’s a solution to tackle the requirements step-by-step: 
 
 
