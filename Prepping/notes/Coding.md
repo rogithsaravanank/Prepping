@@ -6,20 +6,21 @@ Output: “abcab”, “d”
 Example: “dxabxad” = “dxabxad”
 
 
-## 2. Codility [Code](coding/Codility.md) ![codility](images/codility1.jpeg) 
-- The problem requires implementing a method changeDirectoryString that takes the current directory path and a cd command string, then returns the updated directory path after applying the command. Here’s a solution to tackle the requirements step-by-step: 
+## 2. Codility [Code](coding/Codility.md) 
+- The problem requires implementing a method changeDirectoryString that takes the current directory path and a cd command string, then returns the updated directory path after applying the command. Here’s a solution to tackle the requirements step-by-step: ![codility](images/codility1.jpeg) 
 
 
-## 3. Codility ![codility ](images/codility2.jpeg)
+## 3. Codility [Code](coding/Codility.md) ![codility ](images/codility2.jpeg)
 
 
-## 4. Codility ![codility ](images/codility3.jpeg)
-
+## 4. Codility ![codility ](images/codility2.jpeg)
+- 
 
 ## 5. Codility ![codility ](images/codility3.jpeg)
+- This new task involves setting up a Spring Framework configuration class (`SystemConfig`) for your e-commerce site. Here's a summary of what is required:
 
-
-## 6. Athena Health Care ![Leetcode ](images/leetcode1.jpeg) 
+## 6. Athena Health Care [Code](code/athena.md) 
+- You are given an array nums containing n + 1 integers where each integer is in the range [1, n] inclusive. There is exactly one repeated number in the array. Your task is to return this repeated number. ![Leetcode ](images/leetcode1.jpeg) 
 
 
 ## 7. Athena Health Care ![Leetcode ](images/leetcode2.jpeg) 
@@ -70,7 +71,7 @@ And then invert max and min
 Output: seTsABCDE
 
 
-## 15. Availity (full remote) question:
+## 15. Avility (full remote) question:
 
 Koko loves to eat bananas. There are N piles of bananas, the i-th pile has piles[i] bananas. The guards have gone and will come back in H hours.
 Koko can decide her bananas-per-hour eating speed of K. Each hour, she chooses some pile of bananas, and eats K bananas from that pile.
@@ -88,7 +89,7 @@ Output: 4"
 
 ## 16. Opentext 1st round:
 1. Twosum
-2. Return unique elements in a sorted integer array, without using map
+2. Return unique elements in a sorted integer array, without using map [Code](coding/opentext.md#2)
 
 ## 17. Opentext round two
 
