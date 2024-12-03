@@ -32,15 +32,15 @@
 
 ---
 
-## 5. Athena Health Care [Code](images/leetcode2.jpeg)
+## 5. Athena Health Care ![Code](images/leetcode2.jpeg)
 
 ---
 
-## 6. Athena Health Care [Code](images/Athena-coding.jpeg)
+## 6. Athena Health Care ![Code](images/Athena-coding.jpeg)
 
 ---
 
-## 7. Athena Health Care [Code](images/Athena-coding1.jpeg)
+## 7. Athena Health Care ![Code](images/Athena-coding1.jpeg)
 
 ---
 
