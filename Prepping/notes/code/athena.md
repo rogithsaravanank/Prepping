@@ -1,11 +1,19 @@
-### The LeetCode problem **"287. Find the Duplicate Number"** involves finding a duplicate number in an array using certain constraints. Here’s a breakdown of the problem, approaches, and example implementations:
+## Athena
+
+
+- ![alt text](images/Athena_1.png)
+- ![alt text](images/Athena_2.png) 
+- ![alt text](images/Athena_3.png)
+- ![Code](images/Athena-coding.jpeg) 
+- ![Code](images/Athena-coding1.jpeg)
+- ![Code](images/leetcode2.jpeg) 
+
 
 ---
 
-### **Problem Statement**
-You are given an array `nums` containing `n + 1` integers where each integer is in the range `[1, n]` inclusive. 
+### **1. The LeetCode problem "287. Find the Duplicate Number"**
 
-There is **exactly one repeated number** in the array. Your task is to return this repeated number.
+You are given an array `nums` containing `n + 1` integers where each integer is in the range `[1, n]` inclusive. There is **exactly one repeated number** in the array. Your task is to return this repeated number.
 
 **Constraints:**
 1. You must not modify the array (`nums` is read-only).
@@ -33,17 +41,19 @@ public int findDuplicate(int[] nums) {
     // Phase 1: Detect cycle
     int slow = nums[0];
     int fast = nums[0];
+    
     do {
         slow = nums[slow];
         fast = nums[nums[fast]];
     } while (slow != fast);
-
+    
     // Phase 2: Find the entrance to the cycle
     slow = nums[0];
     while (slow != fast) {
         slow = nums[slow];
         fast = nums[fast];
     }
+    
     return slow; // Duplicate number
 }
 ```
@@ -61,18 +71,22 @@ Use binary search on the range `[1, n]`. For each number `mid`, count how many e
 ```java
 public int findDuplicate(int[] nums) {
     int left = 1, right = nums.length - 1;
+    
     while (left < right) {
         int mid = left + (right - left) / 2;
         int count = 0;
+        
         for (int num : nums) {
             if (num <= mid) count++;
         }
+        
         if (count > mid) {
             right = mid;
         } else {
             left = mid + 1;
         }
     }
+    
     return left;
 }
 ```
@@ -89,12 +103,14 @@ This is an alternative that uses extra space (`O(n)`), violating one constraint 
 ```java
 public int findDuplicate(int[] nums) {
     Set<Integer> seen = new HashSet<>();
+    
     for (int num : nums) {
         if (seen.contains(num)) {
             return num;
         }
         seen.add(num);
     }
+    
     return -1; // Should never reach here
 }
 ```
@@ -109,4 +125,7 @@ public int findDuplicate(int[] nums) {
 - **Floyd's Tortoise and Hare**: Best if you need O(1) space and O(n) time.
 - **Binary Search**: Best when constraints allow slightly more than O(n) time.
 - **HashSet**: Simplest but not optimal (violates O(1) space constraint).
+
+---
+
 

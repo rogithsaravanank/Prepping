@@ -28,36 +28,54 @@
 
 ---
 
-## 5. Athena Health Care ![Code](images/leetcode2.jpeg) 
+## 5. GoldmanSach [Code](code/Goldmansach.md#2)
+
+### Problem Explanation:
+- **N** represents ascending order (the number increases as you move to the right).
+- **M** represents descending order (the number decreases as you move to the right).
+
+You need to find the smallest possible numeric value that satisfies this pattern, where:
+- The sequence must follow the ascending and descending rules.
+- The digits used in the sequence must be from 1 to 9, with no repetition.
+
+### Example:
+- **Input**: `"M"`
+  - **Output**: `21` (since 2 is smaller than 1, and 'M' indicates descending).
+  
+- **Input**: `"NMN"`
+  - **Output**: `2143` (this is the smallest numeric value that satisfies the 'ascending' and 'descending' pattern).
 
 ---
 
-## 6. Athena Health Care ![Code](images/Athena-coding.jpeg) 
+## 6. GoldmanSach [Code](code/Goldmansach.md#1)
+
+### Problem Explanation:
+- **N**: The number of kids at the party, each kid is numbered from 1 to N.
+- **T**: The total number of toys to be distributed.
+- **D**: The random starting point for the distribution, indicating which kid gets the first toy.
+
+The toys are distributed sequentially, with the toys being distributed starting from kid D, and continuing in a cyclic manner until all T toys are given out. The task is to determine which child gets the last (damaged) toy.
+
+### Example:
+- Input: 
+  - N = 5 (5 kids)
+  - T = 1 (1 toy)
+  - D = 2 (starting from the 2nd kid)
+
+The output should be `2` because the toy goes to the 2nd child in this case.
 
 ---
 
-## 7. Athena Health Care ![Code](images/Athena-coding1.jpeg)
-
----
-
-## 8. GoldmanSach ![Code](images/goldmansach1.jpeg) 
-
----
-
-## 9. GoldmanSach ![Code](images/goldmansach2.jpeg)
-
----
-
-## 10. StarHealth ![Code](images/starhealth1.jpeg) 
+## 7. StarHealth ![Code](images/starhealth1.jpeg) 
 
 ---
 
 
-## 11. StarHealth ![Code](images/starhealth2.jpeg) 
+## 8. StarHealth ![Code](images/starhealth2.jpeg) 
 
 ---
 
-## 12. Gen Digital - [Code](coding/GenDigital.md)
+## 9. Gen Digital - [Code](coding/GenDigital.md)
 
 1. **ATM Logic**
    - **Input**: `Enter the amt: 2630`
@@ -80,7 +98,7 @@
 
 ---
 
-## 13. Avility (full remote) question:
+## 10. Avility (full remote) question:
 
  - Koko loves to eat bananas. There are N piles of bananas, and each pile `i` has `piles[i]` bananas. The guards will return in `H` hours. Koko can decide her bananas-per-hour eating speed of `K`. Each hour, she chooses a pile and eats `K` bananas from it.
 
@@ -92,13 +110,13 @@
 
   **Reference**: [GeeksforGeeks - Koko Eating Bananas](https://www.geeksforgeeks.org/koko-eating-bananas/)
 
-## 14. Opentext 1st round:
+## 11. Opentext 1st round:
     1. Twosum
     2. Return unique elements in a sorted integer array, without using map [Code](coding/opentext.md#1)
 
 ---
 
-## 15. Opentext round two [Code](coding/opentext.md#2)
+## 12. Opentext round two [Code](coding/opentext.md#2)
 
 - **Input**: `{{4, 6}, {6, 5}, {7, 3}, {4, 5}}`
 - **Output**: `{6, 5}`
@@ -107,97 +125,84 @@
 
 ---
 
-## 16. Tavant:  Implement heap sort in java [Code](coding/tavant.md#1)
+## 13. Tavant:  Implement heap sort in java [Code](coding/tavant.md#1)
 
 ---
 
-## 17. Tavant: Implement binary search on a sorted array
+## 14. Tavant: Implement binary search on a sorted array
 
 ---
 
-## 18. Tavant: Find longest substring with unique characters in a given string
+## 15. Tavant: Find longest substring with unique characters in a given string
 
 ---
 
-## 19. stream of numbers 1 to 1000 find the missing numbers 
+## 16. stream of numbers 1 to 1000 find the missing numbers 
 
 ---
 
-## 20. Walmart - Asked merge intervals in first round and then asked to design power-bi reporting system [Code](coding/Walmart.md)
+## 17. Walmart - Asked merge intervals in first round and then asked to design power-bi reporting system [Code](coding/Walmart.md)
 
 ---
 
-## 21. Rotate Array
+## 18. Rotate Array
 
 ---
 
-## 22. Use generics in you code ![alt text](images/generics.png)
+## 19. Use generics in your code ![alt text](images/generics.png)
 
 ---
 
-## 23. Caterpillar:
+## 20. Caterpillar:
 This Java program demonstrates how to filter duplicate objects from a list using a Set and Java Streams. The program defines an `Order` class with fields for `orderId`, `name`, `product`, and `location`. Two `Order` objects are considered duplicates if they share the same `name`, `product`, and `location`, regardless of their `orderId`. [Code](coding/Caterpillar.md)
 
 ---
 
-## 24. Colon format [Code](coding/ColonFormat.md)
+## 21. Colon format [Code](coding/ColonFormat.md)
 
 ---
 
-## 25. Digit Occurence [Code](coding/DigitCount.md)
+## 22. Digit Occurence [Code](coding/DigitCount.md)
 
 ---
 
-## 26. Adjacent Elements Product [Code](coding/AdjacentProduct.md)
+## 23. Adjacent Elements Product [Code](coding/AdjacentProduct.md)
 
 ---
 
-## 27. Azentio : This program demonstrates filtering entries from a map based on specific keys (2 to 4) and prints the results. It utilizes Java Streams to process the data. [Code](coding/Azentio.md)
+## 24. Azentio : This program demonstrates filtering entries from a map based on specific keys (2 to 4) and prints the results. It utilizes Java Streams to process the data. [Code](coding/Azentio.md)
 
 ---
 
-## 28. Anthology :his program finds and prints the maximum value from a list of integers using Java Streams. It utilizes the max method with a comparator to determine the largest number in the list. [Code](coding/Anthology.md)
+## 25. Anthology :his program finds and prints the maximum value from a list of integers using Java Streams. It utilizes the max method with a comparator to determine the largest number in the list. [Code](coding/Anthology.md)
 
 ---
 
-## 29. Priority Queue [Code](coding/PriorityQueue.md)
+## 26. Priority Queue [Code](coding/PriorityQueue.md)
 
 ---
 
-## 30. Rotate Array [Code](coding/RotateArray.md)
+## 27. Rotate Array [Code](coding/RotateArray.md)
 
 ---
 
-## 31. Merge Sorted Arrays [Code](coding/MergeSortedArrays.md)
+## 28. Merge Sorted Arrays [Code](coding/MergeSortedArrays.md)
 
 ---
 
-## 32. Move Zeroes [Code](coding/MoveZeroes.md)
+## 29. Move Zeroes [Code](coding/MoveZeroes.md)
 
 ---
 
-## 33. IDFC ![alt text](images/IDFC_Code.png)
+## 30. IDFC ![alt text](images/IDFC_Code.png)
 
 ---
 
-## 34. Shell ![alt text](images/shell.png)
+## 31. Shell [Code](coding/ShellSort.md)
 
 ---
 
-## 35. Athena ![alt text](images/Athena_1.png)
-
----
-
-## 36. Athena ![alt text](images/Athena_2.png)
-
----
-
-
-## 37. Athena ![alt text](images/Athena_3.png)
-
----
-
-## 38. 
+## 32. 
 
 ---
 
