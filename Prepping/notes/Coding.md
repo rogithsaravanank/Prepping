@@ -1,4 +1,4 @@
-## 1. Consecutive Substring - Vimeo
+## 1. Consecutive Substring - Vimeo [Code](coding/String.md#1)
 
     Input : String s = “abcabd”;
     Output: “abcab”, “d” 
@@ -8,28 +8,23 @@
 
 ## 2. Codility [Code](coding/Codility.md) 
 
-- The problem requires implementing a method changeDirectoryString that takes the current directory path and a cd command string, then returns the updated directory path after applying the command. Here’s a solution to tackle the requirements step-by-step: ![codility](images/codility1.jpeg) 
+- The problem requires implementing a method changeDirectoryString that takes the current directory path and a cd command string, then returns the updated directory path after applying the command. Here’s a solution to tackle the requirements step-by-step: ![codility](images/codility1.jpeg) ![codility ](images/codility3.jpeg) ![codility ](images/codility2.jpeg) 
 
 
-## 3. Codility [Code](coding/Codility.md) ![codility ](images/codility2.jpeg)
-
-## 4. Codility ![codility ](images/codility2.jpeg) 
-
-## 5. Codility ![codility ](images/codility3.jpeg)
-
+## 3. Codility [Code](coding/Codility.md) 
 - This new task involves setting up a Spring Framework configuration class (`SystemConfig`) for your e-commerce site. Here's a summary of what is required:
 
-## 6. Athena Health Care [Code](code/athena.md) 
+## 4. Athena Health Care [Code](code/athena.md) 
 
  - You are given an array nums containing n + 1 integers where each integer is in the range [1, n] inclusive. There is exactly one repeated number in the array. Your task is to return this repeated number. ![Leetcode ](images/leetcode1.jpeg) 
 
 
-## 7. Athena Health Care ![Code](images/leetcode2.jpeg) 
+## 5. Athena Health Care ![Code](images/leetcode2.jpeg) 
 
 
-## 8. Athena Health Care ![Code](images/Athena-coding.jpeg) 
+## 6. Athena Health Care ![Code](images/Athena-coding.jpeg) 
 
-## 9. Athena Health Care ![Code](images/Athena-coding1.jpeg)
+## 7. Athena Health Care ![Code](images/Athena-coding1.jpeg)
 
 ## 10. GoldmanSach ![Code](images/goldmansach1.jpeg) 
 
@@ -103,7 +98,7 @@
 
 ## 20. Tavant: Find longest substring with unique characters in a given string
 
-## 21. stream of numbers 1 to 1000 find the missing numbers [Code](coding/Stream1.md)
+## 21. stream of numbers 1 to 1000 find the missing numbers 
 
 ## 22. Walmart - Asked merge intervals in first round and then asked to design power-bi reporting system [Code](coding/Walmart.md)
 
@@ -143,7 +138,7 @@
 
 ## 41. 
 
-## Stream problems examples  
+## Stream problems examples  [Code](coding/Stream1.md)
 
 1. find the sum of squares of all even numbers java 
     ```

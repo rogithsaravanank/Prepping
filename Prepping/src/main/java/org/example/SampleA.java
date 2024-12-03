@@ -31,9 +31,33 @@ public class SampleA {
 
     public static void main(String[] args) throws IOException {
         // createScanner();
-        forEachTest();
+        // forEachTest();
+
+        int[] array = { 8, 13,  15 };
+        System.out.println(addSpaces("LeetcodeHelpsMeLearn",array));
 
     }
+
+
+        public static String addSpaces(String s, int[] spaces) {
+            StringBuilder res = new StringBuilder();
+            int j=0;
+
+            System.out.println(spaces.length);
+            for(int i=0;i<s.length();i++){
+    
+                if(spaces[j]==i ) {
+                    res.append(" ");
+                    if(j<spaces.length-1) j++;
+                }
+                
+                res.append(s.charAt(i));
+    
+            }
+    
+            return res.toString();
+        }
+    
 
 
     public static void forEachTest() {
