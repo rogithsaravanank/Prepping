@@ -10,10 +10,6 @@
 
 - Implement the method `changeDirectoryString` to take the current directory path and a `cd` command string, returning the updated directory path.
 
-  ![codility](images/codility1.jpeg)
-  ![codility](images/codility3.jpeg)
-  ![codility](images/codility2.jpeg)
-
 ---
 
 ## 3. Codility [Code](coding/Codility.md) 
@@ -215,6 +211,12 @@ This Java program demonstrates how to filter duplicate objects from a list using
         .map(x -> x * x)
         .forEach(System.out::println);
     ```
+    ```java
+    Arrays.stream(numbers)
+        .filter(i->i%2==0)
+        .map(i->i*i)
+        .reduce(0,Integer::sum);
+    ```
 
 2. **Find the second max of student age in Java:**
     ```java
@@ -223,6 +225,9 @@ This Java program demonstrates how to filter duplicate objects from a list using
         .skip(1)
         .max()
         .getAsInt();
+    ```
+    ```
+        Optional<Integer> r=lst.stream().distinct().sorted(Comparator.reverseOrder()).skip(1).findFirst();
     ```
 
 3. **Find list of unique characters present in all strings in Java:**
@@ -236,6 +241,12 @@ This Java program demonstrates how to filter duplicate objects from a list using
     ```java
     list.stream()
         .collect(Collectors.groupingBy(Student::getAge, Collectors.counting()));
+    ```
+    ```java
+    Map<Integer, Long> ageCounts = students.stream()
+    .collect(Collectors.groupingBy(Student::getAge,Collectors.counting()));
+
+    ageCounts.forEach((age,count)-> System.out.println(age+" "+count));
     ```
 
 5. **Convert a list into a map in Java:**
@@ -258,6 +269,12 @@ This Java program demonstrates how to filter duplicate objects from a list using
         .boxed()
         .collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
     ```
+    ```java
+    Map<Character,Long> map2=stringsa.stream()
+        .flatMap(str->str.chars()
+        .mapToObj(ch->(char)ch))
+        .collect(Collectors.groupingBy(Function.identity(),Collectors.counting()));
+    ```
 
 8. **Sort by salary in Java:**
     ```java
@@ -274,6 +291,9 @@ This Java program demonstrates how to filter duplicate objects from a list using
 10. **Join given list values with a comma in Java:**
     ```java
     Arrays.stream(names).collect(Collectors.joining(","));
+    ```
+    ```java
+    System.out.println(stringsa.stream().collect(Collectors.joining(",")));
     ```
 
 11. **Combine array matrix values in a set in Java:**

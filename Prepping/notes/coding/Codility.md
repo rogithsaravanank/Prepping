@@ -1,3 +1,9 @@
+## Codility
+
+- ![codility](images/codility1.jpeg)
+- ![codility](images/codility3.jpeg)
+- ![codility](images/codility2.jpeg)
+
 #### 1. The problem requires implementing a method `changeDirectoryString` that takes the current directory path and a `cd` command string, then returns the updated directory path after applying the command. Here’s a solution to tackle the requirements step-by-step:
 
 
