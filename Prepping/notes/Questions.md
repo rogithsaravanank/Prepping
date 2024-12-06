@@ -86,6 +86,13 @@ public void doSomething() {
 }
 ```
 
+#### Autowired Scope
+- When Manual Object Creation Makes Sense Utility or Stateless Classes:
+- If the object has no dependencies and requires no lifecycle management.
+- Simple POJOs or DTOs:
+- Objects that don't interact with Spring components or features.
+
+
 #### Tavant (Bangalore) Round 2:
 
 3. Why would you need balanced trees like red-black tree and avial tree when you have binary tree with O(log n) search

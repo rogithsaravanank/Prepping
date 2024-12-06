@@ -25,8 +25,31 @@ public class Streams {
         System.out.println("Welcome to Streams class");
         Streams streams = new Streams();
         // streams.methods();
-        streams.practice();
-    }
+        // streams.practice();
+       int[] banned = {1,6,5};
+       int n = 5; int maxSum = 6;
+        System.out.println(streams.maxCount(banned,n,maxSum));
+            }
+        
+        
+    public int maxCount(int[] banned, int n, int maxSum) {
+
+            Set<Integer> set=Arrays.stream(banned).boxed().collect(Collectors.toSet());
+            int sum=0;
+            int temp=0;
+            System.out.println("outside loop"+n);
+            for(int i=2;i<n;i++){
+                System.out.println("inside loop");
+                if(set.contains(i)) {System.out.println("set has the "+ i);} else sum+=i;
+               
+                temp=i;
+            }
+            if(sum<=maxSum) return temp;
+            else return 0;
+            
+        }
+    
+
     public static void practice(){
         System.out.println("Practice method");
         int[] numbers1 = {6,1, 2, 3, 4, 5};
