@@ -1,5 +1,10 @@
 ### Questions
 
+#### Intro
+- I have been working at Comcast since 2022, where I have contributed to two major projects: Acceleration and OSO.
+**Acceleration** is an in-house tool designed to speed up the processing time for customer orders across various form types such as MetroE, Carrier, and Active Core. We developed the Acceleration project using four microservices: Centralized MS, FormService, CenturyService, and one for the UI. The tech stack includes Java, Spring Boot, microservice architecture, and SQL. For CI/CD, we utilized Jenkins. The project was completed in one year and is currently managed by the support team.
+**OSO (Order Orchestration Service)** was initially developed by Amdocs and is now being acquired and further developed by Comcast. OSO manages the entire workflow of customer orders, providing notifications in BPM notation on the UI. We use the Activity framework (the predecessor of Flowable) for this purpose. The backend development involves technologies like Java, Spring Boot, microservices, SQL, AWS, Docker containerization, and Kubernetes for container orchestration. I am primarily working on five microservices for this project. For code quality measurement, we use SonarQube.
+
 #### Create a custom data structure
 
 #### CompletableFuture
