@@ -1,7 +1,5 @@
 ## Java Developer Interview
 
-- [Companies](Prepping/notes/Companies.md)
-
 ## 𝗧𝗼𝗽𝗶𝗰 𝟭: 𝗣𝗿𝗼𝗷𝗲𝗰𝘁 𝗳𝗹𝗼𝘄 𝗮𝗻𝗱 𝗮𝗿𝗰𝗵𝗶𝘁𝗲𝗰𝘁𝘂𝗿𝗲 
  - Please tell me about your project and its architecture, Challenges faced?
  - What was your role in the project? Tech Stack of project? why this stack?
