@@ -92,15 +92,21 @@
 
 ## Features of Java 8
 
-- Streams
-- Lambda expressions
+- Streams API : Provides a powerful way to process collections of data in a declarative and efficient manner
+- Lambda expressions : Allow you to write concise, anonymous functions without explicitly defining a class. 
 - Functional Programming
+- Default Methods in Interfaces: Allows us to add new methods to existing interfaces and Static Methods in Interfaces : Allows us to add static methods to existing interfaces
+- Optional Class : Provides a types safe way to handle null pointer exception
+-  Method References : Shorthand way of handling lambda expressions
 
 ## Concurrent HashMap
 
 - Multi-threading
+- Synchronized methods
+- Thread safe oprations can be handle without the need of explicit synchronization
 
 ## Vertex
+- It is a fundamental unit in data structure in graph.
 
 ## REST API
 
@@ -160,8 +166,8 @@
 
 - Single request multiple times but the response should be same. Example: PUT methods.
 
-## Microservices
-
+## Microservices Architecture
+- A microservices architecture is a software development approach where an application is broken down into small, independent, and loosely coupled services. Each service focuses on a specific business capability and runs as an independent system.
 - Multiple services communicate with each other and are loosely coupled
 - Independently developed and deployed
 - Uses polyglot architecture
@@ -189,24 +195,26 @@
 
 ## Service Discovery
 
-- Eureka, Netflix OSS: way applications and microservices locate each other on a network
+- Eureka(Netflix OSS) : way applications and microservices locate each other on a network
+- **Service Registry:** A centralized database or directory that stores information about available services and their locations. Services register themselves with the registry, and other services can query the registry to find their locations.
 
 ## Communication Between Microservices
 
 - Synchronous: client waits for the response (e.g., RestTemplate, gRPC)
-- Asynchronous: Kafka (KafkaTemplate.send), RabbitMQ (RabbitTemplate.convertAndSend with @RabbitListener)
+- Asynchronous: Services publish messages to a queue, and other services subscribe to the queue to consume messages Kafka (KafkaTemplate.send), RabbitMQ (RabbitTemplate.convertAndSend with @RabbitListener)
 
 ## Kafka
 
 - Distributed streaming platform for real-time data pipelines
 - Producer: sends record to Kafka topic
 - Consumer: reads the record from Kafka topic
+- Broker : kafka servers that stores the data and share it with other clusters.
 
-## Packages
+## Packages Java SpringBoot
 
 - Controller
-- Services
-- Entities
+- Service
+- Entity
 - Repository
 
 ## Communication Between Microservices: Sync vs Async
@@ -216,9 +224,9 @@
 
 ## JDK, JRE, JVM
 
-- JDK: Java Development Kit
-- JRE: Java Runtime Environment
-- JVM: Bytecode to machine code
+- JDK: Java Development Kit(For developers to build Java applications.)
+- JRE: Java Runtime Environment(to run java application)
+- JVM: Java Virtual Machine (Bytecode to machine code)
 
 ## Class Loading in Java
 
@@ -232,15 +240,43 @@
 - Immutable classes
 - Examples: int to Integer, long to Long, char to Character, boolean to Boolean
 
+## Why Wrapper Classes
+
+- Wrapper classes in Java provide a way to treat primitive data types (like int, float, boolean) as objects.
+- Handles null values
+- Provides methods to perform operations on the primitive data type(ArrayList,Hashmap)
+
 ## Autoboxing and Unboxing
 
 - Autoboxing: converting the primitive to corresponding wrapper classes (int to Integer)
 - Unboxing: converting the wrapper class to respective primitive data types
 
+```
+// Autoboxing: int to Integer
+int age = 30;
+Integer ageObj = age; // Autoboxing: age (int) is automatically converted to ageObj (Integer)
+
+// Unboxing: Integer to int
+Integer number = 100;
+int num = number; // Unboxing: number (Integer) is automatically converted to num (int)
+```
+
 ## Integer Cache
 
 - Only object references are compared using `==`
-- Integer Cache range: -127 to 127
+- Integer Cache range: -128 to 127
+
+```
+Integer a = 100; 
+Integer b = 100; 
+
+System.out.println(a == b); // Output: true (both refer to the same cached object)
+
+Integer c = 200; 
+Integer d = 200; 
+
+System.out.println(c == d); // Output: false (objects are not cached, so new objects are created)
+```
 
 ## Casting
 

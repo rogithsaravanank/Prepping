@@ -63,4 +63,8 @@
 ## 𝗧𝗼𝗽𝗶𝗰𝘀 𝟴: 𝗕𝗲𝘀𝘁 𝗽𝗿𝗮𝗰𝘁𝗶𝗰𝗲
  - The interviewer always wanted to ask about some design patterns, it maybe Normal design patterns like singleton, factory, or observer patterns to know that you can use these in coding.
 
+---
+
 - [Companies](Companies.md)
+
+---

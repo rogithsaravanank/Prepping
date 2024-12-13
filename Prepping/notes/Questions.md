@@ -1,10 +1,5 @@
 ### Questions
 
-#### Intro
-- I have been working at Comcast since 2022, where I have contributed to two major projects: Acceleration and OSO.
-**Acceleration** is an in-house tool designed to speed up the processing time for customer orders across various form types such as MetroE, Carrier, and Active Core. We developed the Acceleration project using four microservices: Centralized MS, FormService, CenturyService, and one for the UI. The tech stack includes Java, Spring Boot, microservice architecture, and SQL. For CI/CD, we utilized Jenkins/GitHub Action/Concourse. The project was completed in one year and is currently managed by the support team.
-**OSO (Order Orchestration Service)** was initially developed by Amdocs and is now being acquired and further developed by Comcast. OSO manages the entire workflow of customer orders, providing notifications in BPM notation on the UI. We use the Activity framework (the predecessor of Flowable) for this purpose. The backend development involves technologies like Java, Spring Boot, microservices, SQL, AWS, Docker containerization, and Kubernetes for container orchestration. I am primarily working on five microservices for this project. For code quality measurement, we use SonarQube.
-
 #### Create a custom data structure
 
 #### CompletableFuture
@@ -18,6 +13,11 @@
 - **Default capacity:** 16
 - **Resizing:** When the number of entries exceeds `0.75 * 16`
 - **Load factor:** 0.75
+
+#### fork join pool
+- **Default number of threads:** 1
+- **Maximum number of threads:** 1 + (number of available processors - 1)
+- completable future
 
 #### Internal working of HashMap
 
@@ -51,6 +51,26 @@ list.stream().toMap(Function.identity(), Function.identity());
 - **Function:** Clears out memory frequently
 
 #### Swap Two Numbers Without Temp Variable
+- 
+```
+public static void swapNumbers(int a, int b) {
+    a = a + b;
+    b = a - b;
+    a = a - b;
+
+    System.out.println("After swapping: a = " + a + ", b = " + b);
+}
+```
+- XOR Operation
+```
+public static void swapNumbers(int a, int b) {
+    a = a ^ b;
+    b = a ^ b;
+    a = a ^ b;
+
+    System.out.println("After swapping: a = " + a + ", b = " + b);
+}
+```
 
 #### Singleton Pattern
 
@@ -80,8 +100,10 @@ list.stream().toMap(Function.identity(), Function.identity());
 - In Java, a method reference is a shorthand notation of a lambda expression to call a method. It allows you to refer to a method without executing it. The syntax is ClassName::methodName or object::methodName. Method references are a more concise and readable way to write certain types of lambda expressions. They are particularly useful for passing methods as arguments to higher-order functions.
 
 #### Singleton object has prototype instantiation via Autowire so now the prototype will behave as singleton how to change that
-##### When using Spring Framework, if you have a singleton-scoped bean that has a dependency on a prototype-scoped bean, and the prototype bean is injected via @Autowired, the prototype bean will behave like a singleton. This happens because the singleton bean is created only once and its dependencies (including the prototype-scoped bean) are injected at the time of its creation. Therefore, the same instance of the prototype-scoped bean is used throughout the lifecycle of the singleton bean.To change this behavior and ensure that a new instance of the prototype-scoped bean is created every time it is needed.
+
+- When using Spring Framework, if you have a singleton-scoped bean that has a dependency on a prototype-scoped bean, and the prototype bean is injected via @Autowired, the prototype bean will behave like a singleton. This happens because the singleton bean is created only once and its dependencies (including the prototype-scoped bean) are injected at the time of its creation. Therefore, the same instance of the prototype-scoped bean is used throughout the lifecycle of the singleton bean.To change this behavior and ensure that a new instance of the prototype-scoped bean is created every time it is needed.
 - In Application context you can add below code 
+
 ``` @Autowired
 private ApplicationContext applicationContext;
 
@@ -174,5 +196,16 @@ public void doSomething() {
 
 #### Shell
 1. questions related to accessing an api end point in java,SQL query.Missed to capture those questions
+
+#### Technical Questions
+1. Explain how logging works in a distributed microservice architectured application how to debug during that time ?
+2. How ELK works in OSO ?
+3.  
+
+
+#### Intro
+- I have been working at Comcast since 2022, where I have contributed to two major projects: Acceleration and OSO.
+**Acceleration** is an in-house tool designed to speed up the processing time for customer orders across various form types such as MetroE, Carrier, and Active Core. We developed the Acceleration project using four microservices: Centralized MS, FormService, CenturyService, and one for the UI. The tech stack includes Java, Spring Boot, microservice architecture, and SQL. For CI/CD, we utilized Jenkins/GitHub Action/Concourse. The project was completed in one year and is currently managed by the support team.
+**OSO (Order Orchestration Service)** was initially developed by Amdocs and is now being acquired and further developed by Comcast. OSO manages the entire workflow of customer orders, providing notifications in BPM notation on the UI. We use the Activity framework (the predecessor of Flowable) for this purpose. The backend development involves technologies like Java, Spring Boot, microservices, SQL, AWS, Docker containerization, and Kubernetes for container orchestration. I am primarily working on five microservices for this project. For code quality measurement, we use SonarQube.
 
 
