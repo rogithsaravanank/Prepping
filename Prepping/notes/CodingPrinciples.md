@@ -40,3 +40,42 @@
 - Abstraction should not depend on details , Details should depend on abstractions
 - [DI ](images/DI_code.jpeg)
 - [Sample](images/DI_example.jpeg)
+
+
+**Problem Identification:**
+
+1. **Object Creation:** If your problem is related to creating objects, consider these patterns:
+    - **Singleton:** Ensure only one instance of a class exists.
+    - **Factory Method:** Delegate object creation to subclasses.
+    - **Abstract Factory:** Create families of related objects.
+    - **Prototype:** Create objects by cloning existing ones.
+    - **Builder:** Construct complex objects step-by-step.
+
+2. **Object Assembly:** If your problem is related to how objects are composed, consider these patterns:
+    - **Adapter:** Adapt incompatible interfaces.
+    - **Bridge:** Separate an abstraction from its implementation.
+    - **Composite:** Treat individual objects and compositions of objects uniformly.
+    - **Decorator:** Add responsibilities to objects dynamically.
+    - **Facade:** Provide a simplified interface to a complex system.
+    - **Flyweight:** Share objects to reduce memory usage.
+    - **Proxy:** Control access to an object.
+
+3. **Object Interactions:** If your problem is related to how objects interact with each other, consider these patterns:
+    - **Observer:** Notify multiple objects of changes.
+    - **Strategy:** Encapsulate algorithms for interchangeable behavior.
+    - **Command:** Encapsulate a request as an object.
+    - **State:** Change an object's behavior based on its internal state.
+    - **Visitor:** Add operations to object structures without modifying them.
+    - **Memento:** Capture and restore object states.
+    - **Iterator:** Provide a way to access elements of a collection sequentially.
+    - **Mediator:** Centralize communication between objects.
+    - **Chain of Responsibility:** Pass requests along a chain of handlers.
+    - **Template Method:** Define a skeleton algorithm with steps to be filled in by subclasses.
+
+**Remember:**
+
+* **Context Matters:** The best pattern for a particular problem depends on the specific context and requirements.
+* **Trade-offs:** Consider the trade-offs between different patterns in terms of complexity, performance, and maintainability.
+* **Learn and Experiment:** Practice using different patterns to gain experience and develop intuition.
+
+By understanding these patterns and their applications, you can make informed decisions about how to design your software effectively.

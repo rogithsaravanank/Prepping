@@ -317,13 +317,29 @@ System.out.println(c == d); // Output: false (objects are not cached, so new obj
 
 - Symmetric, reflexive, consistent
 - Compares the content of the objects
+```
+@Override
+public boolean equals(Object obj) {
+    if (this == obj) return true;
+    if (obj == null || getClass() != obj.getClass()) return false;
+    MyClass other = (MyClass) obj;
+    return obj.age==this.age && Objects.equals(this.name,obj.name)
+}
+```
 
 ## hashCode()
 
 - Generates hashcode for an object
 - Provides an efficient way to locate an object in a collection
 - If `equals` is overridden, `hashCode` should be overridden too to maintain the general contract of hashCode: equal objects must have equal hashCode
+- Overriding hashCode and equals in Java is essential when you need to control how objects are compared and stored, especially in collections like HashMap, HashSet, and Hashtable. 
 
+```
+@Override
+public boolean (Object obj) {
+    return Objects.hash(name,age);
+}
+```
 
 ## Inheritance
 
@@ -349,6 +365,21 @@ System.out.println(c == d); // Output: false (objects are not cached, so new obj
 
 - Java does not support multiple inheritance to avoid the diamond problem.
 - Supports multiple inheritance through interfaces.
+```
+interface A {
+    void method1();
+}
+
+interface B {
+    void method1();
+}
+
+class C implements A, B {
+    public void method1() {
+        // Implementation for method1
+    }
+}
+```
 
 ## Diamond Problem
 
@@ -357,6 +388,7 @@ System.out.println(c == d); // Output: false (objects are not cached, so new obj
 ## Interface
 
 - Contracts of responsibilities of the class.
+- They specify the methods that a class must provide, ensuring consistency and predictability.
 - Example: `Map` interface.
 
 ## Using Interface
@@ -389,8 +421,23 @@ System.out.println(c == d); // Output: false (objects are not cached, so new obj
 ## Interface vs Abstract Class
 
 - Implements functionality and public.
-- Abstract class: Provides a default implementation, a restricted class which cannot be used to create an object, needs to be inherited by another class.
-- Interface: Contracts of responsibilities of the class.
+- Interface: Contracts of responsibilities of the class and does not provide implementation details.
+```
+interface Shape {
+    void draw();
+    double getArea();
+}
+```
+- Abstract class: a restricted class which cannot be used to create an object, needs to be inherited by another class and provides a concrete methods and abstract methods.
+```
+abstract class Shape {
+    abstract void draw();
+
+    public void printShapeName() {
+        System.out.println("This is a shape");
+    }
+}
+```
 
 ## Constructor
 

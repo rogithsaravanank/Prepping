@@ -25,10 +25,10 @@ public class Streams {
         System.out.println("Welcome to Streams class");
         Streams streams = new Streams();
         // streams.methods();
-        // streams.practice();
+        streams.practice();
        int[] banned = {1,6,5};
        int n = 5; int maxSum = 6;
-        System.out.println(streams.maxCount(banned,n,maxSum));
+        // System.out.println(streams.maxCount(banned,n,maxSum));
             }
         
         
@@ -59,6 +59,7 @@ public class Streams {
         flat.add(Arrays.asList(3, 8));
         flat.add(Arrays.asList(2, 6));
         // Sum of squares of all even numbers in Java:
+        
        int a= Arrays.stream(numbers)
         .filter(x -> x % 2 == 0)
         .map(x -> x * x)
@@ -71,7 +72,12 @@ public class Streams {
        System.out.println(res);
        List<Integer> lst=flat.stream().flatMap(list->list.stream()).collect(Collectors.toList());
         // flat.stream().flatMap().reduce(0,Integer::sum);
-        System.out.println(lst);
+        System.out.println(lst+" NOw");
+
+        System.out.println(lst.stream().map(a1->a1*2).collect(Collectors.toList()));
+
+        lst.stream().map(a2->a2*2).forEach(System.out::println);
+
 
         List<Integer> lstsort=lst.stream().sorted().skip(2).collect(Collectors.toList());
         System.out.println(lstsort);
