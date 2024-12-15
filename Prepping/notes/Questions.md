@@ -1,6 +1,40 @@
 ### Questions
 
 #### Create a custom data structure
+```java
+public class MyArrayList<E> {
+    private Object[] data;
+    private int size;
+    private static final int INITIAL_CAPACITY = 10;
+
+    public MyArrayList(int initialCapacity) {
+        if (initialCapacity < 0) {
+            throw new IllegalArgumentException("Initial capacity cannot be negative");
+        }
+        data = new Object[initialCapacity];
+        size = 0;
+    }
+
+    public void add(E element) {
+        if (size == data.length) {
+            // Resize the array
+            Object[] newData = new Object[data.length * 2];
+            System.arraycopy(data, 0, newData, 0, size);
+            data = newData;
+        }
+        data[size++] = element;
+    }
+
+    public E get(int index) {
+        if (index < 0 || index >= size) {
+            throw new IndexOutOfBoundsException();
+        }
+        return (E) data[index];
+    }
+
+    // Other methods like remove, size, isEmpty, etc. can be implemented similarly
+}
+```
 
 #### CompletableFuture
 - **Async execution of a method**
@@ -13,6 +47,15 @@
 - **Default capacity:** 16
 - **Resizing:** When the number of entries exceeds `0.75 * 16`
 - **Load factor:** 0.75
+- HashMap is a key-value data structure that stores elements in key-value pairs. It's based on the concept of hashing, which maps keys to hash codes, and then uses these hash codes to determine the bucket where the key-value pair should be stored.
+1. Hashing:
+- When you insert a key-value pair, the hash code of the key is calculated using a hash function.
+2. Bucket Determination:
+- The hash code is used to determine the bucket index where the pair will be stored.
+- Multiple key-value pairs can be mapped to the same bucket, leading to collisions.
+3. Collision Handling:
+- Separate Chaining: Each bucket stores a linked list of key-value pairs. When a collision occurs, the new pair is added to the end of the linked list.
+- Open Addressing: If a bucket is already occupied, the hash function is used to probe for the next available slot. This can lead to clustering, which can degrade performance.
 
 #### fork join pool
 - **Default number of threads:** 1
@@ -122,11 +165,121 @@ public void doSomething() {
 
 #### Tavant (Bangalore) Round 2:
 
-3. Why would you need balanced trees like red-black tree and avial tree when you have binary tree with O(log n) search
+3. Why would you need balanced trees like red-black tree and avl tree when you have binary tree with O(log n) search
+- While a binary search tree (BST) can theoretically achieve O(log n) search, insert, and delete operations, its actual performance depends heavily on the order of insertions. In the worst-case scenario, a BST can degenerate into a linked list, leading to O(n) time complexity for these operations
+- In conclusion, while a standard binary search tree can offer O(log n) performance in ideal scenarios, balanced trees like Red-Black trees and AVL trees provide a more reliable and consistent performance guarantee, making them essential for many applications.
+
 4. Find longest substring with unique characters in a given string
+```java
+ public static int lengthOfLongestSubstring(String str) {
+        int ans=0;
+        int i=0,j=0;
+        HashSet<Character> set=new HashSet<>();
+        while(i<str.length() && j<str.length()){
+            if(!set.contains(str.charAt(j))){
+                set.add(str.charAt(j++));
+                ans=Math.max(ans,j-i);
+            }
+            else {
+                set.remove(str.charAt(i++));
+            }
+        }
+        return ans;
+
+    }
+```
 5. Spring boot questions (scope and how to handle multithreading)
+## Spring Boot: Scope and Multithreading
+
+### Understanding Scopes in Spring Boot
+
+Spring Boot provides several scopes for beans, each with its own lifecycle and management strategy:
+
+1. **Singleton Scope:**
+   - **Default scope:** One instance per Spring application context.
+   - Suitable for stateless services and configuration beans.
+   - **Example:** `@Service`, `@Repository`, `@Component` beans.
+
+2. **Prototype Scope:**
+   - A new instance is created for each request or dependency injection.
+   - Suitable for stateful services or objects that need to be isolated.
+   - **Example:** `@Scope("prototype")`
+
+3. **Request Scope:**
+   - A new instance is created for each HTTP request.
+   - Typically used in web applications.
+   - **Example:** `@Scope("request")`
+
+4. **Session Scope:**
+   - A new instance is created for each HTTP session.
+   - Useful for maintaining state within a user session.
+   - **Example:** `@Scope("session")`
+
+**Handling Multithreading in Spring Boot**
+
+Spring Boot offers several mechanisms to handle multithreading and concurrency in your applications:
+
+1. **@Async Annotation:**
+   - Marks methods as asynchronous, allowing them to be executed in a separate thread.
+   - Requires `@EnableAsync` annotation on the configuration class.
+   - **Example:**
+
+   ```java
+   @Service
+   public class MyService {
+       @Async
+       public void asyncMethod() {
+           // This method will be executed in a separate thread
+       }
+   }
+   ```
+
+2. **@Scheduled Annotation:**
+   - Schedules methods to be executed at fixed intervals or specific times.
+   - **Example:**
+
+   ```java
+   @Scheduled(fixedRate = 5000)
+   public void scheduledTask() {
+       // This method will be executed every 5 seconds
+   }
+   ```
+
+3. **Spring's TaskExecutor:**
+   - A flexible way to manage asynchronous tasks.
+   - Allows you to customize thread pools and task execution strategies.
+   - **Example:**
+
+   ```java
+   @Autowired
+   private TaskExecutor taskExecutor;
+
+   public void executeAsyncTask() {
+       taskExecutor.execute(() -> {
+           // Task to be executed asynchronously
+       });
+   }
+   ```
+
+**Additional Considerations:**
+
+* **Thread Safety:** Ensure that your shared resources are thread-safe or use synchronization mechanisms like `synchronized` blocks or `Atomic` classes.
+* **Concurrency Utilities:** Utilize Java concurrency utilities like `ConcurrentHashMap`, `BlockingQueue`, and `Semaphore` for efficient and thread-safe operations.
+* **Testing Asynchronous Code:** Use testing frameworks like Spring TestContext Framework to test asynchronous methods effectively.
+* **Error Handling:** Implement proper error handling mechanisms to catch and handle exceptions that may occur in asynchronous tasks.
+
 6. JVM memory management (gc, gc types, heap regions)
+- Garbage collection is the process of identifying and reclaiming memory that is no longer in use. The JVM uses different garbage collectors to manage the heap
+- Serial collector , Parallel collector , G1 collector, concurrent mark sweep collector
 7. Kubernetes (how to debug a pod, how to check logs)
+- Kubernetes Logs: Use the kubectl logs command to view the logs of a specific pod:
+```
+kubectl logs <pod-name> -n <namespace>
+```
+Use the -f flag to tail the logs in real-time:
+```
+kubectl logs -f <pod-name> -n <namespace>
+```
 8. More kubernetes (auto scaling, configuring memory, ports, etc)
 9. AWS services which you use and explain them
 10. How CI/CD flow works in our application, code to deployment to aws.
@@ -164,10 +317,10 @@ public void doSomething() {
     Child constructor called
 
     ```
-5. return type using overloading
+5. return type using overloading --> No java does not support return type overloading
 6. sample(String name), sample(Object) --> sample(null) will call objects--> sample("String") will call the string method
-7. PagingRepository vs JPARepository in Spring
-8. try with resources
+7. PagingRepository --> provides pagination to list of all entities vs JPARepository in Spring --> it extends PagingRepository and provides pagination to list of all entities with some xtra methods
+8. Try With Resources --> it is used to close the resources automatically
 
 #### Managerial Ques
 
@@ -183,15 +336,29 @@ public void doSomething() {
 2. 
 
 #### UST
-1. n+1 problem in Hibernate
+1. n+1 problem in Hibernate 
+
+- This is a common problem in Hibernate(ORM) where you have a one-to-many relationship between two entities, and you're trying to fetch the related entities in a single query. However, Hibernate will execute a separate query for each related entity.
+- This can lead to performance issues and slow down your application.
+- Eager Fetch type can be used to fetch the related entities in a single query.
+- Data Volume: For large datasets, lazy fetching with batch fetching is often a good choice.
+- Query Frequency: For frequently accessed data, eager fetching or second-level cache can improve performance.
+- Application Complexity: Complex relationships might require more advanced techniques like join fetching or custom queries.
+
 2. Default fetch type in Hibernate -> Lazy
-3. immutable class 
-4. how to convert the class to immutable class
+3. immutable class --> Final class
+4. how to convert the class to immutable class -> Variables as private and final class.
 5. Exception -> checked(Checked at compile time ex:IOException, Filenotfound) and unchecked exception(found at run time ex:nullpointer)
 6. Functional interface, Method reference
 7. inbuilt functional interface
 8. Stream example
 9. comparable and comparator
+- Comparable: Gives us the natural ordering of the objects
+- Comparator: Gives us the custom ordering of the objects
+```java
+        Collections.sort(lst);//comparable compare(a,b)
+        Collections.sort(lst,Collections.reverseOrder());//comparator a.compareTo(b)
+```
 10. SOLID, Design pattern --> decorator
 
 #### Shell

@@ -56,6 +56,23 @@ public class LongestRepeatingSequence {
 
     }
 
+    public static int lengthOfLongestSubstring(String str) {
+        int ans=0;
+        int i=0,j=0;
+        HashSet<Character> set=new HashSet<>();
+        while(i<str.length() && j<str.length()){
+            if(!set.contains(str.charAt(j))){
+                set.add(str.charAt(j++));
+                ans=Math.max(ans,j-i);
+            }
+            else {
+                set.remove(str.charAt(i++));
+            }
+        }
+        return ans;
+
+    }
+
    
 
 
@@ -68,10 +85,12 @@ public class LongestRepeatingSequence {
 
         int result1 = longestRepeatingSubsequences(str);
 
+        int result2 = lengthOfLongestSubstring(str);
+
         if (result.isEmpty()) {
-            System.out.println("No repeating sequence found.");
+            System.out.println("No repeating sequence found."+ result2);
         } else {
-            System.out.println("Longest repeating sequence: " + result);
+            System.out.println("Longest repeating sequence: " + result2);
         }
     }
 }

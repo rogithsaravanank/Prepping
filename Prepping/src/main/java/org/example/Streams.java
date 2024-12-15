@@ -21,9 +21,20 @@ public class Streams {
         System.out.println("Streams class constructor");
     }
 
+    public Streams(int a) {
+        
+       
+        System.out.println("Streams class int constructor"+testStatic);
+
+    }
+    static{
+        System.out.println("static block");
+    }
+
     public static void main(String[] args) {
-        System.out.println("Welcome to Streams class");
-        Streams streams = new Streams();
+        
+        System.out.println("Welcome to Streams class"+testStatic);
+        Streams streams = new Streams(3);
         // streams.methods();
         streams.practice();
        int[] banned = {1,6,5};
@@ -73,7 +84,10 @@ public class Streams {
        List<Integer> lst=flat.stream().flatMap(list->list.stream()).collect(Collectors.toList());
         // flat.stream().flatMap().reduce(0,Integer::sum);
         System.out.println(lst+" NOw");
-
+        Collections.sort(lst);
+        Collections.sort(lst,Collections.reverseOrder());
+        System.out.println(lst+" After");
+        // lst.get(2);
         System.out.println(lst.stream().map(a1->a1*2).collect(Collectors.toList()));
 
         lst.stream().map(a2->a2*2).forEach(System.out::println);

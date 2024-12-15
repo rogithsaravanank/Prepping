@@ -444,6 +444,13 @@ abstract class Shape {
 - Invoked as an instance of the object of the class.
 - We cannot create an object without a constructor.
 - Has no return type.
+- Parameterized constructors are a powerful tool in Java that allows you to initialize objects with specific values during their creation. They provide flexibility and control over the initial state of an object. 
+```
+public Person(int age,String name){
+    this.age=age;
+    this.name=name;
+}
+```
 
 ## Types of Constructors
 
@@ -476,31 +483,65 @@ abstract class Shape {
 ## Overloading
 
 - Same method name but different parameters.
+```
+class Calculator {
+    public int add(int a, int b) {
+        return a + b;
+    }
+
+    public double add(double a, double b) {
+        return a + b;
+    }
+}
+```
 
 ## Overriding
 
 - Super class methods can be overridden in the subclass to behave differently.
+```
+class Animal {
+    public void makeSound() {
+        System.out.println("Generic animal sound");
+    }
+}
 
-## Coupling
+class Dog extends Animal {
+    @Override
+    public void makeSound() {
+        System.out.println("Woof!");
+    }
+}
 
-- How much one class is dependent on another class.
+class Cat extends Animal {
+    @Override
+    public void makeSound() {
+        System.out.println("Meow!");
+    }
+}
+```
+
+## Coupling(Low)
+
+- How much **one class is dependent on another** class.
 - Low coupling is always good.
 - By using interface to inject dependencies.
 
-## Cohesion
+## Cohesion(High)
 
-- Measure of how related the responsibilities of the class are.
+- Measure of **how related the responsibilities** of the class are.
 - Should be high.
 
 ## Encapsulation
 
 - Bundling of data and methods into a single unit as a class.
-- Data hiding (hiding the internal state of the object) and access modifiers (public, private).
+- Data hiding (hiding the internal state of the object) 
+- By using access modifiers such within the class(public, private).
 
 ## Final Keyword
 
 - Methods cannot be overridden.
 - Assigned values cannot be changed.
+- Classes cannot be subclassed - **immutable** objects.
 - Example: Pi.
 
 ## Static Keyword
@@ -539,10 +580,10 @@ abstract class Shape {
 
 ## Initialization Blocks
 - Initialize instance variable of a class.
-- Instance initialization and static initialization (executed without an instance created).
+- Instance initialization(Every time a object is created) and static initialization (executed without an instance created only once at the start).
 
 ## Serialization
-- State of object to byte stream to transport over network.
+- Converting State of object to byte stream to transport over network.
 - Used while caching: storing objects in memory for faster access.
 
 ## File Input and Output
@@ -626,6 +667,7 @@ abstract class Shape {
 public enum Day {
     SUNDAY, MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY, SATURDAY
 }
+```
 ## Overriding equals and hashCode
 
 ```java
@@ -640,4 +682,66 @@ public boolean equals(Object obj) {
 @Override
 public int hashCode() {
     return Objects.hash(name, age);
-}```
+}
+```
+
+## Comparable And Comaparator
+
+- Comparable: Gives us the natural ordering of the objects
+- Comparator: Gives us the custom ordering of the objects
+```java
+        Collections.sort(lst);//comparable
+        Collections.sort(lst,Collections.reverseOrder());//comparator
+```
+
+## Built-in Functional Interfaces in Java
+
+Java 8 introduced a set of built-in functional interfaces in the `java.util.function` package. These interfaces simplify functional programming in Java by providing common functional interfaces that can be used with lambda expressions.
+
+Here are some of the most commonly used functional interfaces:
+
+### Core Functional Interfaces
+
+* **Predicate<T>:** Represents a predicate (boolean-valued function) of one argument.
+  ```java
+  Predicate<String> isLongerThan5 = s -> s.length() > 5;
+  ```
+* **Consumer<T>:** Represents an operation that accepts a single input argument and returns no result.
+  ```java
+  Consumer<String> print = System.out::println;
+  ```
+* **Function<T, R>:** Represents a function that accepts one argument and produces a result.
+  ```java
+  Function<String, Integer> stringToInt = Integer::parseInt;
+  ```
+* **Supplier<T>:** Represents a supplier of results.
+  ```java
+  Supplier<String> helloSupplier = () -> "Hello";
+  ```
+
+### Binary Operator and UnaryOperator
+
+* **BinaryOperator<T>:** Represents an operation that accepts two input arguments and returns a result of the same type.
+  ```java
+  BinaryOperator<Integer> sum = (a, b) -> a + b;
+  ```
+* **UnaryOperator<T>:** Represents an operation that accepts a single input argument and returns a result of the same type.
+  ```java
+  UnaryOperator<Integer> square = x -> x * x;
+  ```
+
+### Primitive Specializations
+
+Java also provides primitive specializations of these interfaces for better performance and type safety:
+
+* **IntPredicate, DoublePredicate, LongPredicate**
+* **IntConsumer, DoubleConsumer, LongConsumer**
+* **IntFunction, DoubleFunction, LongFunction**
+* **IntSupplier, DoubleSupplier, LongSupplier**
+* **IntBinaryOperator, DoubleBinaryOperator, LongBinaryOperator**
+* **IntUnaryOperator, DoubleUnaryOperator, LongUnaryOperator**
+
+
+
+
+
