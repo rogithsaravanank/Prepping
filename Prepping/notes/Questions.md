@@ -198,6 +198,7 @@ Spring Boot provides several scopes for beans, each with its own lifecycle and m
 1. **Singleton Scope:**
    - **Default scope:** One instance per Spring application context.
    - Suitable for stateless services and configuration beans.
+   - Same hashcodes for the objects if the scope is singleton.
    - **Example:** `@Service`, `@Repository`, `@Component` beans.
 
 2. **Prototype Scope:**
@@ -369,7 +370,43 @@ kubectl logs -f <pod-name> -n <namespace>
 2. How ELK works in OSO ?
 3.  
 
+#### Questions
+1. Circular dependency in spring boot
+- A circular dependency occurs when two or more beans directly or indirectly depend on each other. This creates a cyclic reference, preventing Spring Boot from resolving the dependencies correctly.   
+```java
+@Service
+public class A {
+    @Autowired
+    private B b;
+}
 
+@Service
+public class B {
+    @Autowired
+    private A a;
+}
+```
+- Fix by using lazy initialization or by using a third bean that can be used by both A and B .
+```java
+@Service
+@Lazy
+public class B {
+    @Autowired
+    private A a;
+}
+```
+- Constructor injection
+```java
+@Service
+public class A {
+    private final B b;
+
+    @Autowired
+    public A(B b) {
+        this.b = b;
+    }
+}
+```
 #### Intro
 - I have been working at Comcast since 2022, where I have contributed to two major projects: Acceleration and OSO.
 **Acceleration** is an in-house tool designed to speed up the processing time for customer orders across various form types such as MetroE, Carrier, and Active Core. We developed the Acceleration project using four microservices: Centralized MS, FormService, CenturyService, and one for the UI. The tech stack includes Java, Spring Boot, microservice architecture, and SQL. For CI/CD, we utilized Jenkins/GitHub Action/Concourse. The project was completed in one year and is currently managed by the support team.

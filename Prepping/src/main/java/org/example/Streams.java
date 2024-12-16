@@ -91,6 +91,8 @@ public class Streams {
         System.out.println(lst.stream().map(a1->a1*2).collect(Collectors.toList()));
 
         lst.stream().map(a2->a2*2).forEach(System.out::println);
+        String[] str={"a","s","a","c","b","c","a","s","g"};
+        HashMap<String,Integer> map=Arrays.stream(str).filter(e->e!=null).collect(Collectors.groupingBy(e->e,Collectors));
 
 
         List<Integer> lstsort=lst.stream().sorted().skip(2).collect(Collectors.toList());
