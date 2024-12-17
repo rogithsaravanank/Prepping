@@ -123,7 +123,9 @@ public static void swapNumbers(int a, int b) {
 
 #### Caching in JPA
 - **1st Level Cache**
+* This is a entry level cache that is maintained by the entitymanager. It is a transactional cache that is cleared after each transaction.
 - **2nd Level Cache**
+* This secondary cache maintained by EntitymanagerFactory . It is shared or L2 cache which exists until it cleared. Created by using persistance.xml
 
 #### Multithreading
 - **Real-time experience in code**
@@ -285,9 +287,28 @@ Use the -f flag to tail the logs in real-time:
 ```
 kubectl logs -f <pod-name> -n <namespace>
 ```
-8. More kubernetes (auto scaling, configuring memory, ports, etc)
+8. Kubernetes 
+
+* Auto Scaling: 
+- Horizontal Pod Autoscaler(new pods) 
+- Vertical Pod Autoscaler(increase size of existing pod)
+
+* Configuring Memory: 
+- define resource requests and limits in the Pod's container specification
+
+* Ports:  
+- Container port: The port that the application within the container is listening on.
+- Service port: The port that the Service exposes to access the Pods.
+- NodePort (Optional): Exposes the Service on a static port on each Node's IP
+
 9. AWS services which you use and explain them
+
 10. How CI/CD flow works in our application, code to deployment to aws.
+- We use AWS EKS - Kubernetes service that simplifies running Kubernetes on AWS.
+- It handles the complexity of managing the Kubernetes control plane, allowing you to focus on deploying and managing your applications.
+- We interact with the EKS cluster using the kubectl command-line tool or the AWS Management Console.
+-  EKS provides automated scaling and self-healing capabilities, making it ideal for applications that require high availability and fault tolerance.   
+
 
 #### UPS
 

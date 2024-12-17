@@ -11,55 +11,96 @@ import java.util.function.Function;
 // import java.util.List;
 import java.util.stream.*;
 
+import javax.swing.text.html.parser.Entity;
+
 public class Streams {
 
     final int testFinal = 10;
     static int testStatic = 20;
 
-    //    if the method is private then it is not accessible in the subclass
+    // if the method is private then it is not accessible in the subclass
     public Streams() {
         System.out.println("Streams class constructor");
     }
 
     public Streams(int a) {
-        
-       
-        System.out.println("Streams class int constructor"+testStatic);
+
+        System.out.println("Streams class int constructor" + testStatic);
 
     }
-    static{
+
+    static {
         System.out.println("static block");
     }
 
     public static void main(String[] args) {
-        
-        System.out.println("Welcome to Streams class"+testStatic);
+
+        System.out.println("Welcome to Streams class" + testStatic);
         Streams streams = new Streams(3);
         // streams.methods();
         streams.practice();
-       int[] banned = {1,6,5};
-       int n = 5; int maxSum = 6;
+        int[] banned = { 1, 6, 5 };
+        int n = 5;
+        int maxSum = 6;
         // System.out.println(streams.maxCount(banned,n,maxSum));
-            }
-        
-        
+    }
+
     public int maxCount(int[] banned, int n, int maxSum) {
 
-            Set<Integer> set=Arrays.stream(banned).boxed().collect(Collectors.toSet());
-            int sum=0;
-            int temp=0;
-            System.out.println("outside loop"+n);
-            for(int i=2;i<n;i++){
-                System.out.println("inside loop");
-                if(set.contains(i)) {System.out.println("set has the "+ i);} else sum+=i;
-               
-                temp=i;
-            }
-            if(sum<=maxSum) return temp;
-            else return 0;
-            
+        Set<Integer> set = Arrays.stream(banned).boxed().collect(Collectors.toSet());
+        int sum = 0;
+        int temp = 0;
+        System.out.println("outside loop" + n);
+        for (int i = 2; i < n; i++) {
+            System.out.println("inside loop");
+            if (set.contains(i)) {
+                System.out.println("set has the " + i);
+            } else
+                sum += i;
+
+            temp = i;
         }
-    
+        if (sum <= maxSum)
+            return temp;
+        else
+            return 0;
+
+    }
+
+    public void practice1() {
+        List<Integer> lst = Arrays.asList(1, 2, 3, 4);
+        System.out.println(lst);
+        String[] str = { "a", "s", "a", "c", "b", "c", "a", "s", "g", null };
+        List<String> str1 = Arrays.asList("a", "s", "a", "c", "b", "c", "a", "s", "g", null);
+        Map<String, Long> map = Arrays.stream(str).filter(e -> e != null)
+                .collect(Collectors.groupingBy(e -> e, Collectors.counting()));
+        Map<String, Long> map1 = str1.stream().filter(e -> e != null)
+                .collect(Collectors.groupingBy(t -> t, Collectors.counting()));
+        List<String> list = Arrays.asList("a", "b", "c", "d");
+        Map<String, String> map2 = list.stream().collect(Collectors.toMap(Function.identity(), Function.identity()));
+        System.out.println(map2);
+        ArrayList<List<Integer>> flat = new ArrayList<>();
+        flat.add(Arrays.asList(1, 2));
+        flat.add(Arrays.asList(3, 2, 4));
+        flat.add(Arrays.asList(5, 6));
+        List<Integer> flatList = flat.stream().flatMap(list1 -> list1.stream()).distinct().collect(Collectors.toList());
+        List<Integer> flatList1 = flat.stream().flatMap(Collection::stream).distinct().collect(Collectors.toList());
+        int[] net = { 1, 2, 4, 5, 6, 3, 2, 3, 5, 6, 6 };
+        List<Integer> netList = Arrays.stream(net).boxed().distinct().sorted(Comparator.reverseOrder())
+                .collect(Collectors.toList());
+        // Optional<String> result =Optional.of();
+        String result1 = str1.stream().filter(e -> e != null).collect(Collectors.joining("-"));
+        Optional<String> optional = Optional.ofNullable(null);
+        String result = optional.orElse("Default Value");
+        System.out.println(result);
+        List<Integer> streamList = IntStream.rangeClosed(1, 24).boxed().filter(a -> a % 2 != 0)
+                .collect(Collectors.toList());
+        int temp = streamList.stream().mapToInt(Integer::intValue).sum();
+        System.out.println(temp);
+        Optional<Integer> a = lst.stream().reduce(Integer::max);
+        System.out.println(a);
+
+    }
 
     public static void practice(){
         System.out.println("Practice method");
@@ -81,7 +122,7 @@ public class Streams {
 
        List<Integer> res= Arrays.stream(numbers).sorted().collect(Collectors.toList());
        System.out.println(res);
-       List<Integer> lst=flat.stream().flatMap(list->list.stream()).collect(Collectors.toList());
+       List<Integer> lst=flat.stream().flatMap(Collection::stream).collect(Collectors.toList());
         // flat.stream().flatMap().reduce(0,Integer::sum);
         System.out.println(lst+" NOw");
         Collections.sort(lst);
@@ -92,7 +133,9 @@ public class Streams {
 
         lst.stream().map(a2->a2*2).forEach(System.out::println);
         String[] str={"a","s","a","c","b","c","a","s","g"};
-        HashMap<String,Integer> map=Arrays.stream(str).filter(e->e!=null).collect(Collectors.groupingBy(e->e,Collectors));
+        Map<String,Long> map=Arrays.stream(str).filter(e->e!=null).collect(Collectors.groupingBy(,Collectors.counting()));
+
+
 
 
         List<Integer> lstsort=lst.stream().sorted().skip(2).collect(Collectors.toList());
@@ -106,6 +149,11 @@ System.out.println(lstsort2);
     System.out.println(r);
    System.out.println( Arrays.stream(numbers).filter(i->i%2==0).map(i->i*i).reduce(0,Integer::sum));
 
+   List<String> str1=Arrays.asList("a","s","a","c","b","c","a","s","g",null);
+
+   Map<String,Long> map=Arrays.stream(str).filter(e->e!=null).collect(Collectors.groupingBy(e->e,Collectors.counting()));
+
+   String a=str1.stream().reduce(null, String::Join);
 
    //Find list of unique characters present in all strings in Java:
 
@@ -203,7 +251,7 @@ List<Integer> missList=IntStream.rangeClosed(1, 1000).filter(num->!arraySet.cont
 
         // System.out.println("List of foreachlist-" + foreachlist);
 
-        //reduce
+        // reduce
         List<Integer> flatreduce = Arrays.asList(1, 2, 3, 4, 5);
 
         Integer rlist = flatreduce.stream().reduce(0, Integer::sum);
@@ -214,12 +262,12 @@ List<Integer> missList=IntStream.rangeClosed(1, 1000).filter(num->!arraySet.cont
         Optional<Integer> mini = flatreduce.stream().min(Comparator.naturalOrder());
         System.out.println("\n List of maxi-" + maxi + " mini " + mini);
 
-        //skip
+        // skip
 
         Stream<Integer> skippedstream = flatreduce.stream().skip(3);
         skippedstream.forEach(System.out::println);
 
-        //distinct limit
+        // distinct limit
 
         List dlist = fruit.stream()
                 .distinct()
@@ -228,35 +276,34 @@ List<Integer> missList=IntStream.rangeClosed(1, 1000).filter(num->!arraySet.cont
 
         System.out.println("List of dlist-" + dlist);
 
-
-        //.parallel() — Concurrent execution
-
+        // .parallel() — Concurrent execution
 
     }
-    public static void ques(){
+
+    public static void ques() {
         String s = "120.sid.0.1";
-        
-        String[] arr = s.split("\\.");  // Escape the dot
-        
+
+        String[] arr = s.split("\\."); // Escape the dot
+
         if (arr.length == 4) {
             String verifiedString = Arrays.stream(arr)
-                .filter(x -> {
-                    try {
-                        Integer.parseInt(x);
-                        return true;
-                    } catch (NumberFormatException e) {
-                        return false;
-                    }
-                })
-                .filter(x -> {
-                    int num = Integer.parseInt(x);
-                    return num > 0 && num <= 255;
-                })
-                .collect(Collectors.joining("."));
-            
+                    .filter(x -> {
+                        try {
+                            Integer.parseInt(x);
+                            return true;
+                        } catch (NumberFormatException e) {
+                            return false;
+                        }
+                    })
+                    .filter(x -> {
+                        int num = Integer.parseInt(x);
+                        return num > 0 && num <= 255;
+                    })
+                    .collect(Collectors.joining("."));
+
             System.out.println(verifiedString);
         } else {
             System.out.println("Invalid input string.");
         }
-}
+    }
 }
