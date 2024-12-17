@@ -84,10 +84,14 @@ public class MyArrayList<E> {
 
 #### Convert a List into a Map via Streams
 ```java
-list.stream().toMap(Function.identity(), Function.identity());
+list.stream().Collectors.toMap(Function.identity(), Function.identity());
 ```
 
 #### Difference between `@Repository`, `@Service`, and `@Component`
+- Annotation	Purpose
+- @Component	General-purpose component
+- @Service	Business logic layer
+- @Repository	Data access layer
 
 #### Garbage Collector in Java
 - **Types:** Garbage First (GC), Z Garbage (experimental, used when lower pause time is needed)

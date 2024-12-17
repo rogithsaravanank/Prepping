@@ -49,6 +49,13 @@
 
 * **@Data:** Reduces boilerplate code by automatically generating getters, setters, `toString`, `equals`, and `hashCode` methods for a class (useful for POJOs).
 
+**Aspect Oriented Programming**
+* **@Aspect:** Marks a class as an aspect, containing advice (code to be executed at specific points)
+* **@Pointcut:** Specifies a pointcut (a method or a set of methods) to which
+* **@Before:** Specifies a method to be executed before a pointcut
+* **@After:** Specifies a method to be executed after a pointcut , remove the transaction id
+* **@Around:** Specifies a method to be executed around a pointcut , allowing for full control over the execution flow , generate the transaction id 
+
 **Other Useful Annotations:**
 
 * **@NoArgsConstructor:** Generates a no-argument constructor for a class.
@@ -58,7 +65,6 @@
 * **@Configuration:** Marks a class as a configuration class with bean definitions.
 * **@EnableWebSecurity:** Enables Spring Security for web applications.
 * **@Order(1):** Specifies the order in which beans are initialized.
-* **@Aspect:** Marks a class as an aspect, containing advice (code to be executed at specific points)
 * **@Operation (with @Swagger):** Provides descriptive information about operations in API documentation.
 * **@Tag (with @Swagger):** Tags a class as an application or controller for API documentation.
 * **@CrossOrigin:** Enables Cross-Origin Resource Sharing (CORS) for handling requests from different origins.
