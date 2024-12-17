@@ -38,6 +38,34 @@ public class MyArrayList<E> {
 
 #### CompletableFuture
 - **Async execution of a method**
+- CompletableFuture provides more advanced features for asynchronous programming, such as combining multiple asynchronous operations, handling exceptions, and timeouts.
+```java
+package org.example;
+
+import java.util.concurrent.CompletableFuture;
+
+public class  CompletableFuturePractice{
+    public static void main(String[] args) {
+        // Start a task to clean the room
+        CompletableFuture<Void> cleanRoom = CompletableFuture.runAsync(() -> {
+            System.out.println("Cleaning the room...");
+            try {
+                Thread.sleep(2000); // Simulate time taken to clean the room
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+            System.out.println("Room is clean!");
+        });
+
+        // Do other things while the room is being cleaned
+        System.out.println("Playing outside...");
+
+        // Wait for the room to be cleaned before doing the next task
+        cleanRoom.join();
+        System.out.println("Now making a sandwich.");
+    }
+}
+```
 
 #### ArrayList
 - **Default capacity:** 10
@@ -168,6 +196,34 @@ public void doSomething() {
 - Simple POJOs or DTOs:
 - Objects that don't interact with Spring components or features.
 
+#### Cyclic Dependancy
+- Cyclic dependencies are a serious issue in Spring Boot applications. The best approach is always to refactor your code to eliminate the cycle. Setter injection and @Lazy are workarounds, but they should be used sparingly and with caution. Always aim for clean, decoupled code.
+- Below is the example of cyclic dependency
+```java
+@Service
+public class ServiceA {
+
+    private final ServiceB serviceB;
+
+    public ServiceA(ServiceB serviceB) { // Constructor injection
+        this.serviceB = serviceB;
+    }
+
+    // ... methods of ServiceA
+}
+
+@Service
+public class ServiceB {
+
+    private final ServiceA serviceA;
+
+    public ServiceB(ServiceA serviceA) { // Constructor injection
+        this.serviceA = serviceA;
+    }
+
+    // ... methods of ServiceB
+}
+```
 
 #### Tavant (Bangalore) Round 2:
 
@@ -432,14 +488,21 @@ public class A {
     }
 }
 ```
+
 #### Intro
 - I have been working at Comcast since 2022, where I have contributed to two major projects: Acceleration and OSO.
 **Acceleration** is an in-house tool designed to speed up the processing time for customer orders across various form types such as MetroE, Carrier, and Active Core. We developed the Acceleration project using four microservices: Centralized MS, FormService, CenturyService, and one for the UI. The tech stack includes Java, Spring Boot, microservice architecture, and SQL. For CI/CD, we utilized Jenkins/GitHub Action/Concourse. The project was completed in one year and is currently managed by the support team.
 **OSO (Order Orchestration Service)** was initially developed by Amdocs and is now being acquired and further developed by Comcast. OSO manages the entire workflow of customer orders, providing notifications in BPM notation on the UI. We use the Activity framework (the predecessor of Flowable) for this purpose. The backend development involves technologies like Java, Spring Boot, microservices, SQL, AWS, Docker containerization, and Kubernetes for container orchestration. I am primarily working on five microservices for this project. For code quality measurement, we use SonarQube.
-
 - Developed and maintained securities trading and corporate action processes, ensuring compliance with SWIFT ISO 15022 & 20022 standards.
-
 - Sample messages for each MT564 -corporate action notification tag based format
 Sese 23 - securities settlement transaction xml based format.
+
+#### How CI/CD flow works in our application, code to deployment to aws.
+- We use AWS EKS (Amazon ELastic Kubernetes Service)- Kubernetes service that simplifies running Kubernetes on AWS.
+- It handles the complexity of managing the Kubernetes control plane, allowing you to focus on deploying and managing your applications.
+- We interact with the EKS cluster using the kubectl command-line tool or the AWS Management Console.
+- EKS provides automated scaling and self-healing capabilities, making it ideal for applications that require high availability and fault tolerance.   
+
+
 
 
