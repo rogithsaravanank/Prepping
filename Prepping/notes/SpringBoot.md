@@ -11,7 +11,8 @@
     * `@ComponentScan`: Scans for components (beans) in the package where the class is located.
     * `@Configuration`: Marks the class as a configuration class.
 * **@RestController:** Marks a class as a REST API controller, handling incoming HTTP requests and responses.
-* **@Autowired:**  It automatically injects dependencies into a class, Injects dependencies into a bean constructor, field, or setter method. Prefer constructor injection for clarity and better control.
+* **@Autowired:**  It automatically injects dependencies into a class, Injects dependencies into a bean constructor, field, or setter method. Prefer constructor injection for clarity and better control. -> https://youtu.be/ET39IFffr24?si=-XKubSkwERj2vvXw ,**Dependency Injection** Instead of objects creating their dependencies themselves, they receive them from an external source.
+* **@Qualifier** or **@Primary** to resolve ambiguity when multiple beans of the same type exist
 * **@Component (including @Service and @Repository):** A generic annotation for Spring beans.
     * `@Service`: Marks a class as a business logic service.
     * `@Repository`: Marks a class for data access logic (repositories).
@@ -83,6 +84,9 @@
 * **@Async**: Marks methods to be executed asynchronously.
 * **@Cacheable**: Enables caching for methods.
 
+
+### Dependancy Injection
+- DI is a design pattern where objects receive their dependencies from external sources rather than creating them themselves. This promotes loose coupling, testability, and maintainability.
 
 ### QueryDSL
 - 1.19.46.00 --> Springboot with mongodb

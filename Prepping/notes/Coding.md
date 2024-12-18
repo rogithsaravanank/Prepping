@@ -202,6 +202,8 @@ This Java program demonstrates how to filter duplicate objects from a list using
 
 ---
 
+## 33. Samsung [Ques](coding/Samsung.md)
+
 ## Stream problems examples  [Code](coding/Stream1.md)
 
 1. **Sum of squares of all even numbers in Java:**

@@ -87,14 +87,14 @@
 ## Static keyword
 - Static variables are stored in separte place. It can be used by having class name as object.
 - Static block will be called only once and it will always be called first.
-- if object is not created it will not call static block(use Class.forName(classname) to only intialize a class without create an object)
+- If object is not created it will not call static block(use Class.forName(classname) to only intialize a class without create an object)
 - We cannot use instance varibles in Static methods.
 
 ## Encapsulation
 - Intergrating data(variables) and methods into a single entity is called as encapsultaion.
 
-## Getterss and Setters
-- Normally when we create a instacne variable in private then it will be accessible only within the class to make it editable and gettable outside the class is were the getters and setters comes in to the picture.
+## Getters and Setters
+- Normally when we create a instance variable in private then it will be accessible only within the class to make it editable and gettable outside the class is were the getters and setters comes in to the picture.
 
 ## this keyword
 - It represents the current object.
@@ -115,7 +115,7 @@
 ## Naming Convention
 - Class, Interface --> Student
 - Variable and Methods --> CamelCase
-- Constants --> PIE
+- Constants --> PIComparator<String> cmp = (i, j) -> Integer.compare(i.length(), j.length());Comparator<String> cmp = (i, j) -> Integer.compare(i.length(), j.length());
 
 ## Annoymous Object
 - new Student().getMarks();
@@ -269,23 +269,83 @@
 - Comparator class
  
 ## Imporant
- Comparator cmp= new Comparator<String>() {
-            public int compare(String i,String j){
-                // if(i.length()>j.length())
-                //     return 1;
-                // else 
-                //     return -1;
+- You've shown several ways to define a `Comparator` in Java, specifically for comparing strings based on their lengths. Let's break down each version and explain the differences:
 
-                return (i.length()>j.length()) ? 1:-1;
-            }
-        };
+**1. Anonymous Inner Class (Older Style):**
 
-    Comparator<String> cmp= (String i,String j) -> (i.length()>j.length()) ? 1:-1;
+```java
+Comparator cmp = new Comparator() {
+    public int compare(String i, String j) {
+        return (i.length() > j.length()) ? 1 : -1;
+    }
+};
+```
 
-    Comparator<String> cmp= (i,j) -> (i.length()>j.length()) ? 1:-1;
+*   This is the traditional way of creating a `Comparator` before Java 8.
+*   It defines an anonymous inner class that implements the `Comparator` interface.
+*   It requires explicitly defining the `compare()` method.
+*   **Type Safety Issue:** Notice that the `Comparator` interface is used without a type parameter (i.e. `Comparator<String>`). This means that the `compare()` method receives `Object` types as arguments. You are relying on implicit casting to `String` within the compare method. This can lead to `ClassCastException` at runtime if you accidentally pass objects of different types to the comparator.
 
-    //Collections.sort(lst,cmp);
-     Collections.sort(lst,(i,j) -> (i.length()>j.length()) ? 1:-1);
+**2. Lambda Expression (Explicit Types):**
+
+```java
+Comparator<String> cmp = (String i, String j) -> (i.length() > j.length()) ? 1 : -1;
+```
+
+*   This is a more concise way to define a `Comparator` using a lambda expression (introduced in Java 8).
+*   It uses the `Comparator<String>` interface, which provides type safety. The compiler knows that the lambda expression should accept and compare `String` objects.
+*   The lambda expression `(String i, String j) -> (i.length() > j.length()) ? 1 : -1` implements the `compare()` method.
+
+**3. Lambda Expression (Type Inference):**
+
+```java
+Comparator<String> cmp = (i, j) -> (i.length() > j.length()) ? 1 : -1;
+```
+
+*   This is an even more concise version of the lambda expression.
+*   The compiler can infer the types of the parameters `i` and `j` from the `Comparator<String>` interface, so you don't need to explicitly specify `(String i, String j)`. This makes the code cleaner.
+
+**4. In-Place Lambda Expression with `Collections.sort()`:**
+
+```java
+Collections.sort(lst, (i, j) -> (i.length() > j.length()) ? 1 : -1);
+```
+
+*   This is the most common and preferred way to use a `Comparator` with `Collections.sort()`.
+*   The lambda expression is passed directly as an argument to the `sort()` method, eliminating the need to create a separate `Comparator` variable. This makes the code very concise and readable.
+
+**Key Differences and Best Practices:**
+
+*   **Type Safety:** The lambda expression versions (`Comparator<String>`) are type-safe, preventing potential `ClassCastException` at runtime. The anonymous inner class version without type parameter is not type-safe.
+*   **Conciseness:** Lambda expressions are much more concise than anonymous inner classes.
+*   **Readability:** In-place lambda expressions with `Collections.sort()` are often the most readable, especially for simple comparisons.
+
+**Important Note about the Comparison Logic:**
+
+In all your provided examples, the comparison logic is:
+
+```java
+(i.length() > j.length()) ? 1 : -1;
+```
+
+- This has a subtle flaw. It only checks if `i` is *longer* than `j`. If they are the *same length*, it returns -1, meaning `j` is considered "less than" `i`, which is incorrect.
+
+- A correct implementation should handle all three cases:
+
+*   `i.length() > j.length()`: Return 1 (i is greater)
+*   `i.length() < j.length()`: Return -1 (i is less)
+*   `i.length() == j.length()`: Return 0 (i and j are equal)
+
+- Here's the corrected lambda expression:
+
+```java
+Collections.sort(lst, (i, j) -> Integer.compare(i.length(), j.length()));
+//or
+Collections.sort(lst, Comparator.comparingInt(String::length));
+```
+
+- Using `Integer.compare()` handles all three cases correctly and is generally the recommended approach for comparing integers. The second way is even more concise using method reference.
+
 
 ## Streams
 - Streams can be used only once 
