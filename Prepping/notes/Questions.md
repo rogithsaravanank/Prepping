@@ -501,7 +501,16 @@ Sese 23 - securities settlement transaction xml based format.
 - We use AWS EKS (Amazon ELastic Kubernetes Service)- Kubernetes service that simplifies running Kubernetes on AWS.
 - It handles the complexity of managing the Kubernetes control plane, allowing you to focus on deploying and managing your applications.
 - We interact with the EKS cluster using the kubectl command-line tool or the AWS Management Console.
-- EKS provides automated scaling and self-healing capabilities, making it ideal for applications that require high availability and fault tolerance.   
+- EKS provides automated scaling and self-healing capabilities, making it ideal for applications that require high availability and fault tolerance.
+
+#### Steps to deploy the application to AWS EKS
+- Write code.
+- Create Dockerfile.
+- Build Docker image.
+- Push image to ECR(ECR stands for Elastic Container Registry(Docker image Storage). It's a fully managed Docker container registry provided by Amazon Web Services (AWS)).
+- Create Kubernetes YAML files (Deployment and Service).
+- Apply YAML files to EKS using kubectl.
+- Verify deployment.   
 
 
 

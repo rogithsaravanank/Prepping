@@ -11,7 +11,7 @@
     * `@ComponentScan`: Scans for components (beans) in the package where the class is located.
     * `@Configuration`: Marks the class as a configuration class.
 * **@RestController:** Marks a class as a REST API controller, handling incoming HTTP requests and responses.
-* **@Autowired:** Injects dependencies into a bean constructor, field, or setter method. Prefer constructor injection for clarity and better control.
+* **@Autowired:**  It automatically injects dependencies into a class, Injects dependencies into a bean constructor, field, or setter method. Prefer constructor injection for clarity and better control.
 * **@Component (including @Service and @Repository):** A generic annotation for Spring beans.
     * `@Service`: Marks a class as a business logic service.
     * `@Repository`: Marks a class for data access logic (repositories).
