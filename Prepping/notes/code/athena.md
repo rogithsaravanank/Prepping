@@ -21,6 +21,54 @@ You are given an array `nums` containing `n + 1` integers where each integer is 
 3. The runtime complexity must be less than `O(n^2)`.
 
 ---
+### Given a set of coin denominations and a target amount, find the minimum number of coins that sum up to the target amount
+```
+import java.util.Arrays;
+
+public class CoinChange {
+
+    public int coinChange(int[] coins, int amount) {
+        int[] dp = new int[amount + 1];
+        Arrays.fill(dp, amount + 1); // Initialize with a value greater than the maximum possible result
+        dp[0] = 0;
+
+        for (int i = 1; i <= amount; i++) {
+            for (int coin : coins) {
+                if (coin <= i) {
+                    dp[i] = Math.min(dp[i], dp[i - coin] + 1);
+                }
+            }
+        }
+
+        return dp[amount] > amount ? -1 : dp[amount]; // Return -1 if no solution is found
+    }
+
+    public static void main(String[] args) {
+        CoinChange cc = new CoinChange();
+        int[] coins = {1, 2, 5};
+        int amount = 11;
+        int minCoins = cc.coinChange(coins, amount);
+        System.out.println("Minimum coins: " + minCoins); // Output: 3
+
+        int amount2 = 2;
+        int[] coins2 = {3, 5};
+        int minCoins2 = cc.coinChange(coins2, amount2);
+        System.out.println("Minimum coins: " + minCoins2); // Output: -1
+
+        int amount3 = 0;
+        int[] coins3 = {1,2,5};
+        int minCoins3 = cc.coinChange(coins3, amount3);
+        System.out.println("Minimum coins: " + minCoins3); // Output: 0
+
+        int amount4 = 1;
+        int[] coins4 = {1};
+        int minCoins4 = cc.coinChange(coins4, amount4);
+        System.out.println("Minimum coins: " + minCoins4); // Output: 1
+    }
+}
+```
+
+---
 
 ### **Approaches**
 
