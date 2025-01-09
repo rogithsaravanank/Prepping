@@ -43,6 +43,9 @@ These are potential interview questions categorized by level and topic, based on
 
 *   Find the second highest salary from a given list of employees (using Java streams).
 *   Find the second highest salary (using an SQL query).
+  ```
+select * from employee order by salary desc OFFSET 1 FETCH FIRST 1 ROW ONLY 
+  ```
 
 ### Design Patterns
 
