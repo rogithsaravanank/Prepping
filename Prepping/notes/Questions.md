@@ -1,6 +1,6 @@
 ### Questions
 
-- [Questions](Prepping/notes/Questions_Companies.md)
+- [Questions](Questions_Companies.md)
 
 #### Create a custom data structure
 ```java
