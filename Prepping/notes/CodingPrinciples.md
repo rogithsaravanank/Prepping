@@ -4,7 +4,7 @@
 - Single Responsibility Principle
 - Open/ Closed Principle
 - Liskov's Substituition Principle
-- Interface Segrgation Principle
+- Interface Segrigation Principle
 - Dependancy Inversion Principle
 
 ### Single Responsibility Principle
