@@ -12,6 +12,7 @@
 - [SpringMVC](Prepping/notes/SpringMVC.md)
 - [SpringBoot](Prepping/notes/SpringBoot.md)
 - [AOP](Prepping/notes/AOP.md)
+- [Security](Prepping/notes/Security.md)
 - [GIT](Prepping/notes/Git.md)
 - [CI/CD](Prepping/notes/CICD.md)
 - [Workpalce Communication](Prepping/notes/Communication.md)
