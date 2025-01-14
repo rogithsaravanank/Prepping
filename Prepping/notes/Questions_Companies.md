@@ -1073,6 +1073,7 @@ These are potential interview questions for Oracle, categorized by level.
 
 8. Array Sorting:
  Implement sorting algorithms like bubble sort, merge sort, or quicksort.
+- Arrays.sort(). It uses a highly optimized dual-pivot quicksort algorithm and is usually the most efficient choice.
 
 9. Binary Search:
  Implement a binary search algorithm to find an element in a sorted array.
