@@ -1073,7 +1073,11 @@ These are potential interview questions for Oracle, categorized by level.
 
 8. Array Sorting:
  Implement sorting algorithms like bubble sort, merge sort, or quicksort.
+
 - Arrays.sort(). It uses a highly optimized dual-pivot quicksort algorithm and is usually the most efficient choice.
+- Merge Sort: Use merge sort if you need a stable sort (elements with equal values maintain their relative order) or if you need guaranteed O(n log n) time complexity in all cases.
+- Quick Sort: Quick sort is often the fastest in practice, but its worst-case time complexity is O(n^2). Use it when you need high performance and don't need a stable sort.
+- Bubble Sort: Avoid bubble sort for anything other than very small datasets or educational purposes. It's extremely inefficient for larger datasets.
 
 9. Binary Search:
  Implement a binary search algorithm to find an element in a sorted array.
