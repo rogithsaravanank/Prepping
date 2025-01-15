@@ -305,7 +305,7 @@ This Java program demonstrates how to filter duplicate objects from a list using
         .boxed()
         .collect(Collectors.toList());
     ```
-## Coding Questions: [Solution](coding/Basic_Programs.md)
+## Coding Questions: [Solution](Basic_Programs.md)
 ```
 1. Reverse a String:
  Write a Java program to reverse a given string.
