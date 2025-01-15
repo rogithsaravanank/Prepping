@@ -252,6 +252,39 @@ public class ServiceB {
 
     }
 ```
+```
+private static void longestSubstringNonRepeatingChar(String str) {
+
+                int i=0,j=0;
+                int n=str.length();
+
+                int maxLen=0;
+                int longestStart=0,longestEnd=0;
+
+                Set<Character> set=new HashSet<>();
+
+                while(i<n&&j<n){
+
+                if(!set.contains(str.charAt(j))){
+                    set.add(str.charAt(j));
+                    j++;
+                    if(j-i>maxLen){
+                        maxLen=j-i;
+                        longestStart=i;
+                        longestEnd=j;
+                    }
+                }
+                else{
+                    set.remove(str.charAt(i));
+                    i++;
+                }
+                
+                }
+
+                System.out.println(str.substring(longestStart,longestEnd));
+
+            }
+```
 5. Spring boot questions (scope and how to handle multithreading)
 ## Spring Boot: Scope and Multithreading
 
