@@ -81,7 +81,25 @@
 By understanding these patterns and their applications, you can make informed decisions about how to design your software effectively.
 
 
-# Commonly Used Java Design Patterns
+## ACID
+
+### Atomicity - all or nothing
+
+### Consistency - Data should be consistent across all the datasets
+
+### Isolation - Isolating the failure to prevent a cascading effect of failures
+
+### Durability - Once transaction is committed the changes are permanent even in the time of system failures
+
+## CAP Theorem - Always has Availabilty and Partial tolerance to sacrifice consistency
+
+### Consistency
+
+### Availability
+
+### Partial Tolerance 
+
+## Commonly Used Java Design Patterns
 
 As a Java developer, here are the most commonly used design patterns, categorized by their types:
 
