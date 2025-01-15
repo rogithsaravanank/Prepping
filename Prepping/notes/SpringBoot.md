@@ -76,8 +76,8 @@
 * **@Scope ("prototype/session/request/singleton")**: Defines the scope of a bean (singleton by default, prototype for each request, etc.).
 * **@RequestParam**: Binds request parameters to method parameters.
 * **@PathVariable**: Binds URI template variables to method parameters.
-* **@RequestBody**: Binds the HTTP request body to a method parameter.
-* **@ResponseBody**: Writes the return value of a method directly to the HTTP response body.
+* **@RequestBody**: Binds the HTTP request body to a method parameter.(Deserialise the request)
+* **@ResponseBody**: Writes the return value of a method directly to the HTTP response body.(Serialise the response)
 * **@PreAuthorize**: Secures methods with Spring Security expressions.
 * **@PostAuthorize**: Secures method return values with Spring Security expressions.
 * **@Scheduled**: Schedules methods to be executed at fixed intervals or specific times.
