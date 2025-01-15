@@ -1,6 +1,7 @@
 ```
 package com.example.interview;
 
+import java.lang.StackWalker.Option;
 import java.util.*;
 import java.util.function.Function;
 import java.util.stream.Collectors;
@@ -74,7 +75,7 @@ public class Main {
 
         // Binary Search: Implement a binary search algorithm to find an element in a
         // sorted array.
-        Arrays.sort(arr);
+        
         binarySearch(arr, 5);
 
         // Duplicate Elements in an Array:Find and print duplicate elements in an array.
@@ -148,12 +149,50 @@ public class Main {
 
         getArr1();
 
+        longestSubstringNonRepeatingChar("abcabcbb");
+        
+        // Write a single statement using java to fetch 3 highest elements from an unsorted array.
 
+        int[] arr1 = { 1, 9, 3, 4, 5, 6, 2, 2, 4 };
+        System.out.println(Arrays.toString(arr1));
 
+        List<Integer> lst1= Arrays.stream(arr1).boxed().sorted(Comparator.reverseOrder()).limit(3).collect(Collectors.toList());
+        System.out.println(lst1);
+            }
+        
+            private static void longestSubstringNonRepeatingChar(String str) {
 
-    }
+                int i=0,j=0;
+                int n=str.length();
 
-    private static void getArr1() {
+                int maxLen=0;
+                int longestStart=0,longestEnd=0;
+
+                Set<Character> set=new HashSet<>();
+
+                while(i<n&&j<n){
+
+                if(!set.contains(str.charAt(j))){
+                    set.add(str.charAt(j));
+                    j++;
+                    if(j-i>maxLen){
+                        maxLen=j-i;
+                        longestStart=i;
+                        longestEnd=j;
+                    }
+                }
+                else{
+                    set.remove(str.charAt(i));
+                    i++;
+                }
+                
+                }
+
+                System.out.println(str.substring(longestStart,longestEnd));
+
+            }
+        
+            private static void getArr1() {
         // first more than one character
         String res="rogithsaravanank";
 
@@ -312,7 +351,7 @@ public class Main {
 
     private static void binarySearch(int[] arr, int target) {
         // int index = Arrays.binarySearch(arr, target);
-
+        Arrays.sort(arr);
         int left = 0;
         int right = arr.length - 1;
 
