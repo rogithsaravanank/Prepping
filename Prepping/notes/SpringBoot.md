@@ -11,6 +11,7 @@
     * `@ComponentScan`: Scans for components (beans) in the package where the class is located.
     * `@Configuration`: Marks the class as a configuration class.
 * **@RestController:** Marks a class as a REST API controller, handling incoming HTTP requests and responses.
+* **@EnableEurekaClient:** Used to refer the circuit breaker(Resilience4j).
 * **@Autowired:**  It automatically injects dependencies into a class, Injects dependencies into a bean constructor, field, or setter method. Prefer constructor injection for clarity and better control. -> https://youtu.be/ET39IFffr24?si=-XKubSkwERj2vvXw ,**Dependency Injection** Instead of objects creating their dependencies themselves, they receive them from an external source.
 * **@Qualifier** or **@Primary** to resolve ambiguity when multiple beans of the same type exist
 * **@Component (including @Service and @Repository):** A generic annotation for Spring beans.
