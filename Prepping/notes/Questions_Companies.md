@@ -1012,7 +1012,7 @@ These are potential interview questions for Oracle, categorized by level.
 *   What are Docker and Kubernetes used for?
 *   What do you know about Jenkins?
 
-## Level 2
+### Level 2
 
 ### About Project
 
@@ -1052,7 +1052,7 @@ These are potential interview questions for Oracle, categorized by level.
 *   Do you follow Agile methodologies?
 
 
-# Java Interview Preparation for Schindler Electric
+## Java Interview Preparation for Schindler Electric
 
 This document outlines potential topics and questions you might encounter during a Java interview at Schindler Electric.
 
@@ -1112,5 +1112,42 @@ Apart from technical expertise, your problem-solving and teamwork skills will al
 *   "Describe a situation where you had to learn a new technology quickly—how did you approach it?"
 *   "Have you mentored junior developers? How did you help them adopt Java 8 features effectively?"
 *   "Can you recall a time when you identified a performance bottleneck in a Java application and how you resolved it?"
+
+## Java Interview Questions (Level 1)
+
+This document outlines potential Java interview questions, categorized by topic.
+
+### About Project
+
+*   Explain about your project and the tech stack you are using.
+*   What are your roles and responsibilities in your team?
+
+### Core Java
+
+*   How many string objects are created when you create two different objects with the same value?
+*   What is the contract between `equals()` and `hashCode()` methods in Java?
+*   Which versions of Java have you used?
+*   What are the key features in Java 8?
+*   How do you create a singleton object in Java using design patterns (without Spring)?
+*   How does `HashMap` work internally?
+*   What is the use of thread pools in Java?
+
+## Coding
+
+*   Write a program to find the nth value in a Fibonacci series using recursion.
+*   Find the first non-repeating index of a given string.
+*   Find the 3rd highest element in an array/list. What are the different ways of doing it?
+
+## Microservices
+
+*   What are the challenges while setting up microservices?
+*   How do you identify and fix performance issues in a microservices architecture?
+*   How do you reduce the latency in an application?
+*   How do you handle it if a service goes down? How can you prevent this from happening?
+
+## Spring Framework
+
+*   Difference between `@Controller` and `@RestController`.
+*   Can we create multiple objects of the same type in a Spring application?
 
 
