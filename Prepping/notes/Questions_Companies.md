@@ -104,9 +104,6 @@ select * from employee order by salary desc OFFSET 1 FETCH FIRST 1 ROW ONLY
 
 
 
-# KPMG Interview Questions
-
-These are potential interview questions categorized by level and topic.
 
 ## Level 1
 
@@ -1053,5 +1050,67 @@ These are potential interview questions for Oracle, categorized by level.
 *   What kind of role are you looking for?
 *   Where do you see yourself in 5 years?
 *   Do you follow Agile methodologies?
+
+
+# Java Interview Preparation for Schindler Electric
+
+This document outlines potential topics and questions you might encounter during a Java interview at Schindler Electric.
+
+---
+
+## 1. Design Patterns and Architecture
+
+You’ll likely be asked to explain how you design resilient systems:
+
+*   "Can you explain the Circuit Breaker design pattern and its role in system resilience?"
+*   "What are the different states in the Circuit Breaker pattern, and when do they transition?"
+*   "How would you implement a Circuit Breaker using Java and Resilience4j?"
+*   "What are the key trade-offs of using microservices over a monolithic architecture?"
+
+---
+
+## 2. Core Java and Java 8 Features
+
+Expect to dive deep into Java 8 features, especially Streams and functional programming:
+
+*   "How would you dynamically segregate data based on the first two characters of a string using Java 8?"
+*   "Can you explain the difference between `map()` and `flatMap()` in Streams?"
+*   "What are the best practices for using `Optional` to handle null values?"
+*   "How do lambda expressions improve code readability?"
+*   "When should you use parallel streams, and what are the pitfalls?"
+
+---
+
+## 3. Concurrency and Multithreading
+
+With years of experience, you’ll definitely be quizzed on multithreading and asynchronous programming:
+
+*   "How would you implement a multithreaded application using `ExecutorService`?"
+*   "What’s the difference between `volatile` and `synchronized` in Java?"
+*   "How does the `ForkJoinPool` work, and when should you use it?"
+*   "How can `CompletableFuture` be used to handle asynchronous operations in a non-blocking way?"
+
+---
+
+## 4. Database and Data Handling
+
+Schindler Electric deals with large-scale systems, so you can expect SQL and database optimization questions:
+
+*   "Write a SQL query to find the second highest salary in a table."
+*   "How would you optimize a slow-running SQL query?"
+*   "Explain how indexing works in databases and how it improves performance."
+*   "What are ACID properties, and how do they ensure database consistency?"
+
+---
+
+## 5. Behavioral and Problem-Solving Questions
+
+Apart from technical expertise, your problem-solving and teamwork skills will also be tested:
+
+*   "Can you share a challenging project you worked on and how you managed it?"
+*   "How do you prioritize tasks when handling multiple deadlines?"
+*   "Describe a situation where you had to learn a new technology quickly—how did you approach it?"
+*   "Have you mentored junior developers? How did you help them adopt Java 8 features effectively?"
+*   "Can you recall a time when you identified a performance bottleneck in a Java application and how you resolved it?"
 
 
