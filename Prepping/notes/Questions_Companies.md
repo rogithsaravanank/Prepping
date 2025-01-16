@@ -1150,4 +1150,105 @@ This document outlines potential Java interview questions, categorized by topic.
 *   Difference between `@Controller` and `@RestController`.
 *   Can we create multiple objects of the same type in a Spring application?
 
+```
+Here's a list of 50 essential Java and Spring Boot topics that will help you stand out:
+
+1. Java & Spring Boot Core Concepts:
+
+2.Public vs Private Access Modifiers
+
+3.Static Methods vs Instance Methods
+
+4. Primitive Data Types vs Objects
+
+5. Wrapper Classes (e.g.. Integer, String) vs Primitive Types (e.g.. int, String)
+
+6. Array vs List
+
+7.Set vs List
+
+8. Comparable vs Comparator
+
+9. Interface vs Abstract Class
+
+10.Final vs Static Keyword 11.== vs equals() Method
+
+12.Autoboxing vs Unboxing
+
+13.Checked vs Unchecked Exceptions
+
+14. Thread vs Runnable
+
+15.StringBuilder vs StringBuffer
+
+16.Synchronized Methods vs Synchronized Blocks
+
+17.Abstract Class vs Concrete Class
+
+18.Method Overloading vs Method Overriding
+
+19.Serialization vs Deserialization
+
+20.HashMap vs TreeMap
+
+21.ArrayList vs LinkedList
+
+22.HashMap vs Hashtable
+
+23 Enum vs Constant Variables
+
+24.Singleton Pattern vs Prototype Pattern
+
+25.Garbage Collection vs Manual Memory Management
+
+26.Lambda Expressions vs Anonymous Classes
+
+27.Functional Programming vs Object-Oriented Programming
+
+28. Try-Catch Blocks vs Finally Blocks
+
+29.Shallow Copy vs Deep Copy
+
+30.Stack vs Heap Memory Allocation
+
+31.@SpringBootApplication vs @Configuration
+
+32.@ComponentScan vs @EnableAutoConfiguration
+
+33.@Configuration vs @Bean
+
+34.@Autowired vs @Qualifier
+
+35.@RestController vs @Controller
+
+36.@RequestMapping vs @GetMapping
+
+37.@PathVariable vs @RequestParam
+
+38.@PostMapping vs @PutMapping
+
+39.PUT vs PATCH
+
+40.@ExceptionHandler vs @ControllerAdvice
+
+41.@Primary vs @Qualifier
+
+42.@Async vs @Scheduled
+
+43.@Cacheable vs @CacheEvict
+
+44.application.properties vs application.yml
+
+45. Microservices Architecture vs Monolithic Architecture
+
+46.JAR vs WAR Files
+
+47.Maven vs Gradle
+
+48.Continuous Integration vs Continuous Deployment
+
+49. Agile vs Waterfall Methodologies
+
+50.RESTful API vs SOAP API
+```
 
