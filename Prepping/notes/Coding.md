@@ -201,6 +201,96 @@ This Java program demonstrates how to filter duplicate objects from a list using
 ## 32. ThoughtWorks [Process](code/ThoughtWorks.md)
 
 ---
+## 33. Comcast - Explain binary tree with simple traversal.
+```
+public class BinaryTree {
+
+    private Node root;
+
+    private static class Node {
+        int data;
+        Node left;
+        Node right;
+
+        Node(int data) {
+            this.data = data;
+            left = null;
+            right = null;
+        }
+    }
+
+    public void insert(int data) {
+        root = insertRecursive(root, data);
+    }
+
+    private Node insertRecursive(Node current, int data) {
+        if (current == null) {
+            return new Node(data);
+        }
+
+        if (data < current.data) {
+            current.left = insertRecursive(current.left, data);
+        } else if (data > current.data) {
+            current.right = insertRecursive(current.right, data);
+        } else {
+            // value already exists
+            return current;
+        }
+
+        return current;
+    }
+
+    public boolean contains(int data) {
+        return containsRecursive(root, data);
+    }
+
+    private boolean containsRecursive(Node current, int data) {
+        if (current == null) {
+            return false;
+        }
+        if (data == current.data) {
+            return true;
+        }
+        return data < current.data
+                ? containsRecursive(current.left, data)
+                : containsRecursive(current.right, data);
+    }
+
+
+
+    public void inOrderTraversal() {
+        inOrderTraversalRecursive(root);
+        System.out.println(); // Newline for better output formatting
+    }
+
+    private void inOrderTraversalRecursive(Node node) {
+        if (node != null) {
+            inOrderTraversalRecursive(node.left);
+            System.out.print(node.data + " ");
+            inOrderTraversalRecursive(node.right);
+        }
+    }
+
+    public static void main(String[] args) {
+        BinaryTree tree = new BinaryTree();
+        tree.insert(50);
+        tree.insert(30);
+        tree.insert(20);
+        tree.insert(40);
+        tree.insert(70);
+        tree.insert(60);
+        tree.insert(80);
+
+        System.out.println("Inorder traversal of the given tree");
+        tree.inOrderTraversal(); // Output: 20 30 40 50 60 70 80
+
+        System.out.println("Contains 40: " + tree.contains(40)); // Output: true
+        System.out.println("Contains 90: " + tree.contains(90)); // Output: false
+
+    }
+}
+```
+---
 
 ## 33. Samsung [Ques](coding/Samsung.md)
 
