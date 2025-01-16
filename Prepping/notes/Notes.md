@@ -159,9 +159,17 @@ This is a great outline of key system design concepts, progressing from fundamen
 
 This expanded explanation should provide a more comprehensive understanding of the topics you've outlined. Remember that system design is a vast field, and continuous learning and practice are essential.
 
-## Asynchronus Communication
+### Synchronous Communication
 
-### Kafka 
+```
+RestTemplate restTemplate = new RestTemplate();
+String url = "https://api.example.com/resource/1";
+String result = restTemplate.getForObject(url, String.class);
+```
+
+### Asynchronous Communication
+
+#### Kafka 
 1. kafkaTemplate(Producer)
    ```
     kafkaTemplate.send("myTopic", message);
