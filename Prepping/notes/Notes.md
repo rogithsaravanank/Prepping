@@ -159,4 +159,20 @@ This is a great outline of key system design concepts, progressing from fundamen
 
 This expanded explanation should provide a more comprehensive understanding of the topics you've outlined. Remember that system design is a vast field, and continuous learning and practice are essential.
 
+## Asynchronus Communication
+
+### Kafka 
+1. kafkaTemplate(Producer)
+   ```
+    kafkaTemplate.send("myTopic", message);
+   ```
+2. Kafka Listener
+   ```
+   @KafkaListener(
+            topicPartitions = @TopicPartition(topic = "myTopic", partitions = {"0", "1"}),
+            groupId = "partitionedGroup"
+    )
+   ```
+
+
 
