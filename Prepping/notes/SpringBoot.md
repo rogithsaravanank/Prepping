@@ -160,3 +160,35 @@ Sometimes, if we try to show everything at once, we can get confused. It’s lik
 - **@Transactional** : It is used to mark the method or class as a transactional .Which will automatically rollback if the commit didn't happen.
 - **@Value("{application.properties}")** : This annotation is used to set the properties from the application.properties or application.yaml file.
 - **@Scope("prototype/session/request/singleton(default)")**: This annotation is used to set the scope for the object creation.same hashcodes for the objects if the scope is singleton.
+
+```
+
+@RestController
+@RequestMapping("/api/v1")
+public class springProject(){
+
+private final Service service;
+
+    @Autowired
+    public springProject(){
+        this.service=service;
+    }
+
+
+    @GetMapping()
+    private List<Task> getMethod(){
+        return service.getTask();
+    }
+
+    @PostMapping()
+    private ResponseEntity<Task> PostMethod(@RequestBody Task task){
+        return ResponseEntity.status(200).body(task);
+    }
+
+    @PutMapping(value="/id")
+    private ResponseEntity<Task> PutMethod(@PathVariable Long id){
+        return ResponseEntity.status(200).body(task);
+    }
+
+}
+```
