@@ -201,6 +201,87 @@ This Java program demonstrates how to filter duplicate objects from a list using
 ## 32. ThoughtWorks [Process](code/ThoughtWorks.md)
 
 ---
+
+## 34. Wipro 
+
+```
+You are given an array A of N integers, representing the maximum heights of N skyscrapers to be built.
+
+Your task is to specify the actual heights of the skyscrapers, given that:
+
+the height of the K-th skyscraper should be positive and not bigger than A(K];
+
+no two skyscrapers should be of the same height;
+
+the total sum of the skyscrapers' heights should be the maximum possible.
+
+Write a function: class Solution { public int[] solution(int[] A); }
+
+that, given an array A of N integers, returns an array B of N integers where B[K] is the assigned height of the K-th skyscraper satisfying the above conditions.
+
+If there are several possible answers, the function may return any of them. You may assume that it is always possible to build all skyscrapers while fulfilling all the requirements. Examples:
+
+Given A = [1, 2, 3], your function should return [1, 2, 3], as all of the skyscrapers may be built to their maximum height.
+
+Given A = [9, 4, 3, 7, 7], your function may return [9, 4, 3, 7, 6]. Note that [9, 4, 3, 6, 7] is also a valid answer. It is not possible for the last two skyscrapers to have the same height. The of height of one of them should be 7 and the other should be 6.
+
+Given A [2, 5, 4, 5, 5], your function should return [1, 2, 3, 4, 5]
+
+Write an efficient algorithm for the following assumptions:
+
+N is an integer within the range [1..50,000];
+
+each element of array A is an integer within the range [1..1,000,000,000];
+
+there is always a solution for the given input.
+
+What I did: Couldn’t think of anything but brute force. Used a set to check if a height is a duplicate. If it isn’t a duplicate use that height, else try every number below till we find an unused one.
+```
+
+```
+package com.example.interview;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
+
+public class Wipro {
+
+    public static int[] solution(int[] A) {
+        int N = A.length;
+        int[] B = new int[N];
+        Set<Integer> usedHeights = new HashSet<>();
+
+        for (int i = N - 1; i >= 0; i--) {
+            int height = A[i];
+            while (height > 0 && usedHeights.contains(height)) {
+                height--;
+            }
+            if (height == 0) {
+                throw new IllegalArgumentException("Input array has no solution"); //Should not happen according to prompt
+            }
+            B[i] = height;
+            usedHeights.add(height);
+        }
+
+        return B;
+    }
+
+    public static void main(String[] args) {
+        System.out.println(Arrays.toString(solution(new int[]{1, 2, 3}))); // [1, 2, 3]
+        System.out.println(Arrays.toString(solution(new int[]{9, 4, 5, 7, 7}))); // [9, 4, 5, 6, 7]
+        System.out.println(Arrays.toString(solution(new int[]{2, 5, 3, 5, 5}))); // [2, 3, 4, 5]
+        // System.out.println(Arrays.toString(transformArray(new int[]{1, 5, 2, 6}))); // [1, 2, 3, 4, 5, 2, 3, 4, 5, 6]
+        // System.out.println(Arrays.toString(transformArray(new int[]{1,1,1,1,1}))); // [1]
+        // System.out.println(Arrays.toString(transformArray(new int[]{5,4,3,2,1}))); // [5,4,3,2,1]
+    }
+}
+
+
+```
+
+---
 ## 33. Comcast - Explain binary tree with simple traversal.
 ```
 public class BinaryTree {
