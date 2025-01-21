@@ -372,6 +372,49 @@ public class BinaryTree {
 }
 ```
 ---
+## 34.Inmedical Coding
+```
+import java.util.Scanner;
+
+public class NumbersWithExactlyTwoZeroes {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        // Input the number of digits
+        System.out.print("Enter the number of digits (e.g., 3 for 999, 4 for 9999): ");
+        int digits = scanner.nextInt();
+
+        // Calculate the maximum value based on the number of digits
+        int max = (int) Math.pow(10, digits) - 1;
+
+        // Counter for numbers with exactly two zeroes
+        int count = 0;
+
+        // Loop through all numbers up to the max
+        for (int i = 100; i <= max; i++) {
+            // Convert number to string and count zeroes
+            String numberStr = Integer.toString(i);
+            int zeroCount = 0;
+
+            // Count the number of zeroes in the number's string representation
+            for (char c : numberStr.toCharArray()) {
+                if (c == '0') {
+                    zeroCount++;
+                }
+            }
+
+            // If there are exactly two zeroes, increment the count
+            if (zeroCount == 2) {
+                count++;
+            }
+        }
+
+        // Output the result
+        System.out.println("Count of numbers with exactly two zeroes: " + count);
+    }
+}
+```
+---
 
 ## 33. Samsung [Ques](coding/Samsung.md)
 
