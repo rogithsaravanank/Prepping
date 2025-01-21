@@ -1150,6 +1150,484 @@ This document outlines potential Java interview questions, categorized by topic.
 *   Difference between `@Controller` and `@RestController`.
 *   Can we create multiple objects of the same type in a Spring application?
 
+# Publicis Sapient Interview Questions (Level 1)
+
+This document summarizes the interview questions asked for a Level 1 position at Publicis Sapient. The interview covered various topics, including project experience, Core Java, coding, Microservices, Spring Framework, and general software development concepts.
+
+## Project Experience
+
+*   Explain your project and the tech stack you used.
+*   What were your roles and responsibilities within the team?
+
+## Core Java
+
+*   **Custom Annotations:** How do you create a custom annotation?
+    *   Explain the `@interface` syntax.
+    *   Discuss annotation elements (fields with types).
+    *   Cover meta-annotations like `@Target`, `@Retention`, and `@Documented`.
+    *   Example:
+
+    ```java
+    import java.lang.annotation.*;
+
+    @Retention(RetentionPolicy.RUNTIME)
+    @Target(ElementType.METHOD)
+    public @interface MyCustomAnnotation {
+        String value() default "";
+        int count() default 0;
+    }
+    ```
+
+*   **Java Versions:** What Java versions have you worked on?
+    *   List the versions you have experience with (e.g., Java 8, 11, 17).
+    *   Be prepared to discuss key features introduced in each version.
+
+*   **`map` vs. `flatMap`:** What is the difference between `map` and `flatMap`?
+    *   `map` transforms each element in a stream into another element.
+    *   `flatMap` transforms each element into a stream and then flattens the resulting streams into a single stream.
+    *   Use cases: `map` for one-to-one transformations, `flatMap` for one-to-many transformations or when dealing with nested collections/Optional.
+
+*   **Logging:** How do you log data?
+    *   Discuss logging frameworks like SLF4j and Logback/Log4j2.
+    *   Explain logging levels (TRACE, DEBUG, INFO, WARN, ERROR).
+    *   Show how to use logging in code:
+
+    ```java
+    import org.slf4j.Logger;
+    import org.slf4j.LoggerFactory;
+
+    private static final Logger logger = LoggerFactory.getLogger(MyClass.class);
+
+    logger.info("This is an info message.");
+    logger.error("An error occurred: {}", exception.getMessage()); // Use placeholders
+    ```
+
+*   **Javadoc vs. Multiline Comments:** What is the difference between Javadoc and multiline comments?
+    *   Javadoc (`/** ... */`) is used to generate API documentation. It supports tags like `@param`, `@return`, `@throws`, etc.
+    *   Multiline comments (`/* ... */`) are for general code comments and are not included in generated documentation.
+
+## Coding
+
+*   **Java 8+ Features:** A generic coding problem involving Java 8+ features like streams, `flatMap`, `filter`, etc.
+*   **String to Map Conversion:** Convert a given string to a map where the name is the key and the number is the value.
+    *   Example Input: "John 123, Jane 456, Peter 789"
+    *   Expected Output: `{"John": 123, "Jane": 456, "Peter": 789}`
+    *   Example Java Code:
+
+    ```java
+    import java.util.Arrays;
+    import java.util.Map;
+    import java.util.stream.Collectors;
+
+    public static Map<String, Integer> stringToMap(String input) {
+        return Arrays.stream(input.split(", "))
+                .map(s -> s.split(" "))
+                .collect(Collectors.toMap(
+                        parts -> parts[0],
+                        parts -> Integer.parseInt(parts[1])
+                ));
+    }
+    ```
+
+## Microservices
+
+*   **API Gateway:** What does an API gateway do?
+    *   Acts as a single entry point for all client requests.
+    *   Handles routing, load balancing, authentication, authorization, rate limiting, and other cross-cutting concerns.
+
+## Spring Framework
+
+*   **Request Layers:** What layers does a request pass through before reaching the controller?
+    *   DispatcherServlet -> HandlerMapping -> Interceptors -> Controller -> Service -> Repository (and potentially other layers).
+
+*   **Request Validation:** How do you validate requests?
+    *   Using `@Valid` and `@NotNull`, `@Size`, `@Pattern`, etc., annotations from `javax.validation.constraints`.
+    *   Using a custom validator implementing the `Validator` interface.
+
+*   **Filter vs. Interceptor:** What is the difference between a filter and an interceptor?
+    *   Filters operate at the servlet level (before and after the DispatcherServlet).
+    *   Interceptors operate within the Spring context (before and after the controller method).
+    *   Filters are for cross-cutting concerns that don't need access to the Spring context, while interceptors have access to the handler, model, and view.
+
+*   **Controller Advice:** What is Controller Advice? How does it work?
+    *   `@ControllerAdvice` allows you to handle exceptions globally across multiple controllers.
+    *   `@ExceptionHandler` methods within a `@ControllerAdvice` class handle specific exceptions.
+
+*   **User Authentication:** How do you authenticate users?
+    *   Spring Security is the standard way.
+    *   Explain authentication mechanisms (e.g., basic authentication, OAuth 2.0, JWT).
+
+*   **Bean Prioritization:** How do you prioritize bean loading if there are two beans of the same type?
+    *   `@Primary` annotation.
+    *   `@Order` annotation or `Ordered` interface.
+    *   Bean name qualification using `@Qualifier`.
+
+*   **Dependencies from Different Repositories:** How will your Spring Boot project retrieve dependencies from different repositories?
+    *   You configure the repositories in your `pom.xml` (Maven) or `build.gradle` (Gradle) file. Maven/Gradle will search the repositories in the order they are defined.
+
+*   **SSL/TLS Configuration:** How do you configure SSL and TLS certificates?
+    *   Place the keystore file in the appropriate location.
+    *   Configure the server properties (e.g., `server.ssl.key-store`, `server.ssl.key-store-password`, etc.) in `application.properties` or `application.yml`.
+
+*   **`RestTemplate` with SSL:** How can you create a bean of `RestTemplate` with an SSL certificate?
+    *   Use a `ClientHttpRequestFactory` configured with an `SSLContext`.
+
+*   **Code Coverage Dependency:** What dependency is used to check code coverage?
+    *   JaCoCo (Java Code Coverage).
+
+*   **Test Class Annotation:** What annotation do you place on a test class?
+    *   `@Test` (JUnit 5) or `@RunWith(JUnit.class)` (JUnit 4).
+
+*   **JUnit Version:** Which version of JUnit are you using? (JUnit 4 or JUnit 5)
+
+*   **Parameterized Tests:** Have you used parameterized test annotations?
+    *   `@ParameterizedTest` and `@ValueSource`, `@MethodSource`, `@CsvSource`, etc. (JUnit 5).
+
+## Generic Questions
+
+*   **Jenkins:** What do you know about Jenkins?
+    *   A popular open-source automation server used for continuous integration and continuous delivery (CI/CD).
+
+*   **Docker:** How familiar are you with Docker?
+    *   Containerization technology for packaging applications and their dependencies into portable containers.
+
+*   **Docker Image Contents:** What does a Docker image consist of?
+    *   A read-only template that contains the application code, libraries, dependencies, tools, and other files needed to run the application. It's built in layers.
+
+# Publicis Sapient Interview Questions (Level 1) - Part 2
+
+This document summarizes the second part of interview questions asked for a Level 1 position at Publicis Sapient.
+
+## Project Experience
+
+*   Tell me about your project.
+
+## Core Java
+
+*   **Serialization:** What is serialization in Java?
+    *   The process of converting an object's state to a byte stream for storage or transmission.
+*   **`serialVersionUID`:** What is the use of `serialVersionUID`?
+    *   A version identifier for serializable classes. It's used during deserialization to ensure that the class version matches the serialized data version. Prevents `InvalidClassException`.
+*   **Thread Pools and Executor Frameworks:** What are thread pools and executor frameworks?
+    *   Thread pools manage a set of worker threads to execute tasks concurrently, improving performance by reducing the overhead of thread creation/destruction.
+    *   Executor frameworks provide APIs for creating and managing thread pools (e.g., `ExecutorService`, `ThreadPoolExecutor`, `ForkJoinPool`).
+*   **`CompletableFuture`:** What is `CompletableFuture`?
+    *   A class introduced in Java 8 for asynchronous programming. It represents a result of an asynchronous computation that may not be available yet. Provides methods for chaining, combining, and handling results/exceptions of asynchronous operations.
+*   **`HashSet`:** What is a `HashSet`?
+    *   An implementation of the `Set` interface that stores unique elements in a hash table. Provides fast lookups (O(1) on average).
+*   **Linked List:** What is a linked list?
+    *   A linear data structure where elements are stored in nodes. Each node contains data and a pointer to the next node. Supports efficient insertion/deletion but slower access to elements compared to arrays.
+*   **Marker Interface:** What is a marker interface?
+    *   An interface with no methods (e.g., `Serializable`, `Cloneable`). It's used to mark a class with a certain characteristic or capability.
+
+## Coding
+
+*   **Singleton Class:** Create a singleton class.
+    *   Example using enum (preferred):
+
+    ```java
+    public enum MySingleton {
+        INSTANCE;
+
+        public void doSomething() {
+            // ...
+        }
+    }
+    ```
+
+    *   Example using static instance (less preferred but commonly seen):
+
+    ```java
+    public class MySingleton {
+        private static final MySingleton INSTANCE = new MySingleton();
+
+        private MySingleton() {} // Private constructor
+
+        public static MySingleton getInstance() {
+            return INSTANCE;
+        }
+
+        public void doSomething() {
+            // ...
+        }
+    }
+    ```
+
+*   **First Repeating Character:** Write a program to find the first repeating character in a string. Explain its time complexity.
+    *   Use a `HashSet` to keep track of seen characters.
+    *   Time complexity: O(n) in the average and worst case.
+
+    ```java
+    import java.util.HashSet;
+    import java.util.Set;
+
+    public static char firstRepeatingChar(String str) {
+        Set<Character> seen = new HashSet<>();
+        for (char c : str.toCharArray()) {
+            if (seen.contains(c)) {
+                return c;
+            }
+            seen.add(c);
+        }
+        return '\0'; // Or throw an exception if no repeating char
+    }
+    ```
+
+*   **Streams (Sort and Filter):** Use streams to sort integers and filter even numbers.
+
+    ```java
+    import java.util.Arrays;
+    import java.util.List;
+    import java.util.stream.Collectors;
+
+    List<Integer> numbers = Arrays.asList(5, 2, 8, 1, 9, 4);
+
+    List<Integer> sortedEvenNumbers = numbers.stream()
+            .filter(n -> n % 2 == 0)
+            .sorted()
+            .collect(Collectors.toList());
+    ```
+
+*   **Immutable Class:** Create an immutable class in Java.
+    *   Make all fields `final` and `private`.
+    *   Do not provide setter methods.
+    *   If the class has mutable fields, make defensive copies in the constructor and getter methods.
+
+    ```java
+    public final class ImmutablePerson {
+        private final String name;
+        private final int age;
+
+        public ImmutablePerson(String name, int age) {
+            this.name = name;
+            this.age = age;
+        }
+
+        public String getName() {
+            return name;
+        }
+
+        public int getAge() {
+            return age;
+        }
+    }
+    ```
+
+*   **`BiPredicate`:** What is `BiPredicate`? Implement it.
+    *   A functional interface that represents a predicate (boolean-valued function) that takes two arguments.
+
+    ```java
+    import java.util.function.BiPredicate;
+
+    BiPredicate<String, Integer> checkLength = (str, len) -> str.length() == len;
+
+    boolean result = checkLength.test("hello", 5); // true
+    ```
+
+## Microservices
+
+*   **Caching Purpose and Usage:** What is the purpose of using caching and how did you use it?
+    *   To improve performance by storing frequently accessed data in memory.
+    *   Mention caching strategies (e.g., LRU, FIFO).
+    *   Discuss technologies like Redis, Memcached, or Caffeine.
+
+*   **REST Principles:** What are REST principles?
+    *   Client-server architecture, statelessness, cacheability, uniform interface, layered system, code on demand (optional).
+
+*   **Service Communication:** What are the various ways of establishing communication between services?
+    *   REST (HTTP), gRPC, message queues (Kafka, RabbitMQ).
+
+*   **JWT (JSON Web Tokens):** What is JWT and how have you implemented it?
+    *   A standard for representing claims securely between parties as a JSON object. Used for authentication and authorization.
+    *   Explain the structure (header, payload, signature).
+    *   Mention libraries like `jjwt`.
+
+*   **Caching:** What is caching? (Already covered above)
+
+## Spring Framework
+
+*   **Jackson API:** What is Jackson API? (Covered in previous response)
+
+*   **`@Transactional`:** What does `@Transactional` do?
+    *   Manages transactions for database operations. Ensures atomicity, consistency, isolation, and durability (ACID properties).
+
+*   **`@SpringBootApplication`:** What does `@SpringBootApplication` do?
+    *   A composite annotation that combines `@Configuration`, `@EnableAutoConfiguration`, and `@ComponentScan`. It marks the main class of a Spring Boot application.
+
+*   **First Class Loaded:** What is the first class that is loaded when the Spring app starts?
+    *   The class annotated with `@SpringBootApplication` (the main application class).
+
+*   **`@PathVariable` vs. `@QueryParam`:** What is the difference between `@PathVariable` and `@QueryParam`?
+    *   `@PathVariable` extracts values from the URL path (e.g., `/users/{id}`).
+    *   `@QueryParam` extracts values from the query parameters (e.g., `/users?name=John`).
+
+*   **Singleton Bean with Private Constructor:** Have you ever seen/created a singleton Java bean which had a private constructor? (Covered in the Singleton Class question).
+
+*   **Feign Client:** How does a Feign client work?
+    *   A declarative HTTP client for making calls to other services. It simplifies the process of writing HTTP clients by using annotations.
+
+*   **Mockito Mocking:** How do you mock objects in Mockito?
+    *   `@Mock` annotation to create mocks.
+    *   `when(...).thenReturn(...)` to define mock behavior.
+    *   `verify(...)` to verify method calls.
+
+## Kafka
+
+*   **Kafka Configuration and Consumer Downtime:** Explain how you have configured Kafka and what happens when all consumers go down?
+    *   Configuration involves setting up brokers, topics, partitions, and consumers.
+    *   If all consumers go down, messages will continue to be stored in the Kafka topic (up to the retention period). Once a consumer comes back online, it will resume consuming from where it left off (depending on the consumer group and offset management).
+
+## Selenium
+
+*   **Selenium Use Case:** Tell me about a use case where you used Selenium.
+    *   Web UI testing automation.
+
+*   **Automated Test Scripts:** Have you ever automated test scripts?
+
+## Database
+
+*   **CAP Theorem:** What does the CAP theorem state?
+    *   In a distributed system, you can only guarantee two out of three: Consistency, Availability, and Partition tolerance.
+
+*   **Data Modeling:** Have you ever done data modeling?
+
+## Cloud (AWS/Azure)
+
+*   **AWS S3 Usage:** What did you do with AWS S3?
+    *   Object storage for storing files and data.
+
+*   **Azure Features:** What features of Azure have you used?
+
+## Generic Questions
+
+*   **SOLID Principles:** What are SOLID principles?
+    *   Single Responsibility, Open/Closed, Liskov Substitution, Interface Segregation, Dependency Inversion
+
+# Database Interview Questions
+
+This document covers common database interview questions, focusing on SQL concepts.
+
+## SQL Joins
+
+*   **Left Join (Left Outer Join):** What is a left join?
+
+    A left join returns all rows from the left table and the matching rows from the right table. If there is no match in the right table, `NULL` values are returned for the columns of the right table.
+
+    **Example:**
+
+    ```sql
+    SELECT *
+    FROM Employees e
+    LEFT JOIN Departments d ON e.department_id = d.id;
+    ```
+
+    This will return all employees, and if an employee has a matching department in the `Departments` table, the department information will be included. If an employee has no matching department, the department columns will be `NULL`.
+
+*   **Self Join:** What is a self join?
+
+    A self join is a regular join, but the table is joined with itself. It's useful for comparing rows within the same table.
+
+    **Example:** Finding employees who are managers of other employees:
+
+    ```sql
+    SELECT e.name AS employee_name, m.name AS manager_name
+    FROM Employees e
+    JOIN Employees m ON e.manager_id = m.id;
+    ```
+
+    Here, the `Employees` table is aliased as `e` (employee) and `m` (manager), and the join condition is based on the `manager_id` column.
+
+## Data Manipulation
+
+*   **`TRUNCATE` vs. `DELETE`:** What is the difference between `TRUNCATE` and `DELETE`?
+
+    Both `TRUNCATE` and `DELETE` remove rows from a table, but they differ in several ways:
+
+    | Feature        | `DELETE`                               | `TRUNCATE`                             |
+    | -------------- | -------------------------------------- | -------------------------------------- |
+    | Operation      | DML (Data Manipulation Language)       | DDL (Data Definition Language)       |
+    | Logging        | Logs each row deletion.               | Minimal logging (only the deallocation of data pages). |
+    | Speed          | Slower, especially for large tables.   | Much faster for large tables.        |
+    | `WHERE` Clause | Supports `WHERE` clause for filtering. | Does not support `WHERE` clause. Removes all rows. |
+    | Auto-Increment | Does not reset auto-increment values (in most databases). | Resets auto-increment values (in most databases). |
+    | Rollback       | Can be rolled back.                     | Cannot be rolled back (in most databases). |
+    | Triggers       | Triggers are fired.                     | Triggers are not fired.                 |
+
+    In summary, `TRUNCATE` is faster for deleting all rows from a table but cannot be rolled back and resets auto-increment values. `DELETE` is slower but allows for selective deletion with a `WHERE` clause and can be rolled back.
+
+*   **Altering a Column:** How to alter a column?
+
+    The SQL syntax for altering a column varies slightly between database systems (MySQL, PostgreSQL, SQL Server, Oracle, etc.), but the general structure is:
+
+    ```sql
+    ALTER TABLE table_name
+    ALTER COLUMN column_name data_type [constraints];
+    ```
+
+    **Examples:**
+
+    *   **MySQL:**
+
+        ```sql
+        ALTER TABLE Employees
+        MODIFY COLUMN name VARCHAR(255); -- Change data type
+        
+        ALTER TABLE Employees
+        ADD COLUMN email VARCHAR(255); -- Add a column
+        
+        ALTER TABLE Employees
+        DROP COLUMN email; -- Drop a column
+
+        ALTER TABLE Employees
+        CHANGE COLUMN old_name new_name VARCHAR(255); -- Rename a column
+        ```
+
+    *   **PostgreSQL:**
+
+        ```sql
+        ALTER TABLE Employees
+        ALTER COLUMN name TYPE VARCHAR(255); -- Change data type
+
+        ALTER TABLE Employees
+        ADD COLUMN email VARCHAR(255); -- Add a column
+
+        ALTER TABLE Employees
+        DROP COLUMN email; -- Drop a column
+
+        ALTER TABLE Employees
+        RENAME COLUMN old_name TO new_name; -- Rename a column
+        ```
+
+    *   **SQL Server:**
+
+        ```sql
+        ALTER TABLE Employees
+        ALTER COLUMN name VARCHAR(255); -- Change data type
+
+        ALTER TABLE Employees
+        ADD email VARCHAR(255); -- Add a column
+
+        ALTER TABLE Employees
+        DROP COLUMN email; -- Drop a column
+
+        EXEC sp_rename 'Employees.old_name', 'new_name', 'COLUMN'; -- Rename a column
+        ```
+
+    Consult your specific database documentation for the precise syntax.
+
+## Key Constraints
+
+*   **Primary Key vs. Unique Key:** Difference between primary key and unique key?
+
+    | Feature        | Primary Key                                 | Unique Key                                  |
+    | -------------- | ------------------------------------------- | ------------------------------------------- |
+    | Purpose        | Uniquely identifies each row in a table. | Ensures that values in a column (or group of columns) are unique. |
+    | `NULL` Values  | Cannot contain `NULL` values.                | Can contain one or more `NULL` values (depending on the database). |
+    | Index          | Automatically creates a clustered index (in most databases). | Creates a non-clustered index. |
+    | Table Limit    | One primary key per table.                   | Multiple unique keys per table.            |
+
+    In summary, a primary key is used to uniquely identify each row and cannot be `NULL`. A unique key ensures uniqueness but can allow `NULL` values. A table can have only one primary key but multiple unique keys.
+
 ```
 Here's a list of 50 essential Java and Spring Boot topics that will help you stand out:
 
