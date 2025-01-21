@@ -4,6 +4,8 @@
 - ![alt text](images/Athena_1.png)
 - ![alt text](images/Athena_2.png) 
 - ![alt text](images/Athena_3.png)
+- ![Athena_R2](https://github.com/user-attachments/assets/b13d7c55-23ba-49fc-928c-e278951dd778)
+- ![Athena_R1](https://github.com/user-attachments/assets/e59da618-e4b1-452c-9c78-526dfcc6e534)
 - ![Code](images/Athena-coding.jpeg) 
 - ![Code](images/Athena-coding1.jpeg)
 - ![Code](images/leetcode2.jpeg) 
@@ -176,4 +178,124 @@ public int findDuplicate(int[] nums) {
 
 ---
 
+---
+```
+import java.util.*;
+
+class Result {
+    public static List<Integer> minChairs(List<String> simulations) {
+        List<Integer> res = new ArrayList<>();
+
+        for (String str : simulations) {
+            int totalChairs = 0;
+            int availableChairs = 0;
+
+            for (char action : str.toCharArray()) {
+                switch (action) {
+                    case 'C': // New employee arrives
+                    case 'U': // Employee returns from a meeting
+                        if (availableChairs > 0) {
+                            availableChairs--;
+                        } else {
+                            totalChairs++;
+                        }
+                        break;
+                    case 'R': // Employee goes to a meeting
+                    case 'L': // Employee leaves the workroom
+                        availableChairs++;
+                        break;
+                }
+            }
+
+            res.add(totalChairs); // Add the result for this simulation
+        }
+
+        return res;
+    }
+
+    public static void main(String[] args) {
+        // Example usage
+        List<String> simulations = Arrays.asList("CRUL", "CCRUUL");
+        List<Integer> result = minChairs(simulations);
+
+        System.out.println(result); // Output: [1, 2]
+    }
+}
+```
+---
+```
+import java.util.*;
+
+class Result {
+    public static List<Long> mazeGame(List<Long> t, List<Integer> endpoint1, List<Integer> endpoint2, List<Integer> edgeLength) {
+        int n = t.size(); // Number of vertices
+        List<List<int[]>> graph = new ArrayList<>(); // Adjacency list to store edges
+        for (int i = 0; i <= n; i++) {
+            graph.add(new ArrayList<>());
+        }
+
+        // Build the graph
+        for (int i = 0; i < endpoint1.size(); i++) {
+            int u = endpoint1.get(i);
+            int v = endpoint2.get(i);
+            int len = edgeLength.get(i);
+            graph.get(u).add(new int[]{v, len});
+            graph.get(v).add(new int[]{u, len}); // Bidirectional edge
+        }
+
+        // Priority queue for Dijkstra's algorithm
+        PriorityQueue<long[]> pq = new PriorityQueue<>(Comparator.comparingLong(a -> a[1])); // [vertex, time]
+        pq.offer(new long[]{1, 0}); // Start at vertex 1 with time 0
+
+        long[] earliestTime = new long[n + 1];
+        Arrays.fill(earliestTime, Long.MAX_VALUE);
+        earliestTime[1] = 0;
+
+        while (!pq.isEmpty()) {
+            long[] current = pq.poll();
+            int vertex = (int) current[0];
+            long currentTime = current[1];
+
+            // If the current vertex is already gone, skip it
+            if (currentTime >= t.get(vertex - 1)) {
+                continue;
+            }
+
+            // Explore neighbors
+            for (int[] neighbor : graph.get(vertex)) {
+                int nextVertex = neighbor[0];
+                long travelTime = neighbor[1];
+                long nextTime = currentTime + travelTime;
+
+                // Check if the next vertex is reachable and update time
+                if (nextTime < t.get(nextVertex - 1) && nextTime < earliestTime[nextVertex]) {
+                    earliestTime[nextVertex] = nextTime;
+                    pq.offer(new long[]{nextVertex, nextTime});
+                }
+            }
+        }
+
+        // Prepare the result
+        List<Long> result = new ArrayList<>();
+        for (int i = 1; i <= n; i++) {
+            result.add(earliestTime[i] == Long.MAX_VALUE ? -1 : earliestTime[i]);
+        }
+
+        return result;
+    }
+
+    public static void main(String[] args) {
+        // Example input
+        int n = 4, m = 4;
+        List<Long> t = Arrays.asList(1L, 2L, 7L, 9L);
+        List<Integer> endpoint1 = Arrays.asList(1, 2, 3, 4);
+        List<Integer> endpoint2 = Arrays.asList(2, 3, 4, 1);
+        List<Integer> edgeLength = Arrays.asList(2, 4, 1, 5);
+
+        List<Long> result = mazeGame(t, endpoint1, endpoint2, edgeLength);
+        System.out.println(result); // Output: [0, -1, 7, 9]
+    }
+}
+```
+---
 
