@@ -484,7 +484,34 @@ kubectl logs -f <pod-name> -n <namespace>
 #### Technical Questions
 1. Explain how logging works in a distributed microservice architectured application how to debug during that time ?
 2. How ELK works in OSO ?
-3.  
+3. Cycle Detection in Linked List
+```java
+import java.util.HashSet;
+import java.util.Set;
+
+public class CycleDetectionHashSet {
+
+    public static boolean hasCycle(Node head) {
+        Set<Node> visited = new HashSet<>();
+        Node current = head;
+
+        while (current != null) {
+            if (visited.contains(current)) {
+                return true; // Cycle detected
+            }
+            visited.add(current);
+            current = current.next;
+        }
+
+        return false; // No cycle
+    }
+    //...main method from above can be reused.
+}
+```
+4.  Java Memory Model:
+- The Java Memory Model (JMM) is a set of rules that governs how threads in a Java program interact with memory. It defines how and when different threads can see changes to shared variables. Understanding the JMM is crucial for writing correct concurrent programs.
+
+
 
 #### Questions
 1. Circular dependency in spring boot
