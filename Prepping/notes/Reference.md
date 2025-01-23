@@ -695,6 +695,25 @@ public int hashCode() {
         Collections.sort(lst,Collections.reverseOrder());//comparator
 ```
 
+## Load balancer 
+
+- It is mainly used to divert the network traffic in a distributed manner to all the available resources. so that the requests doesn't overewhelm one server.
+
+## Circuit Breaker
+
+- It is used to prevent the cascading effect on all the available services. hence trips the service which is failing in to a Open mode.
+
+- The circuit breaker pattern acts as a proxy between a service and its dependencies. It monitors the calls to the dependency and, if a certain threshold of failures is reached, it "trips" the circuit breaker, preventing further calls to the dependency. This gives the failing service time to recover without causing further damage to the system.
+
+- States of a Circuit Breaker:
+
+- Closed: In the normal state, the circuit breaker allows calls to pass through to the dependency. It monitors the success and failure of these calls.
+
+- Open: When the number of failures exceeds a predefined threshold within a specific time window, the circuit breaker trips and enters the open state. In this state, it blocks all calls to the dependency and immediately returns an error or a fallback response.
+
+- Half-Open: After a timeout period, the circuit breaker transitions to the half-open state. In this state, it allows a limited number of test calls to the dependency. If these calls succeed, the circuit breaker returns to the closed state. If they fail, it goes back to the open state.
+
+
 ## Built-in Functional Interfaces in Java
 
 Java 8 introduced a set of built-in functional interfaces in the `java.util.function` package. These interfaces simplify functional programming in Java by providing common functional interfaces that can be used with lambda expressions.
