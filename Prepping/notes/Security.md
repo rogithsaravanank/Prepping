@@ -56,3 +56,69 @@ In a Spring Boot application acting as a resource server, a JWT authentication f
 In an OAuth 2.0 flow, the application (as a client) obtains an access token on behalf of the user. This access token is then used to access resources on the resource server. The database itself is *not* directly authenticated on a per-user basis in this flow. The application uses its own database credentials (stored securely) to connect to the database. The authorization logic (whether a user has permission to access certain data) is handled at the application level based on the claims in the JWT.
 
 In summary, OAuth 2.0 with JWT provides a robust and standardized way to handle authentication and authorization in modern web applications and APIs. It decouples authentication from the resource server, allowing for greater flexibility and scalability.
+
+
+
+## Authentication and Authorization using JWT in Spring Boot
+
+This document explains how to implement JWT-based authentication and authorization in a Spring Boot application.
+
+### 1. What is JWT?
+
+JWT (JSON Web Token) is a compact, URL-safe token used for securely transmitting information between a client and a server. It consists of three parts separated by dots:
+
+* **Header:** Contains the token type (JWT) and signing algorithm.
+* **Payload:** Contains user claims (e.g., username, roles, permissions).
+* **Signature:** Ensures the token's integrity and authenticity using a secret key.
+
+JWTs are self-contained and stateless, making them suitable for microservices architectures.
+
+### 2. Why use JWT in Spring Boot?
+
+* **Stateless Authentication:** JWTs eliminate the need for session management on the server, simplifying application scaling.
+* **Compact and Secure:** JWTs are compact due to base64 encoding and cryptographically signed, ensuring data integrity.
+* **Scalable:** JWTs work well in distributed systems and microservices architectures.
+
+### 3. How JWT Works
+
+The JWT workflow involves three main steps:
+
+1. **User Login:**
+    * The client sends username and password to the server.
+    * The server validates credentials (e.g., against a database).
+    * If valid, the server generates a JWT containing user claims.
+
+2. **Token Usage:**
+    * The server sends the JWT back to the client.
+    * The client stores the JWT securely (e.g., local storage or cookies).
+    * For subsequent requests, the client includes the JWT in the Authorization header.
+
+3. **Server Verification:**
+    * The server receives the JWT from the Authorization header.
+    * The server verifies the token's signature and extracts user information from claims.
+    * If valid, the request is processed; otherwise, it's rejected.
+
+### 4. Implementing JWT in a Spring Boot Application
+
+Here's a step-by-step guide to implementing JWT in your Spring Boot application:
+
+**Step 1: Add Dependencies**
+
+Add the following dependencies to your pom.xml:
+
+```xml
+<dependency>
+  <groupId>io.jsonwebtoken</groupId>
+  <artifactId>jjwt-api</artifactId>
+  <version>0.11.5</version>
+</dependency>
+<dependency>
+  <groupId>io.jsonwebtoken</groupId>
+  <artifactId>jjwt-impl</artifactId>
+  <version>0.11.5</version>
+</dependency>
+<dependency>
+  <groupId>io.jsonwebtoken</groupId>
+  <artifactId>jjwt-jackson</artifactId>
+  <version>0.11.5</version>
+</dependency>
