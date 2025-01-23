@@ -122,3 +122,24 @@ Add the following dependencies to your pom.xml:
   <artifactId>jjwt-jackson</artifactId>
   <version>0.11.5</version>
 </dependency>
+```
+
+```
+@Component
+public class JwtUtil {
+
+  private String secret = "mysecretkey";
+  private int jwtExpirationInMs = 3600000; // 1 hour
+
+  public String generateToken(String username) {
+    return Jwts.builder()
+        .setSubject(username)
+        .setIssuedAt(new Date())
+        .setExpiration(new Date(System.currentTimeMillis() + jwtExpirationInMs))
+        .signWith(SignatureAlgorithm.HS512, secret)
+        .compact();
+  }
+
+  // ... other methods for parsing claims and validating tokens
+}
+```
