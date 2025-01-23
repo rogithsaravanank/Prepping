@@ -98,6 +98,7 @@
 - Default Methods in Interfaces: Allows us to add new methods to existing interfaces and Static Methods in Interfaces : Allows us to add static methods to existing interfaces
 - Optional Class : Provides a types safe way to handle null pointer exception
 -  Method References : Shorthand way of handling lambda expressions
+-  A functional interface in Java is an interface that contains exactly one abstract method. It can have default methods, static methods, and private methods, but it must have only one abstract method.
 
 ## Concurrent HashMap
 
