@@ -162,3 +162,242 @@ These deal with communication between objects.
 *   **Strategy:** For flexible algorithm switching.
 
 These patterns provide flexibility, scalability, and maintainability in software design.
+
+```
+Spring Boot heavily relies on several design patterns to simplify and standardize development. Here are the most commonly used design patterns and their usage in Spring Boot:
+
+
+---
+
+1. Singleton Pattern
+
+Description: Ensures a class has only one instance and provides a global point of access to it.
+
+Usage in Spring Boot:
+
+The Spring container manages beans as singletons by default (@Bean or @Component scope is singleton unless explicitly configured otherwise).
+
+Used in Service classes, Repository classes, and Spring-managed beans.
+
+
+Example:
+
+@Service
+public class UserService {
+    // Singleton by default
+}
+
+
+
+---
+
+2. Factory Method Pattern
+
+Description: Creates objects without specifying the exact class to instantiate.
+
+Usage in Spring Boot:
+
+Used in the @Bean annotated methods in @Configuration classes to define bean creation logic.
+
+Spring Factory Beans are a practical implementation.
+
+
+Example:
+
+@Configuration
+public class AppConfig {
+    @Bean
+    public UserService userService() {
+        return new UserService();
+    }
+}
+
+
+
+---
+
+3. Proxy Pattern
+
+Description: Provides a surrogate or placeholder for another object to control access to it.
+
+Usage in Spring Boot:
+
+Used in AOP (Aspect-Oriented Programming) for creating proxies around beans to handle cross-cutting concerns like logging, transaction management, or security.
+
+Spring Transaction Management uses proxies to wrap methods annotated with @Transactional.
+
+
+Example:
+
+@Transactional
+public void performTransaction() {
+    // Spring creates a proxy to manage the transaction.
+}
+
+
+
+---
+
+4. Template Method Pattern
+
+Description: Defines the skeleton of an algorithm in a base class, allowing subclasses to override specific steps.
+
+Usage in Spring Boot:
+
+Used in JdbcTemplate, RestTemplate, JpaTemplate, etc., where common operations are defined, and specific implementations are customized.
+
+
+Example:
+
+jdbcTemplate.query("SELECT * FROM users", (rs, rowNum) -> new User(rs.getInt("id"), rs.getString("name")));
+
+
+
+---
+
+5. Observer Pattern
+
+Description: Allows one object (observer) to listen to state changes in another object (subject).
+
+Usage in Spring Boot:
+
+Implemented in Event Handling using ApplicationEventPublisher and @EventListener.
+
+
+Example:
+
+@EventListener
+public void handleUserCreatedEvent(UserCreatedEvent event) {
+    System.out.println("User created: " + event.getUser());
+}
+
+
+
+---
+
+6. Decorator Pattern
+
+Description: Dynamically adds responsibilities to an object.
+
+Usage in Spring Boot:
+
+Used in custom BeanPostProcessor and HandlerInterceptor to add behaviors to beans or requests dynamically.
+
+
+Example:
+
+public class CustomBeanPostProcessor implements BeanPostProcessor {
+    @Override
+    public Object postProcessBeforeInitialization(Object bean, String beanName) {
+        // Add custom behavior before initialization
+        return bean;
+    }
+}
+
+
+
+---
+
+7. Builder Pattern
+
+Description: Simplifies the creation of complex objects step-by-step.
+
+Usage in Spring Boot:
+
+Commonly used for Entity classes or DTOs.
+
+Also used with Builder APIs like in ResponseEntity.
+
+
+Example:
+
+User user = User.builder().id(1).name("John").email("john@example.com").build();
+
+
+
+---
+
+8. Command Pattern
+
+Description: Encapsulates a request as an object, allowing parameterization of methods with different requests.
+
+Usage in Spring Boot:
+
+Used in Task Executors like @Async methods or Spring Batch for jobs and steps.
+
+
+Example:
+
+@Async
+public void processTask() {
+    // Executes task in a separate thread
+}
+
+
+
+---
+
+9. Adapter Pattern
+
+Description: Provides a bridge between two incompatible interfaces.
+
+Usage in Spring Boot:
+
+Used in integration components like Spring Security's UserDetails and adapters for third-party libraries.
+
+
+Example:
+
+public class UserDetailsAdapter implements UserDetails {
+    private final User user;
+
+    // Map User to UserDetails
+}
+
+
+
+---
+
+10. Strategy Pattern
+
+Description: Enables selecting an algorithm at runtime.
+
+Usage in Spring Boot:
+
+Used in Spring Data Repositories and in defining multiple implementations of interfaces injected based on @Qualifier.
+
+
+Example:
+
+@Service
+@Qualifier("paymentStrategy")
+public class PaypalPaymentService implements PaymentService {
+    // Implementation
+}
+
+
+
+---
+
+11. Dependency Injection (DI) Pattern
+
+Description: A specific implementation of the Inversion of Control principle that injects dependencies at runtime.
+
+Usage in Spring Boot:
+
+Core to the Spring Framework. Dependencies are injected via constructors, setters, or fields.
+
+
+Example:
+
+@Service
+public class OrderService {
+    private final UserRepository userRepository;
+
+    @Autowired
+    public OrderService(UserRepository userRepository) {
+        this.userRepository = userRepository;
+    }
+}
+
+```
