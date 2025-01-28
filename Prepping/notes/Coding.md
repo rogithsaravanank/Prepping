@@ -418,6 +418,37 @@ public class NumbersWithExactlyTwoZeroes {
 
 ## 33. Samsung [Ques](coding/Samsung.md)
 
+---
+
+## 34. MedNet
+
+```java
+  int[] arr = {1, 2, 3, 4, 5, 6, 7}; // Example with 7 elements
+        int n = 4; // Example n = 2
+
+        int len = arr.length;
+        int[] res = new int[len];
+
+        int xIndex = 0;
+        int yIndex = n;
+
+        for (int i = 0; i < len; i++) {
+            if (xIndex < n) { // Still elements in the 'x' section
+                if (i % 2 == 0) {
+                    res[i] = arr[xIndex++];
+                } else if (yIndex < len) { // Check if yIndex is within bounds
+                    res[i] = arr[yIndex++];
+                } else { // No more 'y' elements, take from 'x' if available
+                  res[i] = arr[xIndex++];
+                }
+            } else if (yIndex < len) { // No more 'x' elements
+                res[i] = arr[yIndex++];
+            }
+        }
+        System.out.println(Arrays.toString(res));
+
+```
+
 ## Stream problems examples  [Code](coding/Stream1.md)
 
 1. **Sum of squares of all even numbers in Java:**
