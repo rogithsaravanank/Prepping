@@ -142,10 +142,10 @@
 ## Status Codes
 
 - 1XX: Information response
-- 2XX: Success
+- 2XX: Success (200 ok, 201 Created)
 - 3XX: Redirect
-- 4XX: Client error
-- 5XX: Server error
+- 4XX: Client error(401 Unauthorized, 403 Forbidden)
+- 5XX: Server error (500 Internal server error 502 Bad Gateway)
 
 ## Disadvantages of REST
 
